@@ -1,0 +1,350 @@
+```sh
+docker run -d \
+    --name bajie \
+    -p 80:80 \
+    --restart=always \
+    -v "$(pwd)"/wwwroot:/app/wwwroot \
+    -e XYCMS_SECURITY_KEY=e2a3d303-ac9b-41ff-9154-930710af0845 \
+    -e XYCMS_DATABASE_TYPE=SQLite \
+    xueynet/xycms:latest
+```
+
+
+```sh
+docker run -d --name bajie -p 80:80 --restart=always -v /c/Users/1/source/repos/xueynet/XYS/themes/T_Bajie/wwwroot:/app/wwwroot  -v /c/Users/1/source/repos/xueynet/XYS/themes/T_Bajie/plugins:/app/plugins -e XYCMS_SECURITY_KEY=e2a3d303-ac9b-41ff-9154-930710af0845 -e XYCMS_DATABASE_TYPE=SQLServer -e XYCMS_DATABASE_CONNECTION_STRING="Server=106.75.187.189,3433;Uid=db_xc_101;Pwd=ZXc^&*()8;Database=GCBJ;" xueynet/xycms:latest
+```
+
+::: tip
+/c/Users/1/source/repos/xueynet/XYS/themes/T_Bajie 为您需要挂载的目录，即前端项目文件夹
+/c/Users/1/source/repos/xueynet/XYS/themes/T_Bajie/plugins:/app/plugins 插件挂载目录
+数据库更改为线上正式使用的数据库
+:::
+
+
+## 首页发布需求
+
+### html与js
+
+```base
+<!--发布需求开始-->
+    <div class="ui-popup-order-backdrop">
+        <div class="ui-popup-order">
+            <h1 class="section-left--title">
+                发布需求<span class="section-right--title">让全球千万专业人才快速响应您的需求</span>
+            </h1>
+            <div class="section-form">
+                <div class="section-form-item">
+                    <label class="section-form-item--label">
+                        我需要<span class="section-form-item--red">*</span>
+                    </label>
+                    <div class="section-form-item--content">
+                        <div class="section-form--input j-placeholder-wrapper" style="position: relative;">
+                            <textarea class="form-textarea__inner" id="name" placeholder="工程设计、效果图制作、规划设计、建筑设计、全域旅游、城市公共品牌、文创设计；乡村振兴"></textarea>
+                        </div>
+                        <p class="j-describe-error">
+                            <span class="j-error-tip"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="mobile-wrapper section-form-item">
+                    <label class="section-form-item--label">
+                        手机号码<span class="section-form-item--red">*</span>
+                    </label>
+                    <div class="section-form-item--content section-form-item--content__new">
+                        <div class="section-form--input eidt-mobile-wrapper">
+                            <input class="form-input__inner" type="text" id="tel" name="modifyphone" placeholder="便于筛选合适人才后，接收告知信息">
+                        </div>
+                        <p class="j-verify-error mt5">
+                            <span class="j-error-tip"></span>
+                        </p>
+                        <p class="J-login-tip hide">
+                            点击“提交”您将用该手机号码创建猪八戒网账号，且代表您已同意<a href="http://chengxin.zbj.com/report/rule-g-2319" class="login-agreement" target="_blank">《猪八戒网服务协议》</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="section-form-green">信息保护中，仅官方可见</div>
+                <div class="section-form-item section-form-item__submit">
+                    <label class="section-form-item--label">&nbsp;</label>
+                    <div class="section-form-item--content">
+                        <button class="btn btn__main btn-submit J-submit" type="submit" data-linkid="10197006">免费发布需求</button>
+                    </div>
+                </div>
+            </div>
+            <button i="close" class="ui-dialog-order-close popup-close" title="cancel">×</button>
+        </div>
+    </div>
+    <script>
+        $('.search-pub-task').click(function () {
+            $('.ui-popup-order-backdrop').show();
+            $('.ui-popup-order').show();
+        });
+        $('.search-pub-task1').click(function () {
+            $('.ui-popup-order-backdrop').show();
+            $('.ui-popup-order').show();
+        });
+        $('.ui-dialog-order-close').click(function () {
+            $('.ui-popup-order-backdrop').hide();
+            $('.ui-popup-order').hide();
+        });
+        $('.form-textarea__inner').bind('input propertychange', function () {
+            var length = $(".form-textarea__inner").val().length;
+            if (length < 3) {
+                $(".j-describe-error").show();
+                $(".j-describe-error .j-error-tip").text('填写内容不少于2个字')
+            } else {
+                $(".j-describe-error").hide();
+            }
+        });
+        $('.form-input__inner').blur(function () {
+            if (!/^1[345789]\d{9}$/.test($(".form-input__inner").val())) {
+                $(".j-verify-error").show();
+                $(".j-verify-error .j-error-tip").text('填写正确的手机号')
+            } else {
+                $(".j-verify-error").hide();
+            }
+        })
+        $(".btn-submit").on('click', function () {
+            var tel = $.trim($(".form-input__inner").val());
+            var content = $(".form-textarea__inner").val();
+
+            var reg = /(^0?[1][34578][\d]{9}$)|(^0[1-9][\d]{1,2}[- ]?[\d]{7,8}[-| ]?[\d]*$)/;
+            var qq = '';
+            var telephone = tel;
+            var email = '';
+            if (RegExp(reg).test(tel)) {
+                var data = JSON.stringify({ "Mobile": tel, "Content": content })
+                $.ajax({
+                    type: 'POST',
+                    url: "/api/form/1/3",
+                    data: data,
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result.success == true) {
+                            $('.section-form-green').text('发布成功！');
+                            $(".form-input__inner").val('');
+                            $(".form-textarea__inner").val('');
+                            setTimeout(function () {
+                                $('.ui-popup-order-backdrop').hide();
+                                $('.ui-popup-order').hide();
+                                $('.section-form-green').text('信息保护中，仅官方可见');
+
+                            }, 1000);
+                        } else {
+                        }
+                    }
+                });
+                // })
+            } else {
+                $(".j-verify-error .j-error-tip").text('填写正确的手机号')
+            }
+        });
+        $(function () {
+            $("img.lazy").lazyload({
+                threshold: 200
+            });
+        });
+    </script>
+    <!--发布需求结束-->
+```
+
+### css
+
+```bash
+.ui-popup-order-backdrop {
+    background: rgba(0, 0, 0,0.7);
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    user-select: none;
+    z-index: 1028;
+    ;
+    display: none;
+}
+
+.ui-popup-order {
+    position: absolute;
+    outline: 0px;
+    left: 50%;
+    margin-left: -327px;
+    top: 135px;
+    z-index: 1031;
+    width: 654px;
+    height: 380px;
+    padding: 20px 0 48px 0;
+    background-color: #fff;
+    display: none;
+}
+
+.section-left--title {
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 25px;
+    margin-left: 15px;
+    border-left: 6px solid #f60;
+    height: 24px;
+    line-height: 24px;
+    margin-bottom: 32px;
+}
+
+    .section-left--title .section-right--title {
+        margin: 0;
+        color: #666;
+        font-size: 16px;
+        font-weight: 400;
+        margin-left: 20px;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+.section-form {
+    padding-left: 50px;
+}
+
+.section-form-item--label {
+    float: left;
+    width: 86px;
+    padding-right: 18px;
+    line-height: 35px;
+    color: #484848;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.section-form-item--red {
+    color: #e32525;
+    margin-left: 5px;
+}
+
+.section-form-item--content {
+    position: relative;
+    font-size: 14px;
+    margin-left: 88px;
+    margin-right: 54px;
+}
+
+.form-textarea__inner {
+    outline: none;
+    width: 460px;
+    min-height: 140px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    resize: vertical;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ddd;
+}
+
+.js-placeholder {
+    color: #999;
+    padding: 10px;
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+.j-describe-error, .j-verify-error {
+    display: none;
+}
+
+.j-error-tip {
+    display: inline-block;
+    font-size: 12px;
+    color: #ff6e6e;
+    background: #ffe4e4;
+    padding: 3px 80px 3px 5px;
+    width: 462px;
+    box-sizing: border-box;
+    word-break: break-all;
+    border: 1px solid #ff6e6e;
+}
+
+    .j-error-tip:before {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAqUlEQVQokZXQsW0CAQyF4Q8rgiGyAlKAImQGYAHo0kAqxDhhAhZItjghQKzACBRAQQp8BadTBL/0GvvZenbjOp9LmvjCGO2s7bHCN87wko1X/KDjno/UJ0Y4RG6umhupkg5+0QrMajbX8YZpYPKAuWQS6D0x0I0nzHAJrGsa11SVfbj9uUr1SyWrwBLbB+LssAycMMTmn0hbDHAqjz6gjwUKHFNF1t7T4w9KzSKQZUP9uwAAAABJRU5ErkJggg==) 50% no-repeat;
+        margin: 0 5px -2px 0;
+    }
+
+.form-input__inner {
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: inherit;
+    height: 35px;
+    line-height: 35px;
+    outline: none;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.section-form-green {
+    color: #429908;
+    margin-left: 88px;
+    margin-bottom: 20px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+.btn__main {
+    color: #fff;
+    background-color: #f60;
+    border: none;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+}
+
+button.btn.btn__main.btn-submit.J-submit:hover {
+    background-color: red
+}
+
+.popup-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 26px;
+}
+
+.ui-dialog-order-close {
+    float: right;
+    padding: 0 4px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.search-pub-task1:hover {
+    color: white;
+    background-color: #ff6900;
+}
+```
+
+
+### 友盟统计
+
+```javascript
+<script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279850217&web_id=1279850217"></script>
+```
+
+查看统计网址：
+https://new.cnzz.com/v1/login.php?siteid=1279850217
