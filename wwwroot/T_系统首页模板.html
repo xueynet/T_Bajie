@@ -1,0 +1,495 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+
+<head>
+    <stl:include file="include/head.html"></stl:include>
+</head>
+
+<body>
+    <div id="bg3d"></div>
+    <stl:include file="include/header.html"></stl:include>
+    <stl:include file="include/menu.html"></stl:include>
+    <div class="content_dh hidden-xs">
+        <div class="banner owl-carousel" id="owl-banner">
+            <stl:contents channelName="1大图">
+                <stl:itemTemplate type="Item">
+                    <div class="slide">
+                        <div class="slidetext flex-c">
+                            <div class="container">
+                                <stl:form name="frm-gczbj" type="submitforzbj"></stl:form>
+                            </div>
+                        </div>
+                        <div class="slidesvg">
+                            <stl:image class="lazy" data-original="{content.imageUrl}"></stl:image>
+                        </div>
+                    </div>
+                </stl:itemTemplate>
+            </stl:contents>
+        </div>
+    </div>
+    <div class="tabpage hidden-xs">
+        <div class="container">
+            <ul class="h5-btns">
+                <stl:contents channelName="2服务" totalNum="5">
+                    <stl:itemTemplate type="Item">
+                        <li>
+                            <a href="#{content.Author}">
+                                <stl:if type="imageUrl" op="NotEmpty">
+                                    <stl:yes><img class="center-block" src="{content.imageUrl}" alt="" /></stl:yes>
+                                    <stl:no><i class="{content.SubTitle}" aria-hidden="true"></i></stl:no>
+                                </stl:if>
+                                <h5>{content.Title}</h5>
+                                <span>{content.Summary}</span>
+                            </a>
+                        </li>
+                    </stl:itemTemplate>
+                </stl:contents>
+            </ul>
+        </div>
+    </div>
+    <div class="tabpage" id="homead">
+        <div class="container">
+            <div class="row">
+                <stl:contents channelName="3广告" totalNum="3">
+                    <stl:itemTemplate type="Item">
+                        <div class="col-xs-4">
+                            <stl:a target="_blank">
+                                <img data-src="{content.imageUrl}" class="img-thumbnail center-block" alt="{content.Title}" src="{content.imageUrl}" data-holder-rendered="true">
+                            </stl:a>
+                        </div>
+                    </stl:itemTemplate>
+                </stl:contents>
+            </div>
+        </div>
+    </div>
+    <!--工程设计-->
+    <div class="container" id="gcsj">
+        <div class="row">
+            <div class="hidden-xs col-md-2">
+                <div class="gchome-left">
+                    <p>工程设计</p>
+                    <span>互联网＋工程设计<br>一站式服务平台</span>
+                    <a href="javascript:void(0);" class="xy-form-btn">免费发布需求</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                <div class="box">
+                    <div class="ll">
+                        <h5 class="text-center"><a href="/channels/54.html?fr=zbj.sy.zylm" target="_blank">自建房别墅 <i class="hot-i"></i></a></h5>
+                        <a href="/channels/54.html?fr=zbj.sy.zylm" class="single three hot" target="_blank">自建房</a>
+                        <a href="/channels/54.html?fr=zbj.sy.zylm" class="single three" target="_blank">别墅</a>
+                        <a href="/channels/54.html?fr=zbj.sy.zylm" class="single three" target="_blank">住宅</a>
+                        <a href="/channels/54.html?fr=zbj.sy.zylm" class="single three" target="_blank">民宿</a>
+                        <a href="/channels/54.html?fr=zbj.sy.zylm" class="single three" target="_blank">农家乐</a>
+                        <a href="/channels/54.html?fr=zbj.sy.zylm" class="single three" target="_blank">户型图</a>
+                    </div>
+                    <div class="ll">
+                        <h5 class="text-center"><a href="/channels/44.html" target="_blank">效果图制作 <i class="hot-i"></i></a></h5>
+                        <a href="/special/2021-04-22/index.html?fr=zbj.sy.zylm" class="single" target="_blank">装修效果图</a>
+                        <a href="/channels/44.html" class="single" target="_blank">建筑效果图</a>
+                        <a href="/channels/44.html" class="single" target="_blank">景观效果图</a>
+                        <a href="/channels/44.html" class="single" target="_blank">3D效果图</a>
+                    </div>
+                    <div class="ll">
+                        <h5 class="text-center"><a href="/special/2021-04-22/index.html?fr=zbj.sy.zylm" target="_blank">装修设计</a></h5>
+                        <a href="/special/2021-04-22/index.html?fr=zbj.sy.zylm" class="single three hot" target="_blank">餐饮空间</a>
+                        <a href="/special/2021-04-22/index.html?fr=zbj.sy.zylm" class="single three" target="_blank">店铺设计</a>
+                        <a href="/special/2021-04-22/index.html?fr=zbj.sy.zylm" class="single three" target="_blank">酒店空间</a>
+                        <a href="/special/2021-04-22/index.html?fr=zbj.sy.zylm" class="single three" target="_blank">办公空间</a>
+                        <a href="/special/2021-04-22/index.html?fr=zbj.sy.zylm" class="single three hot" target="_blank">展会展厅</a>
+                        <a href="/special/2021-04-22/index.html?fr=zbj.sy.zylm" class="single three" target="_blank">家装设计</a>
+                    </div>
+                    <div class="ll">
+                        <h5 class="text-center"><a href="/channels/57.html?fr=zbj.sy.zylm" target="_blank">建筑景观</a></h5>
+                        <a href="/channels/49.html?fr=zbj.sy.zylm" class="single" target="_blank">建筑设计</a>
+                        <a href="/channels/57.html?fr=zbj.sy.zylm" class="single hot" target="_blank">园林景观</a>
+                        <a href="/channels/57.html?fr=zbj.sy.zylm" class="single" target="_blank">厂区规划</a>
+                        <a href="/channels/57.html?fr=zbj.sy.zylm" class="single" target="_blank">规划设计</a>
+                    </div>
+                </div>
+                <div class="row mt-20">
+                    <stl:contents channelName="工程设计" totalNum="4">
+                        <stl:itemTemplate type="Item">
+                            <div class="col-xs-6 col-md-3">
+                                <stl:a target="_blank"><img class="img-thumbnail center-block" src="{content.imageUrl}" alt="" /></stl:a>
+                            </div>
+                        </stl:itemTemplate>
+                    </stl:contents>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--工程设计-->
+    <!--企业服务-->
+    <div class="container" id="gcqyfw">
+        <div class="row">
+            <div class="hidden-xs col-md-2">
+                <div class="gchome-left">
+                    <p>企业服务</p>
+                    <span>企业服务＋加盟合作<br>一站式服务平台</span>
+                    <a href="javascript:void(0);" class="xy-form-btn">免费发布需求</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                <div class="box">
+                    <div class="ll">
+                        <h5 class="text-center"><a href="/channels/zzbl.html" target="_blank">资质办理</a></h5>
+                        <a href="/channels/zzbl.html" class="single hot" target="_blank">资质新办</a>
+                        <a href="#" class="single hot" target="_blank">股权转让</a>
+                        <a href="#" class="single hot" target="_blank">企业并购</a>
+                        <a href="#" class="single" target="_blank">人才猎聘</a>
+                    </div>
+                    <div class="ll">
+                        <h5 class="text-center"><a href="/channels/pphy.html" target="_blank">品牌会员 <i class="hot-i"></i></a></h5>
+                        <a href="/channels/pphy.html" class="single hot" target="_blank">规划设计</a>
+                        <a href="/channels/pphy.html" class="single" target="_blank">风景园林</a>
+                        <a href="/channels/pphy.html" class="single" target="_blank">建筑设计</a>
+                        <a href="/channels/pphy.html" class="single" target="_blank">造价咨询</a>
+                    </div>
+                    <div class="ll">
+                        <h5 class="text-center"><a href="/channels/hhrzm.html" target="_blank">合伙人招募 <i class="hot-i"></i></a></h5>
+                        <a href="/channels/hhrzm.html" class="single hot" target="_blank">项目合作</a>
+                        <a href="/channels/hhrzm.html" class="single" target="_blank">品牌合作</a>
+                        <a href="/channels/hhrzm.html" class="single" target="_blank">资源整合</a>
+                        <a href="/channels/hhrzm.html" class="single hot" target="_blank">高额返佣</a>
+                    </div>
+                    <div class="ll">
+                        <h5 class="text-center"><a href="/channels/scfw.html" target="_blank">税筹服务</a></h5>
+                        <a href="/channels/scfw.html" class="single hot" target="_blank">税筹策划</a>
+                        <a href="/channels/scfw.html" class="single" target="_blank">票务优化</a>
+                        <a href="/channels/scfw.html" class="single hot" target="_blank">灵活用工</a>
+                    </div>
+                </div>
+                <div class="row mt-20">
+                    <stl:contents channelName="企业服务" totalNum="4">
+                        <stl:itemTemplate type="Item">
+                            <div class="col-xs-6 col-md-3">
+                                <stl:a target="_blank"><img class="img-thumbnail center-block" src="{content.imageUrl}" alt="" /></stl:a>
+                            </div>
+                        </stl:itemTemplate>
+                    </stl:contents>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--企业服务-->
+    <!--数字乡村-->
+    <div class="container" id="szxc">
+        <div class="row">
+            <div class="hidden-xs col-md-2">
+                <div class="gchome-left">
+                    <p>数字乡村</p>
+                    <span>数字乡村站群<br>一站式服务平台</span>
+                    <a href="javascript:void(0);" class="xy-form-btn">免费发布需求</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                <div class="box">
+                    <div class="ll">
+                        <h5 class="text-center"><a href="#" target="_blank">乡村数字化治理</a></h5>
+                        <a href="#" class="single hot" target="_blank">政务进村</a>
+                        <a href="#" class="single" target="_blank">权利监管</a>
+                        <a href="#" class="single" target="_blank">党建进村</a>
+                        <a href="#" class="single" target="_blank">议事协商</a>
+                    </div>
+                    <div class="ll">
+                        <h5 class="text-center"><a href="#" target="_blank">农业生产数字化</a></h5>
+                        <a href="#" class="single" target="_blank">农业监管</a>
+                        <a href="#" class="single" target="_blank">营销服务</a>
+                        <a href="#" class="single" target="_blank">农产品追溯</a>
+                        <a href="#" class="single" target="_blank">信息服务</a>
+                    </div>
+                    <div class="ll">
+                        <h5 class="text-center"><a href="#" target="_blank">乡村数字经济</a></h5>
+                        <a href="#" class="single" target="_blank">品牌产业孵化</a>
+                        <a href="#" class="single hot" target="_blank">乡村旅游服务</a>
+                        <a href="#" class="single hot" target="_blank">电商产业服务</a>
+                        <a href="#" class="single" target="_blank">智慧旅游服务</a>
+                    </div>
+                    <div class="ll">
+                        <h5 class="text-center"><a href="#" target="_blank">乡村绿色生态</a></h5>
+                        <a href="#" class="single" target="_blank">智慧绿色生活</a>
+                        <a href="#" class="single" target="_blank">智慧绿色生产</a>
+                        <a href="#" class="single hot" target="_blank">智慧绿色生态</a>
+                        <a href="#" class="single" target="_blank">两山决策平台</a>
+                    </div>
+                </div>
+                <div class="row mt-20">
+                    <stl:contents channelName="数字乡村" totalNum="4">
+                        <stl:itemTemplate type="Item">
+                            <div class="col-xs-6 col-md-3">
+                                <stl:a target="_blank"><img class="img-thumbnail center-block" src="{content.imageUrl}" alt="" /></stl:a>
+                            </div>
+                        </stl:itemTemplate>
+                    </stl:contents>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--数字乡村-->
+    <!--品牌营销-->
+    <div class="container" id="ppyx">
+        <div class="row">
+            <div class="hidden-xs col-md-2">
+                <div class="gchome-left">
+                    <p>品牌营销</p>
+                    <span>品牌营销<br>一站式服务平台</span>
+                    <a href="javascript:void(0);" class="xy-form-btn">免费发布需求</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                <div class="box">
+                    <div class="ll three">
+                        <h5 class="text-center"><a href="/channels/60.html" target="_blank">品牌塑造 <i class="hot-i"></i></a></h5>
+                        <a href="/channels/60.html" class="single hot" target="_blank">城市品牌建设</a>
+                        <a href="/channels/60.html" class="single" target="_blank">城市名片设计</a>
+                        <a href="/channels/60.html" class="single" target="_blank">公共品牌打造</a>
+                        <a href="/channels/60.html" class="single hot" target="_blank">品牌营销策划</a>
+                    </div>
+                    <div class="ll three">
+                        <h5 class="text-center"><a href="/channels/60.html" target="_blank">营销推广 <i class="hot-i"></i></a></h5>
+                        <a href="/channels/60.html" class="single" target="_blank">全年营销策划</a>
+                        <a href="/channels/60.html" class="single" target="_blank">节庆活动策划</a>
+                        <a href="/channels/60.html" class="single" target="_blank">网络营销传播</a>
+                        <a href="/channels/60.html" class="single" target="_blank">宣传推广策划</a>
+                    </div>
+                    <div class="ll three">
+                        <h5 class="text-center"><a href="/channels/60.html" target="_blank">文创设计制作</a></h5>
+                        <a href="/channels/60.html" class="single hot" target="_blank">文创衍生品开发</a>
+                        <a href="/channels/60.html" class="single" target="_blank">文旅IP品牌设计</a>
+                        <a href="/channels/60.html" class="single" target="_blank">文创商品策划</a>
+                        <a href="/channels/60.html" class="single" target="_blank">文创产品制作</a>
+                    </div>
+                </div>
+                <div class="row mt-20">
+                    <stl:contents channelName="品牌营销" totalNum="4">
+                        <stl:itemTemplate type="Item">
+                            <div class="col-xs-6 col-md-3">
+                                <stl:a target="_blank"><img class="img-thumbnail center-block" src="{content.imageUrl}" alt="" /></stl:a>
+                            </div>
+                        </stl:itemTemplate>
+                    </stl:contents>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--品牌营销-->
+    <!--规划设计-->
+    <div class="container" id="ghsj">
+        <div class="row">
+            <div class="hidden-xs col-md-2">
+                <div class="gchome-left">
+                    <p>规划设计</p>
+                    <span>规划设计<br>一站式服务平台</span>
+                    <a href="javascript:void(0);" class="xy-form-btn">免费发布需求</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                <div class="box">
+                    <div class="ll three">
+                        <h5 class="text-center"><a href="/channels/82.html?=xcgh" target="_blank">空间规划</a></h5>
+                        <a href="/channels/82.html?=xcgh" class="single" target="_blank">总体规划</a>
+                        <a href="/channels/82.html?=xcgh" class="single" target="_blank">详细规划</a>
+                        <a href="/channels/82.html?=xcgh" class="single hot" target="_blank">专项规划</a>
+                        <a href="/channels/82.html?=xcgh" class="single" target="_blank">专题研究</a>
+                    </div>
+                    <div class="ll three">
+                        <h5 class="text-center"><a href="/channels/82.html?=xcgh" target="_blank">乡村振兴 <i class="hot-i"></i></a></h5>
+                        <a href="/channels/82.html?=xcgh" class="single" target="_blank">战略规划</a>
+                        <a href="/channels/82.html?=xcgh" class="single" target="_blank">产业规划</a>
+                        <a href="/channels/82.html?=xcgh" class="single" target="_blank">环境整治</a>
+                        <a href="/channels/82.html?=xcgh" class="single hot" target="_blank">数字服务</a>
+                    </div>
+                    <div class="ll three">
+                        <h5 class="text-center"><a href="/channels/82.html?=xcgh" target="_blank">旅游规划 <i class="hot-i"></i></a></h5>
+                        <a href="/channels/82.html?=xcgh" class="single hot" target="_blank">旅游策划</a>
+                        <a href="/channels/82.html?=xcgh" class="single" target="_blank">旅游规划</a>
+                        <a href="/channels/82.html?=xcgh" class="single" target="_blank">业态导入</a>
+                        <a href="/channels/82.html?=xcgh" class="single" target="_blank">运营招商</a>
+                    </div>
+                </div>
+                <div class="row mt-20">
+                    <stl:contents channelName="规划设计" totalNum="4">
+                        <stl:itemTemplate type="Item">
+                            <div class="col-xs-6 col-md-3">
+                                <stl:a target="_blank"><img class="img-thumbnail center-block" src="{content.imageUrl}" alt="" /></stl:a>
+                            </div>
+                        </stl:itemTemplate>
+                    </stl:contents>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--规划设计-->
+    <!--荣誉资质-->
+    <div class="ry">
+        <div class="content_grid" data-aos="fade-up" data-aos-delay="0">
+            <h1>企业荣誉</h1>
+            <p>立足工程行业、布局工程+互联网的一站式服务平台</p>
+            <div class="box" data-aos="fade-up" data-aos-delay="0">
+                <stl:contents totalNum="4" channelName="4荣誉">
+                    <stl:itemTemplate type="Item">
+                        <stl:image class="lazy" data-original="{content.imageUrl}"></stl:image>
+                    </stl:itemTemplate>
+                </stl:contents>
+            </div>
+        </div>
+    </div>
+    <!--荣誉资质-->
+    <!--行业动态-->
+    <div class="z_news" data-aos="fade-up" data-aos-delay="0">
+        <div class="news_h" data-aos="zoom-in" data-aos-delay="0">行业动态</div>
+        <div class="clearfix" style="position:relative">
+            <div class="news_left">
+                <div class="left_title">八戒工程</div>
+                <stl:contents topLevel="1" channelName="八戒工程" scope="self" totalNum="3" order="default">
+                    <stl:if type="ItemIndex" op="Equals" value="1">
+                        <stl:yes>
+                            <dl class="left_wor1 clearfix" style="border-top-width: 0px;">
+                                <dd>
+                                    <stl:a target="_blank">
+                                        <stl:image class="lazy img-thumbnail" data-original="{content.imageUrl}">
+                                        </stl:image>
+                                    </stl:a>
+                                </dd>
+                                <dt>
+                                    <div class="dt1">
+                                        <stl:a target="_blank">
+                                            {content.Title}
+                                        </stl:a>
+                                    </div>
+                                    <div class="dt2">{content.Summary}</div>
+                                    <div class="c999">{stl:content type="AddDate" formatString="yyyy-MM-dd"}</div>
+                                </dt>
+                            </dl>
+                        </stl:yes>
+                        <stl:no>
+                            <dl class="left_wor1 left_wor2 clearfix">
+                                <dt>
+                                    <div class="dt1">
+                                        <stl:a target="_blank">
+                                            {content.Title}
+                                        </stl:a>
+                                    </div>
+                                    <div class="dt2">{content.Summary}</div>
+                                    <div class="c999">{stl:content type="AddDate" formatString="yyyy-MM-dd"}</div>
+                                </dt>
+                            </dl>
+                        </stl:no>
+                    </stl:if>
+                </stl:contents>
+            </div>
+            <div class="news_left" style="border-right:0px; padding:0px 0px 0px 10px;">
+                <div class="left_title">行业资讯</div>
+                <stl:contents topLevel="1" channelName="行业资讯" scope="self" totalNum="3" order="default">
+                    <stl:if type="ItemIndex" op="Equals" value="1">
+                        <stl:yes>
+                            <dl class="left_wor1 clearfix" style="border-top-width: 0px;">
+                                <dd>
+                                    <stl:a target="_blank">
+                                        <stl:image class="lazy img-thumbnail" data-original="{content.imageUrl}">
+                                        </stl:image>
+                                    </stl:a>
+                                </dd>
+                                <dt>
+                                    <div class="dt1">
+                                        <stl:a target="_blank">
+                                            {content.Title}
+                                        </stl:a>
+                                    </div>
+                                    <div class="dt2">{content.Summary}</div>
+                                    <div class="c999">{stl:content type="AddDate" formatString="yyyy-MM-dd"}</div>
+                                </dt>
+                            </dl>
+                        </stl:yes>
+                        <stl:no>
+                            <dl class="left_wor1 left_wor2 clearfix">
+                                <dt>
+                                    <div class="dt1">
+                                        <stl:a target="_blank">
+                                            {content.Title}
+                                        </stl:a>
+                                    </div>
+                                    <div class="dt2">{content.Summary}</div>
+                                    <div class="c999">{stl:content type="AddDate" formatString="yyyy-MM-dd"}</div>
+                                </dt>
+                            </dl>
+                        </stl:no>
+                    </stl:if>
+                </stl:contents>
+            </div>
+            <div class="news_right">
+                <a href="/channels/pphy.html" target="_blank">
+                    <img class="guangao lazy" data-original="/images/3f98806329281a00.jpg" style="display: inline;">
+                </a>
+                <a href="/channels/94.html" target="_blank">
+                    <img class="more lazy" data-original="/images/e2e974a2422125f1.png" style="display: inline;">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="attribute-introduce">
+        <div class="index-attribute-introduce-icons" id="utopia_widget_18">
+            <ul class="index-attribute-introduce-icons-list clearfix">
+                <li class="index-attribute-iconlist-item" data-aos="fade-right" data-aos-delay="0">
+                    <div class="item-con">
+                        <div class="img">
+                            <img class="lazy" data-original="https://tianpeng.zbjimg.com/tianpeng/task/1.png/origine/8674f44f-2306-4a8f-9c81-e0ae8e2fb952" alt="">
+                        </div>
+                        <div class="text">
+                            <div class="title">专注企业服务12年</div>
+                            <div class="desc">服务1900万用户, 沉淀3000万案例</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="index-attribute-iconlist-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="item-con">
+                        <div class="img">
+                            <img class="lazy" data-original="https://tianpeng.zbjimg.com/tianpeng/task/2.png/origine/4580c0b8-36f4-4cec-8973-05663c3f3f63" alt="">
+                        </div>
+                        <div class="text">
+                            <div class="title">严选服务商</div>
+                            <div class="desc">服务商实名认证、专业资质审核、缴纳保证金</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="index-attribute-iconlist-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="item-con">
+                        <div class="img">
+                            <img class="lazy" data-original="https://tianpeng.zbjimg.com/tianpeng/task/3.png/origine/32c412eb-bcb2-4b60-92df-aee11e64b5bd" alt="">
+                        </div>
+                        <div class="text">
+                            <div class="title">资金托管</div>
+                            <div class="desc">交易资金平台托管</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="index-attribute-iconlist-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="item-con">
+                        <div class="img">
+                            <img class="lazy" data-original="https://tianpeng.zbjimg.com/tianpeng/task/%E9%87%8F.png/origine/89094b94-ab5c-4d12-b846-dc0d876d34f0" alt="">
+                        </div>
+                        <div class="text">
+                            <div class="title">量身定制需求方案</div>
+                            <div class="desc">智能顾问系统，快速找到您想要的需求，量身定制解决方案</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <stl:include file="include/footer.html"></stl:include>
+    <script src="{Stl.SiteUrl}/js/indexmain.js?v=20210526"></script>
+
+    <div class="rightzx2 zxbtn"></div>
+    <script>
+        $(".zxbtn").click(function() {
+            window.open("//p.qiao.baidu.com/cps/chat?siteId=9257917&userId=20703937&siteToken=a25cb6e03bf7c10ac76134bcc03779b1");
+        })
+    </script>
+
+    <stl:include file="include/form.html"></stl:include>
+</body>
+
+</html>

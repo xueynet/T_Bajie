@@ -1,0 +1,156 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{Channel.Title} - {Stl.SiteName}</title>
+    <meta name="description" content="{Channel.description}">
+    <meta name="keywords" content="{Channel.keywords}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icon/favicon.ico">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/owl.theme.css">
+    <link rel="stylesheet" href="../css/owl.transitions.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/animated-headlines.css">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/rootstyle.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0103cfac04c0efb249421b756d92b383";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+    <stl:include file="{Stl.SiteUrl}/include/header.html"></stl:include>
+    <stl:include file="{Stl.SiteUrl}/include/menu.html"></stl:include>
+    <div class="cbanner col-12">
+        <div class="col-12 bg"></div>
+        <div class="container">
+            <div class="text-center col-12" data-aos="fade-up" data-aos-delay="0">
+                <h2>{Channel.Title}</h2>
+            </div>
+            <div class="navigation" data-aos="fade-up" data-aos-delay="0">
+                <div class="col-12 flex-c">
+                    <stl:include file="{Stl.SiteUrl}/include/navigation.html"></stl:include>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12" data-aos="fade-up" data-aos-delay="0">
+            <stl:include file="{Stl.SiteUrl}/include/lefter.html"></stl:include>
+            <div class="clear"></div>
+    </div>
+    <div class="col-12 container">
+        <div class="row">
+            <div class="contentbox col-lg-9 col-md-9 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="htitle">
+                    <span>{Channel.Title}</span>
+                </div>
+                <ul class="product row">
+                    <stl:pageContents pageNum="5" scope="selfAndChildren" order="AddDate">
+                        <stl:itemTemplate type="Item">
+                            <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                <stl:a class="col-12">
+                                    <div class="imgbox">
+                                        <img src="{content.ImageUrl}" class="col-12" />
+                                    </div>
+                                    <div class="desc">
+                                        <h3>{content.Title}</h3>
+                                        <p>{content.Summary}</p>
+                                    </div>
+                                </stl:a>
+                            </li>
+                        </stl:itemTemplate>
+                    </stl:pageContents>
+                </ul>
+                <div class="pages col-12 flex-c">
+                    <ul class="flex-c">
+                        <stl:pageItem type="FirstPage">
+                            <stl:yes>
+                                <li><a href="{Current.Url}">首页</a></li>
+                            </stl:yes>
+                            <stl:no>
+                                <li><a class="active" href="javascript:;">首页</a></li>
+                            </stl:no> 
+                        </stl:pageItem>
+
+                        <stl:pageItem type="PreviousPage">  
+                            <stl:successTemplate>
+                                <li><a href="{Current.Url}">上一页</a></li>
+                            </stl:successTemplate>
+                            <stl:failureTemplate>
+                                <li><a class="active" href="javascript:;">上一页</a></li>
+                            </stl:failureTemplate>
+                        </stl:pageItem>
+
+                        <stl:pageItem type="PageNavigation">
+                            <stl:successTemplate>
+                                <li><a href="{Current.Url}">{Current.Num}</a></li>
+                            </stl:successTemplate>
+                            <stl:failureTemplate>
+                                <li><a class="active" href="javascript:;">{Current.Num}</a></li>
+                            </stl:failureTemplate>
+                        </stl:pageItem>
+
+                        <stl:pageItem type="NextPage">
+                            <stl:successTemplate>
+                                <li><a href="{Current.Url}">下一页</a></li>
+                            </stl:successTemplate>
+                            <stl:failureTemplate>
+                                <li><a class="active" href="javascript:;">下一页</a></li>
+                            </stl:failureTemplate>
+                        </stl:pageItem>
+                        
+                        <stl:pageItem type="LastPage">
+                            <stl:successTemplate>
+                                <li><a href="{Current.Url}">末页</a></li>
+                            </stl:successTemplate>
+                            <stl:failureTemplate>
+                                <li><a class="active" href="javascript:;">末页</a></li>
+                            </stl:failureTemplate>
+                        </stl:pageItem>
+                    </ul>
+                </div>
+            </div>
+            <div class="hotbox col-lg-3 col-md-3 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="htitle">
+                    <span>热点商品</span>
+                </div>
+                <ul class="hot row right">
+                    <stl:contents topLevel="0" scope="all" totalNum="5" order="hits" isRecommend="true">
+                        <li class="col-xs-12">
+                            <stl:a class="row">
+                                <div class="imgbox col-xs-4">
+                                    <stl:image class="col-12"></stl:image>
+                                </div>
+                                <div class="desc col-xs-8">
+                                    <h3>{content.Title}</h3>
+                                    <p>{content.Summary}</p>
+                                </div>
+                                <div class="clear"></div>
+                            </stl:a>
+                        </li>
+                    </stl:contents>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <stl:include file="{Stl.SiteUrl}/include/footer.html"></stl:include>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

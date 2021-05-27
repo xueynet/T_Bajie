@@ -1,0 +1,17 @@
+﻿{
+  "IsProtectData": true,
+  "SecurityKey": "dee20a86913ab387abc5c3f04239ac5190e78a412327345",
+  "Database": {
+    "Type": "Mhs0Dsgv8wE0equals00secret0",
+    "ConnectionString": "1yJW66K7hKmLsTr7F61mVpVLdAOdR2HbhNxmXUIRN6WLIabKdYHu0slash0FULQcmw8br0AU5H8y8ONuC8XplK0add00GZWEq9wj1slw0slash0wEzkIDhoFjccTXTRsj8WVznhIS7Wss0slash0E0slash00secret0"
+  },
+  "Redis": {
+    "ConnectionString": "nyWFT8mWYI5k34B3AuXccLsUlGJBEj0l4ylUh8YJdAg0equals00secret0"
+  },
+  "IsDisablePlugins": false,
+  "AdminRestriction": {
+    "Host": "",
+    "AllowList": [],
+    "BlockList": []
+  }
+}

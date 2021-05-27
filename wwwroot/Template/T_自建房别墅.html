@@ -1,0 +1,279 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{Channel.Title} - {Stl.SiteName}</title>
+    <meta name="description" content="{Channel.description}">
+    <meta name="keywords" content="{Channel.keywords}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/owl.carousel.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/owl.theme.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/owl.transitions.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/animate.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/animated-headlines.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/default.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/aos.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/rootstyle.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/style.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0103cfac04c0efb249421b756d92b383";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body class="jsy">
+    <stl:include file="{Stl.SiteUrl}/include/menu2.html"></stl:include>
+    <div class="ztbanner owl-carousel">
+        <stl:contents totalNum="3" channelName="自建房别墅" groupContent="自建房别墅Banner大图">
+            <stl:itemTemplate type="Item">
+                <div class="slide">
+                    <div class="searchbox">
+                        <div class="form">
+                            <input id="mfbjphone" type="number" placeholder="请留下您的联系方式，设计师将免费为您提供专业意见" />
+                            <button id="mfbj">免费报价</button>
+                        </div>
+                    </div>
+                    <stl:image></stl:image>
+                </div>
+            </stl:itemTemplate>
+        </stl:contents>
+    </div>
+    <div class="xzxqtck" id="xzxqtck">
+        <div class="flex-c">
+            <div class="tckbox">
+                <div class="head">
+                    <h2><i class="bi-check2-circle"></i>您的需求我们已经收到，我们的专业设计师将会火速联系您</h2>
+                    <p>由于咨询人数较多，如遇排队，可能需要等候，请您耐心等待！</p>
+                    <a class="close bi-x"></a>
+                </div>
+                <div class="tbox">
+                    <p>
+                        您可以勾选您想咨询的效果图类型，我们可以更深入的了解您的需求
+                    </p>
+                    <ul id="tcklistxz">
+                        <li class="col-sm-4 col-xs-6"><a class="active" data-name="建筑效果图">建筑效果图</a></li>
+                        <li class="col-sm-4 col-xs-6"><a data-name="装修效果图">装修效果图</a></li>
+                        <li class="col-sm-4 col-xs-6"><a data-name="景观效果图">景观效果图</a></li>
+                        <li class="col-sm-4 col-xs-6"><a data-name="公装效果图">公装效果图</a></li>
+                        <li class="col-sm-4 col-xs-6"><a data-name="规划效果图">规划效果图</a></li>
+                        <li class="col-sm-4 col-xs-6"><a data-name="其他效果图">其他效果图</a></li>
+                    </ul>
+                    <button id="tcktj" class="btn btn-warning">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-10 bge">
+        <div class="container">
+            <div class="product row">
+                <img src="/images/gcsj/4758ba5d9834c695.jpg" />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="contentbox col-xs-12">
+                <div class="product row">
+                    <img src="/images/gcsj/3dabc5474160a70f.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bge">
+        <div class="container">
+            <div class="row">
+                <div class="contentbox col-xs-12">
+                    <div class="htitle" data-aos="fade-up" data-aos-delay="0">
+                        <span>我们的案例展示</span>
+                    </div>
+                    <ul class="product alzs row">
+                        <stl:contents totalNum="16" groupContent="自建房别墅设计案例">
+                            <stl:itemTemplate type="Item">
+                                <stl:if type="ItemIndex" op="in" value="1,5,9,13">
+                                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="0">
+                                        <div class="col-12">
+                                            <div class="imgbox">
+                                                <img src="{content.ImageUrl}" class="col-12" />
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                                <stl:if type="ItemIndex" op="in" value="2,6,10,14">
+                                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="col-12">
+                                            <div class="imgbox">
+                                                <img src="{content.ImageUrl}" class="col-12" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                                <stl:if type="ItemIndex" op="in" value="3,7,11,15">
+                                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="col-12">
+                                            <div class="imgbox">
+                                                <img src="{content.ImageUrl}" class="col-12" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                                <stl:if type="ItemIndex" op="in" value="4,8,12,16">
+                                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="300">
+                                        <div class="col-12">
+                                            <div class="imgbox">
+                                                <img src="{content.ImageUrl}" class="col-12" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                            </stl:itemTemplate>
+                        </stl:contents>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="contentbox col-xs-12">
+                    <div class="htitle" data-aos="fade-up" data-aos-delay="0">
+                        <span>真实案例展示</span>
+                    </div>
+                    <ul class="product alzs row">
+                        <stl:contents totalNum="8" groupContent="自建房别墅施工案例">
+                            <stl:itemTemplate type="Item">
+                                <stl:if type="ItemIndex" op="in" value="1,5">
+                                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="0">
+                                        <div class="col-12">
+                                            <div class="imgbox">
+                                                <img src="{content.ImageUrl}" class="col-12" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                                <stl:if type="ItemIndex" op="in" value="2,6">
+                                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="col-12">
+                                            <div class="imgbox">
+                                                <img src="{content.ImageUrl}" class="col-12" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                                <stl:if type="ItemIndex" op="in" value="3,7">
+                                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="col-12">
+                                            <div class="imgbox">
+                                                <img src="{content.ImageUrl}" class="col-12" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                                <stl:if type="ItemIndex" op="in" value="4,8">
+                                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="col-12">
+                                            <div class="imgbox">
+                                                <img src="{content.ImageUrl}" class="col-12" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                            </stl:itemTemplate>
+                        </stl:contents>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-10 ">
+        <div class="container">
+            <div class="row">
+                <div class="contentbox col-xs-12">
+                    <img src="/images/gcsj/f797d3d3ddcd8a0a.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgf6 col-10">
+        <div class="container">
+            <div class="row">
+                <div class="contentbox col-xs-12">
+                    <img src="/images/gcsj/576c858b77b4e098.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-10 bgd">
+        <div class="container">
+            <div class="cjwt col-10">
+
+                <img src="/images/gcsj/70b494c24dbbbe9d.jpg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-10 bge">
+        <div class="cjwt col-10">
+            <img src="/images/gcsj/75c588b9facac08.jpg" />
+        </div>
+    </div>
+    <div class="hzkh-grid">
+        <div class="container jsy">
+            <div class="htitle" data-aos="fade-up" data-aos-delay="0">
+                <span>合作伙伴</span>
+            </div>
+            <ul class="hzkh-shows ">
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/ebf43ba62ba7974b.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/6ebdef9f8e61dc72.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/121c9379a537b05a.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/ee0fd8edff6da98f.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/92c45187663b441f.png">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/9ac8941fa72858c3.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/5b8dfeba6c9b4fe6.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/d4fe0fbe516dacf6.jpg">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-10">
+        <div class="container">
+            <div class="ljsjdzform">
+                <stl:form name="定制设计" type="submit2"></stl:form>
+            </div>
+        </div>
+    </div>
+    <div class="rightzx zxbtn"></div>
+    <stl:include file="{Stl.SiteUrl}/include/footer.html"></stl:include>
+    <script src="{Stl.SiteUrl}/js/jquery-1.12.4.min.js"></script>
+    <script src="{Stl.SiteUrl}/js/bootstrap.min.js"></script>
+    <script src="{Stl.SiteUrl}/js/owl.carousel.min.js"></script>
+    <script src="{Stl.SiteUrl}/js/aos.js"></script>
+    <script src="{Stl.SiteUrl}/js/main.js"></script>
+    <script src="{Stl.SiteUrl}/js/xiaoguotu.js?v=1.0"></script>
+</body>
+
+</html>

@@ -1,0 +1,611 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{Channel.Title} - {Stl.SiteName}</title>
+    <meta name="description" content="{Channel.description}">
+    <meta name="keywords" content="{Channel.keywords}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/owl.carousel.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/owl.theme.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/owl.transitions.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/animate.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/animated-headlines.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/default.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/aos.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/rootstyle.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/style.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0103cfac04c0efb249421b756d92b383";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body class="jsy">
+    <stl:include file="{Stl.SiteUrl}/include/menu2.html"></stl:include>
+    <div class="ztbanner">
+        <stl:contents totalNum="3" channelName="效果图" groupContent="效果图Banner大图">
+            <stl:itemTemplate type="Item">
+                <div class="slide">
+                    <div class="searchbox">
+                        <div class="form">
+                            <input id="mfbjphone" type="number" placeholder="请留下您的联系方式，设计师将免费为您提供专业意见" />
+                            <button id="mfbj">推荐服务</button>
+                        </div>
+                    </div>
+                    <div class="slidesvg">
+                        <stl:image></stl:image>
+                    </div>
+                </div>
+            </stl:itemTemplate>
+        </stl:contents>
+    </div>
+    <div class="xzxqtck" id="xzxqtck">
+        <div class="flex-c">
+            <div class="tckbox">
+                <div class="head">
+                    <h2><i class="bi-check2-circle"></i>您的需求我们已经收到，我们的专业设计师将会火速联系您</h2>
+                    <p>由于咨询人数较多，如遇排队，可能需要等候，请您耐心等待！</p>
+                    <a class="close bi-x"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="contentbox col-xs-12">
+                <div class="htitle" data-aos="fade-up" data-aos-delay="0">
+                    <span>服务内容</span>
+                </div>
+                <ul class="product row">
+                    <stl:contents totalNum="8" groupContent="效果图服务">
+                        <stl:itemTemplate type="Item">
+                            <stl:if type="ItemIndex" op="in" value="1,5">
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="0">
+                                    <stl:a class="col-12" target="_blank">
+                                        <div class="imgbox">
+                                            <img src="{content.ImageUrl}" class="col-12" />
+                                        </div>
+                                        <div class="desc">
+                                            <h3>{content.Title}</h3>
+                                            <p>{content.Summary}</p>
+                                        </div>
+                                    </stl:a>
+                                </li>
+                            </stl:if>
+                            <stl:if type="ItemIndex" op="in" value="2,6">
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="100">
+                                    <stl:a class="col-12" target="_blank">
+                                        <div class="imgbox">
+                                            <img src="{content.ImageUrl}" class="col-12" />
+                                        </div>
+                                        <div class="desc">
+                                            <h3>{content.Title}</h3>
+                                            <p>{content.Summary}</p>
+                                        </div>
+                                    </stl:a>
+                                </li>
+                            </stl:if>
+                            <stl:if type="ItemIndex" op="in" value="3,7">
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="200">
+                                    <stl:a class="col-12" target="_blank">
+                                        <div class="imgbox">
+                                            <img src="{content.ImageUrl}" class="col-12" />
+                                        </div>
+                                        <div class="desc">
+                                            <h3>{content.Title}</h3>
+                                            <p>{content.Summary}</p>
+                                        </div>
+                                    </stl:a>
+                                </li>
+                            </stl:if>
+                            <stl:if type="ItemIndex" op="in" value="4,8">
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="300">
+                                    <stl:a class="col-12" target="_blank">
+                                        <div class="imgbox">
+                                            <img src="{content.ImageUrl}" class="col-12" />
+                                        </div>
+                                        <div class="desc">
+                                            <h3>{content.Title}</h3>
+                                            <p>{content.Summary}</p>
+                                        </div>
+                                    </stl:a>
+                                </li>
+                            </stl:if>
+                        </stl:itemTemplate>
+                    </stl:contents>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wsmxsbjxgt-grid">
+        <div class="container jsy">
+            <div class="htitle" data-aos="fade-up" data-aos-delay="0">
+                <span>为什么选择八戒工程效果图</span>
+            </div>
+            <ul>
+                <li>
+                    <div class="wsmxsbjxgt-lm-t wsmxsbjxgt-lm-detail left">PK</div>
+                    <div class="wsmxsbjxgt-bjgx-title wsmxsbjxgt-lm-title left">
+                        八戒工程效果图
+                        <span class="wsmxsbjxgt-title-icon"></span>
+                    </div>
+                    <div class="left wsmxsbjxgt-xxgs-title wsmxsbjxgt-xxlm-title">线下公司</div>
+                </li>
+                <li>
+                    <div class="wsmxsbjxgt-lm-detail left">价格</div>
+                    <div class="wsmxsbjxgt-lm-title left">
+                        报价体系健全，透明收费
+                        <span class="wsmxsbjxgt-ok-icon wsmxsbjxgt-jgok-icon"></span>
+                    </div>
+                    <div class="wsmxsbjxgt-xxlm-title left">报价随意，欺骗外行</div>
+                </li>
+                <li>
+                    <div class="wsmxsbjxgt-lm-detail left">质量</div>
+                    <div class="wsmxsbjxgt-lm-title left">
+                        资深设计师坐镇，质量放心
+                        <span class="wsmxsbjxgt-ok-icon wsmxsbjxgt-zlok-icon"></span>
+                    </div>
+                    <div class="wsmxsbjxgt-xxlm-title left">出图质量差，修改不满意就加价</div>
+                </li>
+                <li>
+                    <div class="wsmxsbjxgt-lm-detail left">保障</div>
+                    <div class="wsmxsbjxgt-lm-title left">
+                        平台托管资金，大品牌有保障
+                        <span class="wsmxsbjxgt-ok-icon wsmxsbjxgt-bzok-icon"></span>
+                    </div>
+                    <div class="wsmxsbjxgt-xxlm-title left">小公司交钱无保障</div>
+                </li>
+                <li>
+                    <div class="wsmxsbjxgt-lm-detail left">速度</div>
+                    <div class="wsmxsbjxgt-lm-title left">
+                        闪电出图，全年无休
+                        <span class="wsmxsbjxgt-ok-icon wsmxsbjxgt-sdok-icon"></span>
+                    </div>
+                    <div class="wsmxsbjxgt-xxlm-title left">出稿速度慢，影响项目进度</div>
+                </li>
+                <li>
+                    <div class="wsmxsbjxgt-lm-detail wsmxsbjxgt-zhlm-detail left">售后</div>
+                    <div class="wsmxsbjxgt-lm-title left">
+                        不满意全额退款
+                        <span class="wsmxsbjxgt-ok-icon wsmxsbjxgt-shok-icon"></span>
+                    </div>
+                    <div class="wsmxsbjxgt-xxlm-title left">交钱后应付了事</div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="gybjgc-grid">
+        <div class="container jsy">
+            <div class="htitle" data-aos="fade-up" data-aos-delay="0">
+                <span>关于八戒工程效果图</span>
+            </div>
+            <ul>
+                <li class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="box">
+                        <div class="gybjgc-detail-left left">
+                            <img src="/images/gcsj/48c8223d4b623e5f.png">
+                        </div>
+                        <div class="gybjgc-detail-right left">
+                            <div class="gybjgc-detail-right-title">全年无休</div>
+                            <div class="gybjgc-detail-right-describle">7*24小时不间断服务，接受加急件、临时件</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="box">
+                        <div class="gybjgc-detail-left left">
+                            <img src="/images/gcsj/4981457b4b729627.png">
+                        </div>
+                        <div class="gybjgc-detail-right left">
+                            <div class="gybjgc-detail-right-title">安心支付</div>
+                            <div class="gybjgc-detail-right-describle">费用托管至猪八戒平台，11年平台保障您的支付安全</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="box">
+                        <div class="gybjgc-detail-left left">
+                            <img src="/images/gcsj/982a17bf12ff18da.png">
+                        </div>
+                        <div class="gybjgc-detail-right left">
+                            <div class="gybjgc-detail-right-title">专属设计师</div>
+                            <div class="gybjgc-detail-right-describle">汇集全国各类优秀的设计师轻松匹配各类需求</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="box">
+                        <div class="gybjgc-detail-left left">
+                            <img src="/images/gcsj/3b2572c9a74a93c1.png">
+                        </div>
+                        <div class="gybjgc-detail-right left">
+                            <div class="gybjgc-detail-right-title">满意度高</div>
+                            <div class="gybjgc-detail-right-describle">99%的客户都说好，不满意包退</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="box">
+                        <div class="gybjgc-detail-left left">
+                            <img src="/images/gcsj/991e2597f984b75c.png">
+                        </div>
+                        <div class="gybjgc-detail-right left">
+                            <div class="gybjgc-detail-right-title">服务保障</div>
+                            <div class="gybjgc-detail-right-describle">猪八戒11年服务行业积淀，专业设计+交易顾问专项服务</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="box">
+                        <div class="gybjgc-detail-left left">
+                            <img src="/images/gcsj/f5146f806810587d.png">
+                        </div>
+                        <div class="gybjgc-detail-right left">
+                            <div class="gybjgc-detail-right-title">专业能力</div>
+                            <div class="gybjgc-detail-right-describle">数千优秀设计师，遍布全国多个省份，极力满足各类专业需求</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="contentbox ">
+        <div class="container">
+            <div class="row">
+                <div class="contentbox col-xs-12">
+                    <div class="htitle" data-aos="fade-up" data-aos-delay="0">
+                        <span>效果图优秀案例</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-area clearfix">
+            <stl:contents totalNum="6" groupContent="效果图优秀案例">
+                <stl:itemTemplate type="Item">
+                    <stl:if type="ItemIndex" op="in" value="1,4">
+                        <div class="single-banner col-lg-4 col-md-4 col-sm-6 col-xs-12" data-aos="fade-up" data-aos-delay="0">
+                            <a class="border-hover">
+                                <stl:image></stl:image>
+                            </a>
+                        </div>
+                    </stl:if>
+                    <stl:if type="ItemIndex" op="in" value="2,5">
+                        <div class="single-banner col-lg-4 col-md-4 col-sm-6 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                            <a class="border-hover">
+                                <stl:image></stl:image>
+                            </a>
+                        </div>
+                    </stl:if>
+                    <stl:if type="ItemIndex" op="in" value="3,6">
+                        <div class="single-banner col-lg-4 col-md-4 col-sm-6 col-xs-12" data-aos="fade-up" data-aos-delay="200">
+                            <a class="border-hover">
+                                <stl:image></stl:image>
+                            </a>
+                        </div>
+                    </stl:if>
+                </stl:itemTemplate>
+            </stl:contents>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="col-10 ">
+        <div class="container">
+            <div class="row">
+                <div class="contentbox col-xs-12">
+                    <div class="htitle" data-aos="fade-up" data-aos-delay="0">
+                        <span>设计师团队</span>
+                    </div>
+                    <stl:contents totalNum="4" channelName="效果图" groupContent="效果图设计师团队">
+                        <stl:itemTemplate type="Item">
+                            <stl:if type="ItemIndex" op="Equals" value="1">
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" data-aos="fade-left" data-aos-delay="0">
+                                    <div class="single-prepo">
+                                        <div class="imgbox">
+                                            <stl:image></stl:image>
+                                        </div>
+                                        <div class="desc">
+                                            <ul>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="0"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="100"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="200"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="300"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="400"><i class="bi-star-fill"></i></li>
+                                            </ul>
+                                            <h3>{content.Title}</h3>
+                                            <div class="more">
+                                                <p>{content.Summary}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </stl:if>
+                            <stl:if type="ItemIndex" op="Equals" value="2">
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" data-aos="fade-left" data-aos-delay="100">
+                                    <div class="single-prepo">
+                                        <div class="imgbox">
+                                            <stl:image></stl:image>
+                                        </div>
+                                        <div class="desc">
+                                            <ul>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="0"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="100"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="200"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="300"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="400"><i class="bi-star-fill"></i></li>
+                                            </ul>
+                                            <h3>{content.Title}</h3>
+                                            <div class="more">
+                                                <p>{content.Summary}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </stl:if>
+                            <stl:if type="ItemIndex" op="Equals" value="3">
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" data-aos="fade-left" data-aos-delay="200">
+                                    <div class="single-prepo">
+                                        <div class="imgbox">
+                                            <stl:image></stl:image>
+                                        </div>
+                                        <div class="desc">
+                                            <ul>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="0"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="100"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="200"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="300"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="400"><i class="bi-star-fill"></i></li>
+                                            </ul>
+                                            <h3>{content.Title}</h3>
+                                            <div class="more">
+                                                <p>{content.Summary}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </stl:if>
+                            <stl:if type="ItemIndex" op="Equals" value="4">
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" data-aos="fade-left" data-aos-delay="300">
+                                    <div class="single-prepo">
+                                        <div class="imgbox">
+                                            <stl:image></stl:image>
+                                        </div>
+                                        <div class="desc">
+                                            <ul>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="0"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="100"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="200"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="300"><i class="bi-star-fill"></i></li>
+                                                <li class="star" data-aos="fade-left" data-aos-delay="400"><i class="bi-star-fill"></i></li>
+                                            </ul>
+                                            <h3>{content.Title}</h3>
+                                            <div class="more">
+                                                <p>{content.Summary}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </stl:if>
+                        </stl:itemTemplate>
+                    </stl:contents>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bge col-10">
+        <div class="container">
+            <div class="row">
+                <div class="contentbox col-xs-12 col-lg-item-5">
+                    <div class="htitle" data-aos="fade-up" data-aos-delay="0">
+                        <span>服务流程</span>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="0">
+                        <div class=" fwlcbox">
+                            <div class="col-6">
+                                <h3>沟通</h3>
+                                <p>深入了解客户需求 讨论相关信息</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="/images/gcsj/95d53eb58e5609c1.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                        <div class=" fwlcbox">
+                            <div class="col-6">
+                                <h3>报价</h3>
+                                <p>为您报价及协商交货时间</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="/images/gcsj/6e0ca78845360b67.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+                        <div class=" fwlcbox">
+                            <div class="col-6">
+                                <h3>确认</h3>
+                                <p>下单并确认开始 工作</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="/images/gcsj/b47439ab957fdbe4.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+                        <div class=" fwlcbox">
+                            <div class="col-6">
+                                <h3>小样</h3>
+                                <p>出小样图及修改意见 达到客户满意</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="/images/gcsj/8d99910c31268bb5.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="400">
+                        <div class=" fwlcbox">
+                            <div class="col-6">
+                                <h3>完成</h3>
+                                <p>出小样图及修改意见 达到客户满意</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="/images/gcsj/ea52b6882ebe61c3.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-10">
+        <img src="/images/gcsj/e1e3ca417fa13e59.png">
+    </div>
+
+
+    <div class="col-10 bge">
+        <div class="container">
+            <div class="row">
+                <div class="contentbox col-xs-12">
+                    <div class="htitle" data-aos="fade-up" data-aos-delay="0">
+                        <span>常见问题Q&A</span>
+                    </div>
+                    <ul class="cjwt col-10">
+                        <stl:contents totalNum="6" channelName="效果图" groupContent="效果图常见问题">
+                            <stl:itemTemplate type="Item">
+                                <stl:if type="ItemIndex" op="Equals" value="1">
+                                    <li data-aos="fade-left" data-aos-delay="0">
+                                        <div class="col-1">
+                                            <span>1</span>
+                                        </div>
+                                        <div class="col-9">
+                                            <h3>{content.Title}</h3>
+                                            <p>{content.Summary}</p>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                                <stl:if type="ItemIndex" op="Equals" value="2">
+                                    <li data-aos="fade-left" data-aos-delay="100">
+                                        <div class="col-1">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="col-9">
+                                            <h3>{content.Title}</h3>
+                                            <p>{content.Summary}</p>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                                <stl:if type="ItemIndex" op="Equals" value="3">
+                                    <li data-aos="fade-left" data-aos-delay="200">
+                                        <div class="col-1">
+                                            <span>3</span>
+                                        </div>
+                                        <div class="col-9">
+                                            <h3>{content.Title}</h3>
+                                            <p>{content.Summary}</p>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                                <stl:if type="ItemIndex" op="Equals" value="4">
+                                    <li data-aos="fade-left" data-aos-delay="300">
+                                        <div class="col-1">
+                                            <span>4</span>
+                                        </div>
+                                        <div class="col-9">
+                                            <h3>{content.Title}</h3>
+                                            <p>{content.Summary}</p>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                                <stl:if type="ItemIndex" op="Equals" value="5">
+                                    <li data-aos="fade-left" data-aos-delay="400">
+                                        <div class="col-1">
+                                            <span>5</span>
+                                        </div>
+                                        <div class="col-9">
+                                            <h3>{content.Title}</h3>
+                                            <p>{content.Summary}</p>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                                <stl:if type="ItemIndex" op="Equals" value="6">
+                                    <li data-aos="fade-left" data-aos-delay="500">
+                                        <div class="col-1">
+                                            <span>6</span>
+                                        </div>
+                                        <div class="col-9">
+                                            <h3>{content.Title}</h3>
+                                            <p>{content.Summary}</p>
+                                        </div>
+                                    </li>
+                                </stl:if>
+                            </stl:itemTemplate>
+                        </stl:contents>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hzkh-grid">
+        <div class="container jsy">
+            <div class="htitle" data-aos="fade-up" data-aos-delay="0">
+                <span>合作伙伴</span>
+            </div>
+            <ul class="hzkh-shows ">
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/ebf43ba62ba7974b.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/6ebdef9f8e61dc72.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/121c9379a537b05a.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/ee0fd8edff6da98f.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/92c45187663b441f.png">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/9ac8941fa72858c3.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/5b8dfeba6c9b4fe6.jpg">
+                </li>
+                <li class="col-xs-6 col-sm-3">
+                    <img src="/images/gcsj/d4fe0fbe516dacf6.jpg">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-10">
+        <div class="container">
+            <div class="ljsjdzform">
+                <stl:form name="定制设计" type="submit2"></stl:form>
+            </div>
+        </div>
+    </div>
+    <div class="rightzx zxbtn"></div>
+    <stl:include file="{Stl.SiteUrl}/include/footer.html"></stl:include>
+    <script src="{Stl.SiteUrl}/js/jquery-1.12.4.min.js"></script>
+    <script src="{Stl.SiteUrl}/js/bootstrap.min.js"></script>
+    <script src="{Stl.SiteUrl}/js/owl.carousel.min.js"></script>
+    <script src="{Stl.SiteUrl}/js/aos.js"></script>
+    <script src="{Stl.SiteUrl}/js/main.js"></script>
+    <script src="{Stl.SiteUrl}/js/xiaoguotu.js?v=1.0"></script>
+</body>
+
+</html>

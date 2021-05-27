@@ -1,0 +1,109 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{Content.Title} - {Stl.SiteName}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="{Stl.SiteUrl}/img/icon/favicon.ico">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/owl.carousel.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/owl.theme.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/owl.transitions.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/animate.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/animated-headlines.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/default.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/aos.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/rootstyle.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/style.css">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0103cfac04c0efb249421b756d92b383";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+
+<body>
+    <stl:include file="{Stl.SiteUrl}/include/header.html"></stl:include>
+    <stl:include file="{Stl.SiteUrl}/include/menu.html"></stl:include>
+    <div class="col-10 cp-xqpage">
+        <div class="container">
+            <div class="row">
+                <div class="contentbox">
+                    <div class="cp-img col-xs-12 col-md-6 col-lg-7">
+                        <stl:content type="ImageUrl" class="col-10"></stl:content>
+                    </div>
+                    <div class="cp-data col-xs-12 col-md-6 col-lg-5">
+                        <h2>{content.Title}</h2>
+                        <p>{content.summary}</p>
+                        <div class="cp-jg">
+                            <span>￥{content.Price}</span>
+                        </div>
+                        <div class="cp-number">
+                            <p class=" flex-c"><span>数量：</span><input id="count" type="text" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
+                                    value="1" /><span>件</span></p>
+                        </div>
+                        <div class="cp-btngroup flex-c">
+                            <a class="btn btn-gw" href="javascript:;" onclick="btnPayClick()">立即购买</a>
+                            <a class="btn btn-zx zxbtn">立即咨询</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-10 bgf6">
+        <div class="container">
+            {content.content}
+        </div>
+    </div>
+    <stl:include file="include/footer.html"></stl:include>
+    <div class="rightzx zxbtn"></div>
+    <script src="{Stl.SiteUrl}/js/jquery-1.12.4.min.js"></script>
+    <script src="{Stl.SiteUrl}/js/bootstrap.min.js"></script>
+    <script src="{Stl.SiteUrl}/js/owl.carousel.min.js"></script>
+    <script src="{Stl.SiteUrl}/js/aos.js"></script>
+    <script src="{Stl.SiteUrl}/js/main.js"></script>
+    <script src="{Stl.SiteUrl}/sitefiles/assets/lib/layer/layer-3.1.1.js"></script>
+    <script src="{Stl.SiteUrl}/sitefiles/assets/js/util.js"></script>
+    <script>
+        $(".zxbtn").click(function() {
+            window.open("http://p.qiao.baidu.com/cps/chat?siteId=9257917&userId=20703937&siteToken=a25cb6e03bf7c10ac76134bcc03779b1");
+        })
+
+        function btnPayClick() {
+            var payurl = "/assets/shopping/layer/pay.html?siteId={content.SiteId}&channelId={content.ChannelId}&productId={content.Id}&title=" + encodeURIComponent("{content.Title}") +
+                "&summary=" + encodeURIComponent("{content.Summary}") + "&price={content.Price}&count=" + $("#count").val();
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                //如果是微信浏览器，需要直接跳转，不能用iframe方式
+                if (/MicroMessenger/i.test(navigator.userAgent)) {
+                    location.href = payurl
+                } else {
+                    utils.openLayer({
+                        title: "购买{content.Title}",
+                        width: 350,
+                        height: 450,
+                        url: payurl
+                    })
+                }
+            } else {
+                utils.openLayer({
+                    title: "购买{content.Title}",
+                    width: 650,
+                    height: 500,
+                    url: payurl
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

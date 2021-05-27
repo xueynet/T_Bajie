@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+<head>
+    <stl:include file="include/head.html"></stl:include>
+</head>
+<body>
+    <stl:include file="{Stl.SiteUrl}/include/header.html"></stl:include>
+    <stl:include file="{Stl.SiteUrl}/include/menu.html"></stl:include>
+    <div class="container">
+        <div class="navigation">
+                <stl:include file="{Stl.SiteUrl}/include/navigation.html"></stl:include>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="contentbox col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="caseImg">
+                    <div><img src="{content.imageUrl}" alt=""></div>
+                    <div class="layer">
+                        <div class="name">{content.Title}</div>
+                        <p>{content.Summary}</p>
+                    </div>
+                </div>
+                <div class="newscontent row">
+                    {content.content}
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">提示:</span>
+                    文章未经授权不得转载
+                </div>             
+                <div class="m3page wow fadeIn" data-wow-delay="0.0s">
+                    <p><stl:navigation type="NextContent" tiptext="下一篇：" emptyText="没有了"></stl:navigation></p>
+                </div>
+            </div>
+            <div class="hotbox col-lg-3 col-md-3 col-sm-12 col-xs-12" id="ghsj">
+                <div class="htitle">
+                    <span>--同类定制--</span>
+                </div>
+                <div class="row right">
+                    <div class="gchome-left">
+                        <p><stl:channel topLevel="1"></stl:channel></p> 
+                        <span>互联网＋工程设计<br>一站式服务平台</span> 
+                        <a href="javascript:void(0);" class="xy-form-btn">免费发布需求</a>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <script src="{Stl.SiteUrl}/js/main.js"></script>
+    <stl:include file="{Stl.SiteUrl}/include/footer.html"></stl:include>    
+
+    <div class="rightzx2 zxbtn"></div>
+    <script>
+        $(".zxbtn").click(function () {
+            window.open("//p.qiao.baidu.com/cps/chat?siteId=9257917&userId=20703937&siteToken=a25cb6e03bf7c10ac76134bcc03779b1");
+        })
+    </script>
+
+    <stl:include file="include/form.html"></stl:include>
+    <script>
+        $(function(){
+            initFormTextholder("请在此输入您的需求，我们会尽快与您联系!");
+        });
+    </script>
+</body>
+</html>

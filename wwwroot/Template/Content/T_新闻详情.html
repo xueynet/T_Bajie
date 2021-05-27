@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+<head>
+    <stl:include file="include/head.html"></stl:include>
+    <script src="{Stl.SiteUrl}/js/main.js"></script>
+</head>
+<body>
+    <stl:include file="{Stl.SiteUrl}/include/header.html"></stl:include>
+    <stl:include file="{Stl.SiteUrl}/include/menu.html"></stl:include>
+    <div class="container">
+        <div class="navigation">
+                <stl:include file="{Stl.SiteUrl}/include/navigation.html"></stl:include>
+        </div>
+    </div>
+    <div class="col-12 container">
+        <div class="row">
+            <div class="contentbox col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="wtitle">
+                    <span>{content.Title}</span>
+                </div>
+                <div class="newscontent row">
+                    <div class="data col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <p>创建于</p>
+                        <p>{stl:content type="addDate" formatString="yyyy--MM--dd"}</p>
+                    </div>
+                    <div class="raw col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                        <div class="desc">
+                            {content.Summary}
+                        </div>
+                        <div class="box">
+                            {content.content}
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="hotbox col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="htitle">
+                    <span>热点新闻</span>
+                </div>
+                <ul class="hot row right">
+                    <stl:contents topLevel="0" scope="all" totalNum="5" order="hits" isHot="true">
+                        <li class="col-xs-12">
+                            <stl:a class="row">
+                                <div class="imgbox col-xs-4">
+                                    <stl:image class="col-12"></stl:image>
+                                </div>
+                                <div class="desc col-xs-8">
+                                    <h3>{content.Title}</h3>
+                                    <p>{content.Summary}</p>
+                                </div>
+                                <div class="clear"></div>
+                            </stl:a>
+                        </li>
+                    </stl:contents>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <stl:include file="{Stl.SiteUrl}/include/footer.html"></stl:include>
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+<div class="xcheader">
+    <div class="container">
+        <div class="fl logo">
+            <a href="{Stl.SiteUrl}/index.html" class="logo-img-wrap">
+                <img src="{stl.imageUrl}" />
+            </a>
+        </div>
+        <ul class="navmenu">
+            <stl:if type="TemplateName" op="Equals" testValue="系统首页模板">
+                <stl:yes>
+                    <li class="over">
+                        <stl:a topLevel="0" data-aos="fade" data-aos-delay="0">首 页</stl:a>
+                    </li>
+                </stl:yes>
+                <stl:no>
+                    <li>
+                        <stl:a topLevel="0" data-aos="fade" data-aos-delay="0">首 页</stl:a>
+                    </li>
+                </stl:no>
+            </stl:if>
+
+            <stl:channels topLevel="0" groupChannel="导航">
+                <stl:if type="UpChannelOrSelf">
+                    <stl:yes>
+                        <li class="over">
+                            <stl:a data-aos="fade" data-aos-delay="200">{channel.Title}
+                                <stl:if type="CountOfChannels" op="GreatThan" value="0">
+                                    <i class="bi-chevron-down"></i>
+                                </stl:if>
+                            </stl:a>
+                            <stl:if type="CountOfChannels" op="GreatThan" value="0">
+                                <ul class="twomenu">
+                                    <stl:channels>
+                                        <li>
+                                            <stl:a></stl:a>
+                                        </li>
+                                    </stl:channels>
+                                </ul>
+                            </stl:if>
+                        </li>
+                    </stl:yes>
+                    <stl:no>
+                        <li>
+                            <stl:a data-aos="fade" data-aos-delay="200">{channel.Title}
+                                <stl:if type="CountOfChannels" op="GreatThan" value="0">
+                                    <i class="bi-chevron-down"></i>
+                                </stl:if>
+                            </stl:a>
+                            <stl:if type="CountOfChannels" op="GreatThan" value="0">
+                                <ul class="twomenu">
+                                    <stl:channels>
+                                        <li>
+                                            <stl:a></stl:a>
+                                        </li>
+                                    </stl:channels>
+                                </ul>
+                            </stl:if>
+                        </li>
+                    </stl:no>
+                </stl:if>
+            </stl:channels>
+        </ul>
+        <div class="navmenubtn"><i class="bi-border-width"></i></div>
+    </div>
+</div>

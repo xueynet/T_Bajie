@@ -1,0 +1,10 @@
+.vs/
+.vscode/
+node_modules/
+wwwroot/xy-admin/
+wwwroot/home/
+wwwroot/sitefiles/
+wwwroot/sitefiles/assets/
+wwwroot/sitefiles/resources/
+wwwroot/fhc/
+plugins/
