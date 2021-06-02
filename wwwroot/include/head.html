@@ -1,13 +1,20 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<stl:if type="TemplateName" op="Equals" value="系统首页模板">
+<stl:if type="TemplateType" op="Equals" value="IndexPageTemplate">
     <stl:yes>
         <title>{Stl.SiteName}</title>
         <meta name="keywords" content="{stl:site type=keywords}" />
         <meta name="description" content="{stl:site type=description}" />
     </stl:yes>
     <stl:no>
-        <title>{Stl.Title} - {Stl.SiteName}</title>
+        <stl:if type="TemplateType" op="Equals" value="ChannelTemplate">
+            <stl:yes>
+                <title>{Channel.Title} - {Stl.SiteName}</title>
+            </stl:yes>
+            <stl:no>
+                <title>{Content.Title} - {Stl.SiteName}</title>/>
+            </stl:no>
+        </stl:if>
         <meta name="description" content="{Stl.Description}" />
         <meta name="keywords" content="{Stl.Keywords}" />
     </stl:no>
