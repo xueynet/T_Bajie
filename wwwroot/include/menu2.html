@@ -1,4 +1,21 @@
-<div class="xcheader fixed">
+<div class="header-top-warp-v1 visible-xs">
+    <div class="header-top">
+        <stl:if type="IsUserLoggin">
+            <stl:yes>
+                    <div class="top-user-login">
+                        <span class="text-highlight"><stl:a href="/home" class="J_header-top-fromurl" style="margin-right: 20px;">{user.DisplayName}</stl:a><a href="{Stl.SiteUrl}/home/#1/10" class="J_header-top-fromurl">我的订单</a></span>
+                    </div>
+            </stl:yes>
+            <stl:no>
+                    <div class="top-user-login">
+                        <span class="text-highlight"><stl:a href="{stl:login url=zbj}" class="J_header-top-fromurl header-top-login">请登录</stl:a><a href="https://login.zbj.com/register" class="J_header-top-fromurl" data-linkid="zbjindex2018-top-register" target="_blank">免费注册</a></span>
+                    </div>
+            </stl:no>
+        </stl:if>
+    </div>
+</div>
+
+<div class="xcheader fixedd">
     <div class="container">
         <stl:a class="logo" topLevel="0">
             <img class="logo-img" src="{Stl.ImageUrl}" alt="">
