@@ -1,24 +1,8 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<stl:if type="TemplateType" op="Equals" value="IndexPageTemplate">
-    <stl:yes>
-        <title>{Stl.SiteName}</title>
-        <meta name="keywords" content="{stl:site type=keywords}" />
-        <meta name="description" content="{stl:site type=description}" />
-    </stl:yes>
-    <stl:no>
-        <stl:if type="TemplateType" op="Equals" value="ChannelTemplate">
-            <stl:yes>
-                <title>{Channel.Title} - {Stl.SiteName}</title>
-            </stl:yes>
-            <stl:no>
-                <title>{Content.Title} - {Stl.SiteName}</title>/>
-            </stl:no>
-        </stl:if>
-        <meta name="description" content="{Stl.Description}" />
-        <meta name="keywords" content="{Stl.Keywords}" />
-    </stl:no>
-</stl:if>
+<title>{Stl.SeoTitle} - {Stl.SiteName}</title>
+<meta name="description" content="{Stl.Description}" />
+<meta name="keywords" content="{Stl.Keywords}" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="bytedance-verification-code" content="+UJAzkpSTzX+XSum84J/" />
 <meta name="baidu-site-verification" content="code-kbthVR6ApN" />
@@ -40,7 +24,7 @@
 <script src="{Stl.SiteUrl}/js/jquery.lazyload.js"></script>
 <script src="{Stl.SiteUrl}/js/owl.carousel.min.js"></script>
 <script src="{Stl.SiteUrl}/js/slick.min.js"></script>
-<script src="{Stl.SiteUrl}/js/plugins.js"></script>
+<script src="{Stl.SiteUrl}/js/plugins.js?v=20210622"></script>
 <script src="{Stl.SiteUrl}/js/aos.js"></script>
 <script>
     var _hmt = _hmt || [];

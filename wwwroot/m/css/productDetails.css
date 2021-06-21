@@ -1,0 +1,15 @@
+.foot.disflex .consult,.foot.disflex .buyNow{
+    width: 30%;
+    font-size: 16px;
+}
+.foot.disflex .consult{
+    border-radius: 4px 0 0 4px;
+    background-color: #ffba00;
+    color: #fff;
+}
+.foot.disflex .buyNow{
+    border-radius: 0 4px 4px 0;
+    background-color: #ff5c00;
+    color: #fff;
+}
+

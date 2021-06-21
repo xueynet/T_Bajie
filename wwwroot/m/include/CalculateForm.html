@@ -1,0 +1,109 @@
+<style>
+    .green{
+        color: #429908;
+    }
+    .phone-error{
+        display: block;
+        font-size: 12px;
+        color: #ff6e6e;
+        padding: 3px 80px 3px 5px;
+        width: 100%;
+        box-sizing: border-box;
+        word-break: break-all;
+    }
+</style>
+
+<div class="wrap">
+    <div class="zj1bg bgsz">
+        <div class="zj1top">
+            <div class="zj1topbd disflex flex_center flex_lmr">
+                <span>建房造价</span>
+                <img src="{stl.siteUrl}/images/zj1ico_03.png"/>
+            </div>
+        </div>
+        <div class="mipt mipt_slt">
+            <input placeholder="填写建房地区"/ class="address">
+        </div>
+        <div class="mipt disflex flex_lmr">
+            <div class="mipt_1">
+                <input type="text" placeholder="开间" name="" id="" value="" class="studio"/>
+            </div>
+            <div class="mipt_1">
+                <input type="text" placeholder="进深" name="" id="" value="" class="depth"/>
+            </div>
+            <div class="mipt_1">
+                <input type="text" placeholder="层数" name="" id="" value=""  class="layerNumber"/>
+            </div>
+        </div>
+        <div class="mipt">
+            <input type="text" placeholder="您的联系方式" name="" id="" value="" class="phone"/>
+            <span class="phone-error"></span>
+        </div>
+        <div class="mipt">
+            <span class="green">信息保护中，仅官方可见</span>
+        </div>
+        <div class="mipt msbm">
+            <button class="btn btnbg" id="calculateSubmit">免费获取建房报价</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 验证手机号
+     $('.phone').blur(function () {
+        if (!/^1[345789]\d{9}$/.test($(".phone").val())) {
+            $(".phone-error").show();
+            $(".phone-error").text('填写正确的手机号')
+        } else {
+            $(".phone-error").hide();
+        }
+    });
+
+    $("#calculateSubmit").on('click', function () {
+        // 获取建房地区
+        var address=$('.address').val();
+        // 获取开间
+        var studio=$('.studio').val();
+        // 获取进深
+        var depth=$('.depth').val();
+        // 获取层数
+        var layerNumber=$('.layerNumber').val();
+        // 拼接地址，开间，进深，层数放入content里面
+        var content='建房地区:'+address+',开间:'+studio+'，进深:'+depth+'，层数：'+layerNumber;
+        console.log(content);
+        // 获取电话
+        var tel = $.trim($(".phone").val());
+        var reg = /(^0?[1][34578][\d]{9}$)|(^0[1-9][\d]{1,2}[- ]?[\d]{7,8}[-| ]?[\d]*$)/;
+        var email = '';
+        if (RegExp(reg).test(tel)) {
+            var data = JSON.stringify({ "Mobile": tel, "Content": content, "Source": document.title + " " + window.location.href})
+            $.ajax({
+                type: 'POST',
+                url: "/api/form/1/1",
+                data: data,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (result) {
+                    console.log(result);
+                    if (result.id>0) {
+                        $('.green').text('提交成功！');
+                        $('.address').val('');
+                        $('.studio').val('');
+                        $('.depth').val('');
+                        $('.phone').val('');
+                        $('.layerNumber').val('')
+                        setTimeout(function () {
+                            $('.green').text('信息保护中，仅官方可见');
+                        }, 3000);
+                    } else {
+                        console.log(result);
+                    }
+                }
+            });
+            // })
+        } else {
+            $(".phone-error").text('填写正确的手机号')
+        }
+    });
+</script>

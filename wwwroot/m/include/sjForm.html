@@ -1,0 +1,102 @@
+<style>
+.green{
+    color: #429908;
+}
+.error-tip,.phone-error-tip{
+    display: inline-block;
+    font-size: 12px;
+    color: #ff6e6e;
+    background: #ffe4e4;
+    padding: 3px 80px 3px 5px;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-all;
+    border: 1px solid #ff6e6e;
+}
+.name-error, .phone-error {
+    display: none;
+}
+</style>
+<div class="mipt">
+    <input type="text" placeholder="您的姓名"" name=""  value="" class="name"/>
+    <p class="name-error">
+        <span class="name-tip"></span>
+    </p>
+</div>
+<div class="mipt">
+    <input type="text" placeholder="联系方式" name="" id="tel" value="" class="phone"/>
+    <p class="phone-error mt5">
+        <span class="phone-error-tip"></span>
+    </p>
+</div>
+<div class="mipt">
+    <input type="text" placeholder="建房地址" name="" value="" class="address"/>
+    <p class="address-error mt5">
+        <span class="address-error-tip"></span>
+    </p>
+</div>
+<div class="mipt">
+    <span class="green">信息保护中，仅官方可见</span>
+</div>
+<div class="mipt msbm">
+    <button class="btn btnbg">马上为我预约</button>
+</div>
+<script>
+    // 姓名验证
+     $('.name').bind('input propertychange', function () {
+        var length = $(".name").val().length;
+        if (length < 3) {
+            $(".name-error").show();
+            $(".name-error .error-tip").text('填写内容不少于2个字')
+        } else {
+            $(".xy-describe-error").hide();
+        }
+    });
+
+    // 验证手机号
+     $('.phone').blur(function () {
+        if (!/^1[345789]\d{9}$/.test($(".phone").val())) {
+            $(".phone-error").show();
+            $(".phone-error .phone-error-tip").text('填写正确的手机号')
+        } else {
+            $(".phone-error").hide();
+        }
+    })
+    $(".mipt.msbm .btn.btnbg").on('click', function () {
+        // 获取姓名
+        var name = $(".name").val();
+        var content=$('.address').val();
+        // 获取电话
+        var tel = $.trim($(".phone").val());
+        var reg = /(^0?[1][34578][\d]{9}$)|(^0[1-9][\d]{1,2}[- ]?[\d]{7,8}[-| ]?[\d]*$)/;
+        var qq = '';
+        var telephone = tel;
+        var email = '';
+        if (RegExp(reg).test(tel)) {
+            var data = JSON.stringify({ "Mobile": tel, "Content": content,"Name":name, "Source": document.title + " " + window.location.href})
+            $.ajax({
+                type: 'POST',
+                url: "/api/form/1/1",
+                data: data,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (result) {
+                    if (result.id>0) {
+                        $('.green').text('提交成功！');
+                        $(".name").val('');
+                        $(".phone").val('');
+                        $(".address").val('');
+                        setTimeout(function () {
+                            $('.green').text('信息保护中，仅官方可见');
+                        }, 3000);
+                    } else {
+                        console.log(result);
+                    }
+                }
+            });
+            // })
+        } else {
+            $(".j-verify-error .j-error-tip").text('填写正确的手机号')
+        }
+    });
+</script>

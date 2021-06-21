@@ -1,0 +1,95 @@
+<style>
+.green{
+    color: #429908;
+}
+.xy-error-tip,.xy-phone-error-tip{
+    display: inline-block;
+    font-size: 12px;
+    color: #ff6e6e;
+    background: #ffe4e4;
+    padding: 3px 80px 3px 5px;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-all;
+    border: 1px solid #ff6e6e;
+}
+.xy-describe-error, .xy-phone-error {
+    display: none;
+}
+</style>
+<div class="mipt">
+    <input type="text" placeholder="填写您的需求" name=""  value="" class="xy-describe"/>
+    <p class="xy-describe-error">
+        <span class="xy-error-tip"></span>
+    </p>
+</div>
+<div class="mipt">
+    <input type="text" placeholder="您的联系方式" name="" id="tel" value="" class="xy-phone"/>
+    <p class="xy-phone-error mt5">
+        <span class="xy-phone-error-tip"></span>
+    </p>
+</div>
+<div class="mipt">
+    <span class="green">信息保护中，仅官方可见</span>
+</div>
+<div class="mipt msbm">
+    <button class="btn btnbg">马上为我推荐</button>
+</div>
+<script>
+    // 验证需求
+     $('.xy-describe').bind('input propertychange', function () {
+        var length = $(".xy-describe").val().length;
+        if (length < 3) {
+            $(".xy-describe-error").show();
+            $(".xy-describe-error .xy-error-tip").text('填写内容不少于2个字')
+        } else {
+            $(".xy-describe-error").hide();
+        }
+    });
+
+    // 验证手机号
+     $('.xy-phone').blur(function () {
+        if (!/^1[345789]\d{9}$/.test($(".xy-phone").val())) {
+            $(".xy-phone-error").show();
+            $(".xy-phone-error .xy-phone-error-tip").text('填写正确的手机号')
+        } else {
+            $(".xy-phone-error").hide();
+        }
+    })
+    $(".mipt.msbm .btn.btnbg").on('click', function () {
+        console.log(1111);
+        // 获取需求
+        var content = $(".xy-describe").val();
+        // 获取电话
+        var tel = $.trim($(".xy-phone").val());
+        var reg = /(^0?[1][34578][\d]{9}$)|(^0[1-9][\d]{1,2}[- ]?[\d]{7,8}[-| ]?[\d]*$)/;
+        var qq = '';
+        var telephone = tel;
+        var email = '';
+        if (RegExp(reg).test(tel)) {
+            var data = JSON.stringify({ "Mobile": tel, "Content": content, "Source": document.title + " " + window.location.href})
+            $.ajax({
+                type: 'POST',
+                url: "/api/form/1/1",
+                data: data,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (result) {
+                    if (result.id>0) {
+                        $('.green').text('提交成功！');
+                        $(".xy-describe").val('');
+                        $(".xy-phone").val('');
+                        setTimeout(function () {
+                            $('.green').text('信息保护中，仅官方可见');
+                        }, 3000);
+                    } else {
+                        console.log(result);
+                    }
+                }
+            });
+            // })
+        } else {
+            $(".j-verify-error .j-error-tip").text('填写正确的手机号')
+        }
+    });
+</script>

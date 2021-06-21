@@ -1,0 +1,55 @@
+<div class="head">
+    <div class="wrap h100 disflex flex_center">
+        <i class="hdicon navicon"><img src="{Stl.SiteUrl}/images/hdl_03.png" /></i>
+        <h3 class="flex1 textcenter"><stl:channel></stl:channel></h3>
+        <stl:if type="IsUserLoggin">
+            <stl:yes>
+                <!-- <a href="{Stl.SiteUrl}/home/#1/10" class="hdicon">
+                    <img src="{Stl.SiteUrl}/images/hdr_03.png"/>
+                </a> -->
+                <a href="https://gc.zbj.com/home/#1/10" class="hdicon">
+                    <img src="{Stl.SiteUrl}/images/hdr_03.png"/>
+                </a>
+            </stl:yes>
+            <stl:no>
+                <a href="https://gc.zbj.com/home" class="hdicon">
+                    <img src="{Stl.SiteUrl}/images/hdr_03.png"/>
+                </a>
+            </stl:no>
+        </stl:if>
+    </div>
+</div>
+<div class="head_height"></div>
+<!--导航-->
+<div class="navhide">
+    <div class="nhbg"></div>
+    <div class="nhw">
+        <i class="nh_close"><img class="disblock w100" src="{Stl.SiteUrl}/images/close_03.png" /></i>
+        <div class="nhw_height">
+            <stl:if testType="ChannelIndex" testOperate="Equals" testValue="首页">
+                <stl:yes>
+                    <a href="{Stl.SiteUrl}/index.html" class="active"><img src="{Stl.SiteUrl}/images/navico1_03.png" />首页</a>
+                </stl:yes>
+                <stl:no>
+                    <a href="{Stl.SiteUrl}/index.html"><img src="{Stl.SiteUrl}/images/navico1_03.png" />首页</a>
+                </stl:no>
+            </stl:if>
+            <stl:channels topLevel="0" groupChannel="nav" order='default'>
+                <stl:if testType="UpChannelOrSelf">
+                    <stl:yes>
+                        <stl:a class="active">
+                            <img src="{channel.icon}" />
+                            {channel.Title}
+                        </stl:a>
+                    </stl:yes>
+                    <stl:no>
+                        <stl:a>
+                            <img src="{channel.icon}" />
+                            {channel.Title}
+                        </stl:a>
+                    </stl:no>
+                </stl:if>
+            </stl:channels>
+        </div>
+    </div>
+</div>

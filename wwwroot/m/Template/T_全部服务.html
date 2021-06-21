@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<stl:include file="/include/head.html"></stl:include>
+	</head>
+	<body>
+	<!--头部-->
+    <stl:include file="/include/sideNav.html"></stl:include>
+	<!--主体内容-->
+	<div class="listbn posrelative">
+		<stl:channel type='imageUrl' class="disblock w100"></stl:channel>
+		<div class="lbnpsb disflex flex_center">
+			<div class="lbntxt wrap w100 textcenter">
+				<h3>10秒估算建房造价</h3>
+			</div>
+		</div>
+	</div>
+	<div class="md bggray">
+		<div class="wrap">
+			<div class="qb1 qbpd bgwhite">
+				<div class="qbtitle">
+					<h3><i></i>热门服务</h3>
+					<div class="qb1w disflex flex_wrap">
+						<stl:contents channelName='热门服务'>
+							<a href="" class="qb1a textcenter disblock">
+								<img src="{content.imageUrl}"/><p>{content.Title}</p>
+							</a>
+						</stl:contents>
+					</div>
+				</div>
+			</div>
+			<div class="qb2 qbpd bgwhite mt_10">
+				<div class="qbtitle">
+					<h3><i></i>工程设计</h3>
+					<div class="qb2w mt_15">
+						<h3 class="qb2title">自建房/别墅</h3>
+						<div class="qb2wb disflex flex_wrap">
+							<stl:contents channelName='自建房/别墅'>
+								<a href="">{content.Title}</a>
+							</stl:contents>
+						</div>
+					</div>
+					<div class="qb2w mt_15">
+						<h3 class="qb2title">效果图</h3>
+						<div class="qb2wb disflex flex_wrap">
+							<stl:contents channelName='效果图'>
+								<a href="">{content.Title}</a>
+							</stl:contents>
+						</div>
+					</div>
+					<div class="qb2w mt_15">
+						<h3 class="qb2title">建筑设计</h3>
+						<div class="qb2wb disflex flex_wrap">
+							<stl:contents channelName='建筑设计'>
+								<a href="">{content.Title}</a>
+							</stl:contents>
+						</div>
+					</div>
+					<div class="qb2w mt_15">
+						<h3 class="qb2title">规划景观</h3>
+						<div class="qb2wb disflex flex_wrap">
+							<stl:contents channelName='规划景观'>
+								<a href="">{content.Title}</a>
+							</stl:contents>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="qb2 qbpd bgwhite mt_10">
+				<div class="qbtitle">
+					<h3><i></i>企业服务</h3>
+					<div class="qb2w mt_15">
+						<h3 class="qb2title">资质服务</h3>
+						<div class="qb2wb disflex flex_wrap">
+							<a href="">资质新办</a>
+							<a href="">股权转让</a>
+							<a href="">企业并购</a>
+							<a href="">人才猎聘</a>
+						</div>
+					</div>
+					<div class="qb2w mt_15">
+						<h3 class="qb2title">税筹服务</h3>
+						<div class="qb2wb disflex flex_wrap">
+							<a href="">税筹策划</a>
+							<a href="">票务优化</a>
+							<a href="">灵活用工</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="qb2 qbpd bgwhite mt_10">
+				<div class="qbtitle">
+					<h3><i></i>推荐服务</h3>
+					<div class="qb2w mt_15">
+						<h3 class="qb2title">资质服务</h3>
+						<div class="qb2wb disflex flex_wrap">
+							<stl:contents channelName='资质服务'>
+								<a href="">{content.Title}</a>
+							</stl:contents>
+							<!-- <a href="">资质新办</a>
+							<a href="">股权转让</a>
+							<a href="">企业并购</a>
+							<a href="">人才猎聘</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<stl:include file="/include/foot.html"></stl:include>
+	</body>
+</html>
