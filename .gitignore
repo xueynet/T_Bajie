@@ -1,11 +1,19 @@
+#vs临时文件夹
 .vs/
 .vscode/
+
+#npm包
 node_modules/
+
+#站点系统目录
 wwwroot/xy-admin/
 wwwroot/home/
 wwwroot/sitefiles/
-wwwroot/fhc/
-wwwroot/index.html
 
+#站点生成目录
 channels/
 contents/
+index.html
+
+# 上传目录
+upload/
