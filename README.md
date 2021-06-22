@@ -1,3 +1,25 @@
+### 说明
+
+八戒工程站群模板
+
+### 待办事项
+
+移动端有如下问题：（20210622）
+
+1. banner页跳转后的详情页没有收集商机的入口（重点）
+2. 新人福利的领券要增加填写手机号码 
+3. 下面的产品列表的价格为0，需要调整价格。
+4. 全部服务点击进去无法跳转到详情页
+5. “我的”这个功能目前无法使用
+6. 支付存在问题，流程要保持顺畅 
+7. 客户反馈的时间存在问题，提交表单的时间不正确，包括后台添加内容的默认时间
+8. 资质办理（PC）端模板更新，客户已发图片
+9. banner加载未完成，进去了滚动，后续图片一直显示一半
+
+
+
+### Docker 搭建环境
+
 ```sh
 docker run -d \
     --name bajie \
@@ -11,7 +33,7 @@ docker run -d \
 
 
 ```sh
-docker run -d --name bajie -p 80:80 --restart=always -v /c/Users/1/source/repos/xueynet/XYS/themes/T_Bajie/wwwroot:/app/wwwroot  -v /c/Users/1/source/repos/xueynet/XYS/themes/T_Bajie/plugins:/app/plugins -e XYCMS_SECURITY_KEY=e2a3d303-ac9b-41ff-9154-930710af0845 -e XYCMS_DATABASE_TYPE=SQLServer -e XYCMS_DATABASE_CONNECTION_STRING="Server=106.75.187.189,3433;Uid=db_xc_101;Pwd=ZXc^&*()8;Database=GCBJ;" xueynet/xycms:latest
+docker run -d --name bjgc -p 80:80 --restart=always -v /c/Users/1/source/repos/xueynet/XYS/themes/T_Bajie/wwwroot:/app/wwwroot -e XYCMS_SECURITY_KEY=e2a3d303-ac9b-41ff-9154-930710af0845 -e XYCMS_DATABASE_TYPE=MySql -e XYCMS_DATABASE_CONNECTION_STRING="Server=115.28.3.134;Database=gcbj;Uid=db_xc_101;Pwd=ZXc^&*()8;" xueynet/xycms:latest
 ```
 
 ::: tip
