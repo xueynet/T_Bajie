@@ -1,0 +1,129 @@
+<html>
+
+<head>
+	<stl:include file="/include/head.html"></stl:include>
+</head>
+
+<body>
+	<stl:include file="/include/sideNav.html"></stl:include>
+	<div class="listbn posrelative">
+		<img class="disblock w100" src="{Stl.SiteUrl}/images/bsdzbn_02.jpg" />
+		<div class="lbnpsb disflex flex_center">
+			<div class="lbntxt mfsjbn w100 textcenter">
+				<h3>定制专属别墅 建百年品质老宅</h3>
+			</div>
+		</div>
+	</div>
+	<div class="md bs1">
+		<div class="wrap">
+			<div class="bs1bg bgsz">
+				<div class="toptitle toptitle_wt textcenter">
+					<h3>免费发布需求 官方推荐优质服务商</h3>
+				</div>
+				<div class="m1at m1at_wt mt_75">
+					<img class="middle mr2" height="15" src="{Stl.SiteUrl}/images/m1hot_03.png">
+					<a href="">别墅设计</a>丨<a href="">自建房</a>丨<a href="">建筑</a>丨<a href="">效果图</a>
+				</div>
+				<stl:include file="/include/form.html"></stl:include>
+				<!-- <div class="mipt">
+					<input type="text" placeholder="填写您的需求" name="" id="" value="" />
+        </div>
+					<div class="mipt">
+						<input type="text" placeholder="您的联系方式" name="" id="" value="" />
+        </div>
+						<div class="mipt msbm">
+							<button class="btn btnbg">马上为我推荐</button>
+						</div> -->
+					</div>
+				</div>
+			</div>
+			<div class="md bs2 pt0 mt_5">
+				<div class="wrap">
+					<div class="toptitle textcenter">
+						<h3>
+							资深设计师 一对一专属服务
+						</h3>
+					</div>
+				</div>
+				<div class="mt_10">
+					<div class="swiper-container swiper-container-bn">
+						<div class="swiper-wrapper">
+							<stl:contents channelName='专属服务'>
+								<div class="swiper-slide">
+									<a href="" class="disblock">
+										<img class="disblock w100" src="{content.ImageUrl}" />
+              						</a>
+								</div>
+							</stl:contents>
+						</div>
+						<div class="swiper-pagination swiper-pagination-bn"></div>
+					</div>
+					<div class="bs2w mt_10">
+						<div class="wrap">
+							<h3 class="titleh3">范围内容</h3>
+							<div class="txt text mt_5">
+								<stl:channel channelName='专属服务' type='content'></stl:channel>
+							</div>
+							<div class="mt_10 textcenter">
+								<a href="" class="btnbg more_a">立即预约</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="line"></div>
+			<div class="md bs3">
+				<div class="wrap">
+					<div class="toptitle textcenter">
+						<h3>选择八戒工程 再送你4项增值服务</h3>
+					</div>
+					<div class="bs3w">
+						<stl:contents channelName='增值服务'>
+							<div class="bs3a bgsz" style="background: url({content.ImageUrl}) no-repeat center;">
+								<h3 class="titleh3 colorindex">{content.title}</h3>
+								<p class="text mt_2">{content.subTitle}</p>
+							</div>
+						</stl:contents>
+					</div>
+				</div>
+			</div>
+			<div class="line"></div>
+			<div class="md bs4">
+				<div class="wrap">
+					<div class="toptitle textcenter">
+						<h3>服务流程</h3>
+					</div>
+					<div class="bs4w mt_10 disflex flex_center">
+						<stl:contents channelName='服务流程'>
+							<div class="bs4a textcenter">
+								<img src="{content.ImageUrl}" />
+								<p>{content.Title}</p>
+							</div>
+							<i><img src="{Stl.SiteUrl}/images/bs4jt_03.png" /></i>
+							</stl:channel>
+					</div>
+				</div>
+			</div>
+			<div class="md bs5 pt0 mt_5">
+				<div class="wrap">
+					<div class="toptitle textcenter">
+						<h3>累计服务商全国300万客户</h3>
+					</div>
+				</div>
+				<div class="mt_10">
+					<div class="swiper-container swiper-container-bn">
+						<div class="swiper-wrapper">
+							<stl:contents channelName='累计服务商'>
+								<div class="swiper-slide"><a href="" class="disblock"><img class="disblock w100"
+                src="{Stl.SiteUrl}/images/bs5pic_02.jpg" /></a></div>
+							</stl:contents>
+						</div>
+						<div class="swiper-pagination swiper-pagination-bn"></div>
+					</div>
+				</div>
+			</div>
+			<stl:include file="/include/consult.html"></stl:include>
+			<stl:include file="/include/foot.html"></stl:include>
+</body>
+
+</html>
