@@ -1,183 +1,147 @@
 <html>
 
 <head>
-	<stl:include file="/include/head.html"></stl:include>
+    <stl:include file="/include/head.html"></stl:include>
 </head>
 <style>
-	.orederConfirm {
-		/* background-color:#f1f1f1; */
-	}
-	.head{
-		line-height:3rem;
-	}
-	.info-block.buy-block {
-		margin: 11px 8px 0;
-		box-sizing: border-box;
-    	box-shadow: 0px 0px 20px #eee;
-		border-radius: 9px;
-		overflow: hidden;
-		padding: 15px 13px;
-	}
-
-	.store-title {
-		color: #ff6900;
-	}
-
-	.store-title span {
-		color: #777;
-	}
-
-	.buy-info {
-		border: 1px solid #f1f1f1;
-		border-radius: 5px;
-	}
-	.input-item{
-		display: flex;
-    	justify-content: flex-start;
-		border-bottom: 1px solid #f1f1f1;
-		height: 44px;
-    	line-height: 44px;
-	}
-	.input-item input{
-		padding-left: 12px;
-		background: #fff;
-		width: 100%;
-	}
-	.input-addon{
-		width: 59px;
-		color: #777;
-		font-size: 13px;
-		text-align: right;
-		font-weight: 400;
-		-ms-flex-negative: 0;
-		flex-shrink: 0;
-	}
-	.number-addon{
-		width: 120px;
-		flex-shrink: 0;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: center;
-		justify-content: center;
-		-webkit-box-align: center;
-		align-items: center;
-	}
-	.number-addon input{
-		padding:0;
-		width: 70px;
-		height: 24px;
-		line-height: 24px;
-		border-radius: 3px;
-		background-color: #e1e1e1;
-		text-align: center;
-	}
-	.buy-desc{
-		text-align: right;
-		font-size: 13px;
-		font-weight: 400;
-		line-height: 21px;
-		margin-top: 9px;
-	}
-	.submit-button{
-		height: 44px;
-		width: 96%;
-    	margin: 0 auto;
-		line-height: 44px;
-		background: linear-gradient(-90deg,#ff5d00,#ff923a);
-		border-radius: 5px;
-		color: #fff;
-		font-size: 16px;
-		text-align: center;
-		font-weight: 400;
-		margin-bottom: 17px;
-		margin-top: 11px;
-	}
-	.jian,.jia{
-		width: 24px;
-		height: 24px;
-		line-height: 24px;
-		font-size: 20px;
-		font-weight: bold;
-	}
+    .require .mipt input {
+        border: 1px solid #eee;
+    }
+    
+    .require .mipt {
+        margin: 10px;
+    }
+    
+    .require .mipt textarea {
+        line-height: 2rem;
+        font-size: .85rem;
+        width: 100%;
+        height: 10rem;
+        padding: 0 .75rem;
+        border-radius: 6px;
+        border: 1px solid #eee;
+        background: #fff;
+    }
+    
+    .green {
+        color: #429908;
+    }
+    
+    .error {
+        display: none;
+        font-size: 12px;
+        color: #ff6e6e;
+        padding: 3px 80px 3px 5px;
+        width: 100%;
+        box-sizing: border-box;
+        word-break: break-all;
+    }
+    
+    .name-error .phone-error .email-error .describe-error {
+        display: inline-block;
+        font-size: 12px;
+        color: #ff6e6e;
+        background: #ffe4e4;
+        padding: 3px 80px 3px 5px;
+        width: 100%;
+        box-sizing: border-box;
+        word-break: break-all;
+        border: 1px solid #ff6e6e;
+    }
 </style>
 
 <body>
-	<div class="orderConfirm">
-		<div class="head">
-			<h3 class="flex1 textcenter">订单确认信息</h3>
-		</div>
-		<div class="head_height"></div>
-		<div class="form">
-			<div class="info-block buy-block">
-				<!-- <div class="store-title">xxxx店铺<span>将为您服务</span></div> -->
-				<div class="buy-info">
-					<div class="input-item">
-						<span class="input-addon">我想要</span>
-						<input placeholder="如：logo设计" disabled="disabled" value="" class="content-input" style="margin-right: 12px;" id="contentTitle">
-					</div>
-					<div class="input-item">
-						<span class="input-addon">价格</span>
-						<input value="" class="v-input content-input" id="unitPrice">
-						<div class="number-addon">
-							<span class="jian">-</span>
-							<input id="number" value="1" class="number-addon-num">
-							<span class="jia">+</span>
-						</div>
-					</div>
-				</div>
-				<p class="buy-desc">总价:￥<span id="totalPrice"></span></p>
-			</div>
-			<div class="info-block buy-block">
-				<!-- <div class="input-item">
-					<span class="input-addon">联系电话</span>
-					<input placeholder="手机号以虚拟方式保护中">
-				</div> -->
-				<div class="input-item">
-					<span class="input-addon">备注</span>
-					<input placeholder="(选填) 简要描述你的需求：功能、效果、工期等">
-				</div>
-			</div>
-			<div class="submit-button">提交</div>
-		</div>
-	</div>
+    <!-- 头部和导航 -->
+    <stl:include file="/include/sideNav.html"></stl:include>
+    <div class="listbn posrelative">
+        <stl:channel type='imageUrl' class="disblock w100"></stl:channel>
+    </div>
+    <div class="require">
+        <div class="mipt">
+            <input type="text" placeholder="您的姓名" name="" id="" value="" class="name" />
+            <span class="error name-error"></span>
+        </div>
+        <div class="mipt">
+            <input type="text" placeholder="您的电话" name="" id="" value="" class="phone" />
+            <span class="error phone-error"></span>
+        </div>
+        <div class="mipt">
+            <textarea placeholder="请把问题留给我们，我们会提供让您满意的答复~" class='w100 content'></textarea>
+            <span class="error content-error"></span>
+        </div>
+        <div class="mipt">
+            <span class="green">信息保护中，仅官方可见</span>
+        </div>
+        <div class="mipt msbm">
+            <button class="btn btnbg">发布</button>
+        </div>
+    </div>
+    <stl:include file="/include/footer.html"></stl:include>
+    <script>
+        // 验证手机号
+        $('.phone').blur(function() {
+                if (!/^1[345789]\d{9}$/.test($(".phone").val())) {
+                    $(".phone-error").show();
+                    $(".phone-error").text('填写正确的手机号')
+                } else {
+                    $(".phone-error").hide();
+                }
+            })
+            // 验证问题
+        $('.describe').bind('input propertychange', function() {
+            var length = $(".describe").val().length;
+            if (length < 3) {
+                $(".content-error").show();
+                $(".content-error").text('填写内容不少于2个字')
+            } else {
+                $(".content-error").hide();
+            }
+        });
 
-	<script>
-		
-		var search = window.location.search;
-		console.log(search);
-		var id = getSearchString('id', search);
-		var channelId=getSearchString('channelId', search);
-		let title=getSearchString('title', search);
-		let price=getSearchString('Price',search);
-		console.log(channelId);
-		console.log(price,title);
-		console.log(id);
-		var siteId=getSearchString('siteId', search);
-		function getSearchString(key, Url) {
-			var str = Url;
-			str = str.substring(1, str.length); // 获取URL中?之后的字符（去掉第一位的问号）
-			// 以&分隔字符串，获得类似name=xiaoli这样的元素数组
-			var arr = str.split("&");
-			var obj = new Object();
-			// 将每一个数组元素以=分隔并赋给obj对象 
-			for (var i = 0; i < arr.length; i++) {
-				var tmp_arr = arr[i].split("=");
-				obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
-			}
-			return obj[key];
-		}
-		// 赋值
-		$('#contentTitle').val(title);
-		$('#unitPrice').val();
-		// 计算总价
-		function add(){
-			var danjia=$('#unitPrice').val();
-			var number=$('#number').val();
-			let totl=danjia*number;
-			$('#totalPrice').html(totl);
-		}
-		add();
-	</script>
+        // 提交数据
+        $(".mipt.msbm .btn.btnbg").on('click', function() {
+            // 获取需求
+            var content = $(".content").val();
+            // 获取电话
+            var tel = $.trim($(".phone").val());
+            // 获取姓名
+            var name = $('.name').val();
+            var reg = /(^0?[1][34578][\d]{9}$)|(^0[1-9][\d]{1,2}[- ]?[\d]{7,8}[-| ]?[\d]*$)/;
+            var qq = '';
+            if (RegExp(reg).test(tel)) {
+                var data = JSON.stringify({
+                    "Mobile": tel,
+                    "Name": name,
+                    "Content": content,
+                    "Source": document.title + " " + window.location.href
+                })
+                $.ajax({
+                    type: 'POST',
+                    url: "/api/form/1/1",
+                    data: data,
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function(result) {
+                        if (result.id > 0) {
+                            $('.green').text('发布成功！');
+                            $(".name").val('');
+                            $(".content").val('');
+                            $(".phone").val('');
+                            setTimeout(function() {
+                                $('.green').text('信息保护中，仅官方可见');
+                            }, 3000);
+                            console.log(result);
+                        } else {
+                            console.log(result);
+                        }
+                    }
+                });
+                // })
+            } else {
+                $(".phone-error").text('填写正确的手机号');
+            }
+        });
+    </script>
 </body>
+
 </html>

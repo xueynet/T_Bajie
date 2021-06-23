@@ -1,137 +1,138 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<stl:include file="/include/head.html"></stl:include>
+    <stl:include file="/include/head.html"></stl:include>
 </head>
 
 <body>
-	<!--头部-->
-	<stl:include file="/include/sideNav.html"></stl:include>
+    <!--头部-->
+    <stl:include file="/include/sideNav.html"></stl:include>
 
-	<!--主体内容-->
-	<div class="listbn posrelative">
-		<stl:channel type='imageUrl' class="disblock w100"></stl:channel>
-		<div class="lbnpsb disflex flex_center">
-			<div class="lbntxt w100 textcenter">
-				<h3>专业设计师</h3>
-				<p>免费帮忙看户型</p>
-			</div>
-		</div>
-	</div>
-	<div class="md hx1">
-		<div class="wrap">
-			<div class="bs1bg hx1bg bgsz">
-				<div class="toptitle toptitle_wt textcenter">
-					<h3 class="textshow">抢占免费看房服务</h3>
-				</div>
-				<stl:include file="/include/sjForm.html"></stl:include>
-			</div>
-		</div>
-	</div>
-	<div class="md hx2 bggray">
-		<div class="wrap">
-			<div class="toptitle textcenter">
-				<h3>设计师支招，定制你的专属户型</h3>
-			</div>
-			<div class="hx2t mt_10 tab_head activetop">
-				<ul class="disflex flex_lmr">
-					<!-- <stl:channel>
+    <!--主体内容-->
+    <div class="listbn posrelative">
+        <stl:channel type='imageUrl' class="disblock w100"></stl:channel>
+        <div class="lbnpsb disflex flex_center">
+            <div class="lbntxt w100 textcenter">
+                <h3>专业设计师</h3>
+                <p>免费帮忙看户型</p>
+            </div>
+        </div>
+    </div>
+    <div class="md hx1">
+        <div class="wrap">
+            <div class="bs1bg hx1bg bgsz">
+                <div class="toptitle toptitle_wt textcenter">
+                    <h3 class="textshow">抢占免费看房服务</h3>
+                </div>
+                <stl:include file="/include/sjForm.html"></stl:include>
+            </div>
+        </div>
+    </div>
+    <div class="md hx2 bggray">
+        <div class="wrap">
+            <div class="toptitle textcenter">
+                <h3>设计师支招，定制你的专属户型</h3>
+            </div>
+            <div class="hx2t mt_10 tab_head activetop">
+                <ul class="disflex flex_lmr">
+                    <!-- <stl:channel>
 
 					</stl:channel> -->
-					<li class="active">户型平面图</li>
-					<li>户型优势分析</li>
-					<li>参考效果图</li>
-					<li>工程预算</li>
-				</ul>
-			</div>
-		</div>
-		<div class="tab_content hx2b mt_10">
-			<ul>
-				<li class="tab_content_li active">
-					<div class="swiper-container swiper-container-bn">
-						<div class="swiper-wrapper">
-							<stl:contents channelName='户型平面图'>
-								<div class="swiper-slide"><a href=""
-										class="disblock"><img class="disblock w100" src="{content.imageUrl}"/></a>
-								</div>
-							</stl:contents>
-						</div>
-						<div class="swiper-pagination swiper-pagination-bn"></div>
-					</div>
-				</li>
-				<li class="tab_content_li">
-					<div class="swiper-container swiper-container-bn">
-						<div class="swiper-wrapper">
-							<stl:contents channelName='户型优势分析'>
-								<div class="swiper-slide"><a href=""
-										class="disblock"><img class="disblock w100" src="{content.imageUrl}"/></a>
-								</div>
-							</stl:contents>
-						</div>
-						<div class="swiper-pagination swiper-pagination-bn"></div>
-					</div>
-				</li>
-				<li class="tab_content_li">
-					<div class="swiper-container swiper-container-bn">
-						<div class="swiper-wrapper">
-							<stl:contents channelName='参考效果图'>
-								<div class="swiper-slide"><a href=""
-										class="disblock"><img class="disblock w100" src="{content.imageUrl}"/></a>
-								</div>
-							</stl:contents>
-						</div>
-						<div class="swiper-pagination swiper-pagination-bn"></div>
-					</div>
-				</li>
-				<li class="tab_content_li">
-					<div class="swiper-container swiper-container-bn">
-						<div class="swiper-wrapper">
-							<stl:contents channelName='工程预算'>
-								<div class="swiper-slide"><a href=""
-										class="disblock"><img class="disblock w100" src="{content.imageUrl}"/></a>
-								</div>
-							</stl:contents>
-						</div>
-						<div class="swiper-pagination swiper-pagination-bn"></div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="md hx3">
-		<div class="wrap">
-			<div class="toptitle textcenter">
-				<h3>现在申请送2项增值服务</h3>
-			</div>
-			<div class="hx3w mt_10 disflex flex_lmr">
-				<stl:contents channelName='户型增值服务'>
-					<a href="" class="hx3a disblock textcenter">
-						<img class="disblock w100" src="{content.imageUrl}"/>
-						<p class="mt_5 colorindex">{content.Title}</p>
-					</a>
-				</stl:contents>
-			</div>
-		</div>
-	</div>
-	<div class="line"></div>
-	<div class="md hx4">
-		<div class="wrap">
-			<div class="toptitle textcenter">
-				<h3>服务流程</h3>
-			</div>
-			<div class="bs4w mt_10 disflex flex_center">
-				<stl:contents channelName='户型服务流程'>
-					<div class="bs4a textcenter">
-						<img src="{content.imageUrl}"/>
-						<p>{content.Title}</p>
-					</div>
-					<i><img src="{Stl.SiteUrl}/images/bs4jt_03.png"/></i>
-				</stl:contents>
-			</div>
-		</div>
-	</div>
+                    <li class="active">户型平面图</li>
+                    <li>户型优势分析</li>
+                    <li>参考效果图</li>
+                    <li>工程预算</li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab_content hx2b mt_10">
+            <ul>
+                <li class="tab_content_li active">
+                    <div class="swiper-container swiper-container-bn">
+                        <div class="swiper-wrapper">
+                            <stl:contents channelName='户型平面图'>
+                                <div class="swiper-slide">
+                                    <a href="" class="disblock"><img class="disblock w100" src="{content.imageUrl}" /></a>
+                                </div>
+                            </stl:contents>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-bn"></div>
+                    </div>
+                </li>
+                <li class="tab_content_li">
+                    <div class="swiper-container swiper-container-bn">
+                        <div class="swiper-wrapper">
+                            <stl:contents channelName='户型优势分析'>
+                                <div class="swiper-slide">
+                                    <a href="" class="disblock"><img class="disblock w100" src="{content.imageUrl}" /></a>
+                                </div>
+                            </stl:contents>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-bn"></div>
+                    </div>
+                </li>
+                <li class="tab_content_li">
+                    <div class="swiper-container swiper-container-bn">
+                        <div class="swiper-wrapper">
+                            <stl:contents channelName='参考效果图'>
+                                <div class="swiper-slide">
+                                    <a href="" class="disblock"><img class="disblock w100" src="{content.imageUrl}" /></a>
+                                </div>
+                            </stl:contents>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-bn"></div>
+                    </div>
+                </li>
+                <li class="tab_content_li">
+                    <div class="swiper-container swiper-container-bn">
+                        <div class="swiper-wrapper">
+                            <stl:contents channelName='工程预算'>
+                                <div class="swiper-slide">
+                                    <a href="" class="disblock"><img class="disblock w100" src="{content.imageUrl}" /></a>
+                                </div>
+                            </stl:contents>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-bn"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="md hx3">
+        <div class="wrap">
+            <div class="toptitle textcenter">
+                <h3>现在申请送2项增值服务</h3>
+            </div>
+            <div class="hx3w mt_10 disflex flex_lmr">
+                <stl:contents channelName='户型增值服务'>
+                    <a href="" class="hx3a disblock textcenter">
+                        <img class="disblock w100" src="{content.imageUrl}" />
+                        <p class="mt_5 colorindex">{content.Title}</p>
+                    </a>
+                </stl:contents>
+            </div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="md hx4">
+        <div class="wrap">
+            <div class="toptitle textcenter">
+                <h3>服务流程</h3>
+            </div>
+            <div class="bs4w mt_10 disflex flex_center">
+                <stl:contents channelName='户型服务流程'>
+                    <div class="bs4a textcenter">
+                        <img src="{content.imageUrl}" />
+                        <p>{content.Title}</p>
+                    </div>
+                    <i><img src="{Stl.SiteUrl}/images/bs4jt_03.png"/></i>
+                </stl:contents>
+            </div>
+        </div>
+    </div>
 
-	<!-- <div class="md bggray">
+    <!-- <div class="md bggray">
 					<div class="wrap">
 						<div class="sj4w btnbg disflex flex_center">
 							<div class="sj4l">
@@ -149,8 +150,8 @@
 						</div>
 					</div>
 				</div> -->
-	<stl:include file="/include/consult.html"></stl:include>
-	<stl:include file="/include/foot.html"></stl:include>
+    <stl:include file="/include/consult.html"></stl:include>
+    <stl:include file="/include/footer.html"></stl:include>
 </body>
 
 </html>
