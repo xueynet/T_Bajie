@@ -14,6 +14,9 @@ node_modules/
 channels/
 contents/
 
+#上传目录
+upload/
+
 /wwwroot/index.html
 /wwwroot/m/index.html
 /wwwroot/m/orderConfirm.html
