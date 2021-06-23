@@ -11,7 +11,7 @@
     <!--主体内容-->
     <div class="swiper-container swiper-container-bn">
         <div class="swiper-wrapper">
-            <stl:contents channelName='首页banner'>
+            <stl:contents channelName='banner'>
                 <div class="swiper-slide">
                     <stl:a class="disblock"><img class="disblock w100" src="{content.ImageUrl}" /></stl:a>
                 </div>
@@ -30,27 +30,21 @@
             <stl:a channelName='别墅定制' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico3_03.png" />
                 <p>别墅定制</p>
             </stl:a>
-            <stl:a channelName='建房礼券' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico4_03.png" />
+            <stl:a channelName='建房施工' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico4_03.png" />
                 <p>建房施工</p>
             </stl:a>
-            <stl:a channelName='效果图' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico5_03.png" />
+            <stl:a channelIndex="render" class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico5_03.png" />
                 <p>效果图</p>
             </stl:a>
             <stl:a channelName='户型设计' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico6_03.png" />
                 <p>户型设计</p>
             </stl:a>
-            <stl:a channelName='装修设计' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico7_03.png" />
+            <stl:a channelName='室内装修' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico7_03.png" />
                 <p>室内装修</p>
             </stl:a>
-            <stl:a channelName='全部服务' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico8_03.png" />
+            <stl:a channelName='服务' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico8_03.png" />
                 <p>全部服务</p>
             </stl:a>
-            <!-- <stl:contents channelName='首页icon'>
-        <a href="" class="mta disblock textcenter">
-          <img src="{content.ImageUrl}" />
-          <p>{content.Title}</p>
-        </a>
-      </stl:contents> -->
         </div>
     </div>
     <div class="md m1 bgsz">
@@ -78,7 +72,7 @@
         <div class="pb_w mt_10 posrelative">
             <div class="swiper-container swiper-container-public">
                 <div class="swiper-wrapper">
-                    <stl:contents channelName='精品别墅'>
+                    <stl:contents channelName="别墅设计">
                         <div class="swiper-slide">
                             <a href="" class="pb_a disblock"><img class="disblock w100" src="{content.ImageUrl}" /></a>
                         </div>
@@ -101,7 +95,7 @@
         <div class="pb_w mt_10 posrelative">
             <div class="swiper-container swiper-container-public">
                 <div class="swiper-wrapper">
-                    <stl:contents channelName='全包服务'>
+                    <stl:contents channelName="别墅施工" scope="self">
                         <div class="swiper-slide">
                             <a href="" class="pb_a disblock"><img class="disblock w100" src="{content.ImageUrl}" /></a>
                         </div>
@@ -120,7 +114,7 @@
                 <h3>新人福利专区</h3>
             </div>
             <div class="m3w pdlr75">
-                <stl:contents channelName='新人福利专区'>
+                <stl:contents channelName='优惠券'>
                     <a href="" class="m3a disblock"><img class="disblock w100" src="{content.ImageUrl}" /></a>
                 </stl:contents>
             </div>
@@ -130,18 +124,24 @@
         <div class="wrap">
             <div class="m4t activetop disflex flex_lmr flex_wrap">
                 <span class="active">全部</span>
-                <span>室内效果图</span>
-                <span>建筑/景观效果图</span>
-                <span>鸟瞰图</span>
+                <stl:channels channelName="效果图" parent="工程设计">
+                    <span>
+            <stl:channel></stl:channel>
+          </span>
+                </stl:channels>
+                <!-- <span>彩平图</span>
+        <span>室内效果图</span>
+        <span>鸟瞰图</span> -->
             </div>
         </div>
         <div class="">
             <div class="swiper-container swiper-container-m4 swiper-no-swiping">
                 <div class="swiper-wrapper">
+                    <!-- 全部 -->
                     <div class="swiper-slide">
                         <div class="m4wrap">
                             <ul class="m4w wall posrelative clearfix">
-                                <stl:contents channelName='效果图' scope='all'>
+                                <stl:contents channelName="效果图" parent="工程设计" scope="all">
                                     <li class="article">
                                         <div class="m4a disblock w100 bgwhite">
                                             <stl:a href="" class="m4at">
@@ -151,7 +151,7 @@
                                                 <div class="m4atxt padding5">
                                                     <h3 class="line_1">{content.Title}</h3>
                                                     <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                                                        <span>￥{content.Price}</span><i>销量{content.Inventory}</i>
+                                                        <span>￥{content.Price}</span>
                                                     </div>
                                                 </div>
                                             </stl:a>
@@ -165,93 +165,42 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="m4wrap">
-                            <ul class="m4w wall posrelative clearfix">
-                                <stl:contents channelName='室内效果图' '>
-                  <li class="article">
-                    <div class="m4a disblock w100 bgwhite">
-                      <stl:a href="" class="m4at">
-                        <div class="m4aimg">
-                          <img class="disblock w100" src="{content.ImageUrl}" />
+                    <stl:channels channelName='效果图' parent="工程设计">
+                        <div class="swiper-slide">
+                            <div class="m4wrap">
+                                <ul class="m4w wall posrelative clearfix">
+                                    <stl:contents>
+                                        <li class="article">
+                                            <div class="m4a disblock w100 bgwhite">
+                                                <stl:a href="" class="m4at">
+                                                    <div class="m4aimg">
+                                                        <img class="disblock w100" src="{content.ImageUrl}" />
+                                                    </div>
+                                                    <div class="m4atxt padding5">
+                                                        <h3 class="line_1">{content.Title}</h3>
+                                                        <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
+                                                            <span>￥{content.Price}</span>
+                                                        </div>
+                                                    </div>
+                                                </stl:a>
+                                                <a href="" class="m4abtn btnbg">免费咨询</a>
+                                            </div>
+                                        </li>
+                                    </stl:contents>
+                                </ul>
+                                <div class="m4zk textcenter mt_10">
+                                    <span><img src="images/m4zk_03.png" /></span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="m4atxt padding5">
-                          <h3 class="line_1">{content.Title}</h3>
-                          <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                            <span>￥{content.Price}</span><i>销量{content.Inventory}</i>
-                          </div>
-                        </div>
-                      <stl:/a>
-                      <a href="" class="m4abtn btnbg">免费咨询</a>
-                    </div>
-                  </li>
-                </stl:contents>
-              </ul>
-              <div class="m4zk textcenter mt_10">
-                <span><img src="images/m4zk_03.png" /></span>
-              </div>
+                    </stl:channels>
+                </div>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="m4wrap">
-              <ul class="m4w wall posrelative clearfix">
-                <stl:contents channelName='建筑/景观效果图 '>
-                  <li class="article">
-                    <div class="m4a disblock w100 bgwhite">
-                      <stl:a href="" class="m4at">
-                        <div class="m4aimg">
-                          <img class="disblock w100" src="{content.ImageUrl}" />
-                        </div>
-                        <div class="m4atxt padding5">
-                          <h3 class="line_1">{content.Title}</h3>
-                          <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                            <span>￥{content.Price}</span><i>销量{content.Inventory}</i>
-                          </div>
-                        </div>
-                      </stl:a>
-                      <a href="" class="m4abtn btnbg">免费咨询</a>
-                    </div>
-                  </li>
-                </stl:contents>
-              </ul>
-              <div class="m4zk textcenter mt_10">
-                <span><img src="images/m4zk_03.png" /></span>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="m4wrap">
-              <ul class="m4w wall posrelative clearfix">
-                <stl:contents channelName='鸟瞰图 '>
-                  <li class="article">
-                    <div class="m4a disblock w100 bgwhite">
-                      <stl:a href="" class="m4at">
-                        <div class="m4aimg">
-                          <img class="disblock w100" src="{content.ImageUrl}" />
-                        </div>
-                        <div class="m4atxt padding5">
-                          <h3 class="line_1">{content.Title}</h3>
-                          <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                            <span>￥{content.Price}</span><i>销量{content.Inventory}</i>
-                          </div>
-                        </div>
-                      </stl:a>
-                      <a href="" class="m4abtn btnbg">免费咨询</a>
-                    </div>
-                  </li>
-                </stl:contents>
-              </ul>
-              <div class="m4zk textcenter mt_10">
-                <span><img src="images/m4zk_03.png" /></span>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <stl:include file="/include/footer.html"></stl:include>
-  <script src="js/jaliswall.js" type="text/javascript"></script>
-  <script src="js/index.js" type="text/javascript"></script>
+    <stl:include file="/include/footer.html"></stl:include>
+    <script src="js/jaliswall.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
 </body>
+
 </html>

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<stl:include file="/include/head.html"></stl:include>
-	</head>
-	<body>
+
+<head>
+	<stl:include file="/include/head.html"></stl:include>
+</head>
+
+<body>
 	<!-- 头部和导航 -->
 	<stl:include file="/include/sideNav.html"></stl:include>
 	<!--主体内容-->
@@ -22,11 +24,13 @@
 	</div>
 	<div class="md zj2 pt0 mt_5">
 		<div class="wrap">
-			<div class="toptitle textcenter">
+			<stl:channel channelName='算造价' type="content">
+				<!-- {channel.content} -->
+			</stl:channel>
+			<!-- <div class="toptitle textcenter">
 				<h3>我们的报价源于</h3>
 			</div>
 			<div class="zj2w">
-				
 				<div class="zj2a disflex flex_lmr flex_center">
 					<div class="zj2atxt flex1">
 						<h3 class="titleh3 colorindex">300万雇主</h3>
@@ -35,12 +39,12 @@
 						</div>
 					</div>
 					<div class="zj2aimg">
-						<img class="disblock w100" src="{stl.siteUrl}/images/zj2pic1_03.jpg"/>
+						<img class="disblock w100" src="{stl.siteUrl}/images/zj2pic1_03.jpg" />
 					</div>
 				</div>
 				<div class="zj2a disflex flex_lmr flex_center">
 					<div class="zj2aimg">
-						<img class="disblock w100" src="{stl.siteUrl}/images/zj2pic2_03.jpg"/>
+						<img class="disblock w100" src="{stl.siteUrl}/images/zj2pic2_03.jpg" />
 					</div>
 					<div class="zj2atxt flex1">
 						<h3 class="titleh3 colorindex">10万平台设计师</h3>
@@ -57,12 +61,12 @@
 						</div>
 					</div>
 					<div class="zj2aimg">
-						<img class="disblock w100" src="{stl.siteUrl}/images/zj2pic3_03.jpg"/>
+						<img class="disblock w100" src="{stl.siteUrl}/images/zj2pic3_03.jpg" />
 					</div>
 				</div>
 				<div class="zj2a disflex flex_lmr flex_center">
 					<div class="zj2aimg">
-						<img class="disblock w100" src="{stl.siteUrl}/images/zj2pic4_03.jpg"/>
+						<img class="disblock w100" src="{stl.siteUrl}/images/zj2pic4_03.jpg" />
 					</div>
 					<div class="zj2atxt flex1">
 						<h3 class="titleh3 colorindex">大数据分析</h3>
@@ -71,13 +75,14 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="mt_15">
+			</div> -->
+			<!-- <div class="mt_15">
 				<a href="" class="btnbg btn disblock textcenter">免费获取建房报价</a>
-			</div>
+			</div> -->
 		</div>
 	</div>
-	
+
 	<stl:include file="/include/foot.html"></stl:include>
-	</body>
+</body>
+
 </html>

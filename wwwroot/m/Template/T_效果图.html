@@ -32,87 +32,29 @@
 			</div>
 		</div>
 	</div>
-	<div class="md xg2">
-		<div class="wrap">
-			<div class="pbt disflex flex_center flex_lmr">
-				<h3>室内效果图</h3>
-				<a href=""><i class="fa fa-angle-right"></i></a>
-			</div>
-		</div>
-		<div class="pb_w mt_10 posrelative">
-			<div class="swiper-container swiper-container-public">
-			    <div class="swiper-wrapper">
-                    <stl:contents channelName='室内效果图'>
-                        <div class="swiper-slide"><a href="" class="pb_a disblock"><img class="disblock w100" src="{content.imageUrl}"/></a></div>
-                    </stl:contents>
-			    </div>
-			</div>
-		</div>
-		<div class="mt_10 textcenter">
-			<a href="" class="btnbg more_a">立即预约</a>
-		</div>
-	</div>
-	<div class="line"></div>
-	<div class="md xg2">
-		<div class="wrap">
-			<div class="pbt disflex flex_center flex_lmr">
-				<h3>建筑/景观效果图</h3>
-				<a href=""><i class="fa fa-angle-right"></i></a>
-			</div>
-		</div>
-		<div class="pb_w mt_10 posrelative">
-			<div class="swiper-container swiper-container-public">
-			    <div class="swiper-wrapper">
-                    <stl:contents channelName='建筑/景观效果图'>
-                        <div class="swiper-slide"><a href="" class="pb_a disblock"><img class="disblock w100" src="{content.imageUrl}"/></a></div>
-                    </stl:contents>
-			    </div>
-			</div>
-		</div>
-		<div class="mt_10 textcenter">
-			<a href="" class="btnbg more_a">立即预约</a>
-		</div>
-	</div>
-	<div class="line"></div>
-	<div class="md xg2">
-		<div class="wrap">
-			<div class="pbt disflex flex_center flex_lmr">
-				<h3>鸟瞰图</h3>
-				<a href=""><i class="fa fa-angle-right"></i></a>
-			</div>
-		</div>
-		<div class="pb_w mt_10 posrelative">
-			<div class="swiper-container swiper-container-public">
-			    <div class="swiper-wrapper">
-                    <stl:contents channelName='鸟瞰图'>
-                        <div class="swiper-slide"><a href="" class="pb_a disblock"><img class="disblock w100" src="{content.imageUrl}"/></a></div>
-                    </stl:contents>
-			    </div>
-			</div>
-		</div>
-		<div class="mt_10 textcenter">
-			<a href="" class="btnbg more_a">立即预约</a>
-		</div>
-	</div>
-	
-	<!-- <div class="md bggray">
-		<div class="wrap">
-			<div class="sj4w btnbg disflex flex_center">
-				<div class="sj4l">
-					<h3>自己找服务太麻烦？</h3>
-					<p>顾问在线帮您解决一切问题</p>
-					<a href="">立即获取服务<i class="fa fa-caret-right ml2"></i></a>
+	<stl:channels channelName="效果图">
+		<div class="md xg2">
+			<div class="wrap">
+				<div class="pbt disflex flex_center flex_lmr">
+					<h3><stl:channel type='title'></stl:channel></h3></h3>
+					<a href=""><i class="fa fa-angle-right"></i></a>
 				</div>
-				<div class="sj4r flex1">
-					<input type="text" placeholder="请输入您的电话" name="" id="" value="" />
-					<div class="sj4rbox disflex flex_lrcenter flex_center">
-						<button>为我服务</button>
-						<button class="active">在线咨询</button>
+			</div>
+			<div class="pb_w mt_10 posrelative">
+				<div class="swiper-container swiper-container-public">
+					<div class="swiper-wrapper">
+						<stl:contents>
+							<div class="swiper-slide"><a href="" class="pb_a disblock"><img class="disblock w100" src="{content.imageUrl}"/></a></div>
+						</stl:contents>
 					</div>
 				</div>
 			</div>
+			<div class="mt_10 textcenter">
+				<a href="" class="btnbg more_a">立即预约</a>
+			</div>
 		</div>
-	</div> -->
+		<div class="line"></div>
+	</stl:channels>
 	<stl:include file="/include/consult.html"></stl:include>
 	<stl:include file="/include/foot.html"></stl:include>
 	</body>
