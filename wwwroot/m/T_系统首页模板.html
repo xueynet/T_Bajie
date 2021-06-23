@@ -250,26 +250,8 @@
       </div>
     </div>
   </div>
-  <stl:include file="/include/foot.html"></stl:include>
+  <stl:include file="/include/footer.html"></stl:include>
   <script src="js/jaliswall.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    $(function () {
-      var serviceswiper = new Swiper('.swiper-container-m4 ', {
-        speed: 250,
-        autoHeight: true,
-        on: {
-          slideChangeTransitionStart: function () {
-            var elemIndex = this.activeIndex;
-            $(".m4t span").eq(elemIndex).addClass("active").siblings("span").removeClass("active");
-          },
-        },
-      });
-      $('.m4t span ').click(function () {
-        $(this).addClass("active").siblings("span").removeClass("active");
-        serviceswiper.slideTo($(this).index(), 250, false);
-      })
-      $('.wall ').jaliswall({ item: '.article ' });
-    });
-  </script>
+  <script src="js/index.js" type="text/javascript"></script>
 </body>
 </html>
