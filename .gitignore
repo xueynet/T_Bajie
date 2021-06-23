@@ -6,12 +6,12 @@
 node_modules/
 
 #站点系统目录
-wwwroot/xy-admin/
-wwwroot/home/
-wwwroot/sitefiles/
+/wwwroot/xy-admin/*
+/wwwroot/home/*
+/wwwroot/sitefiles/*
 
 #排除文件（特定文件：覆盖原文件）
-!wwwroot/xy-admin/index.html
+!/wwwroot/xy-admin/index.html
 
 #站点生成目录
 channels/
