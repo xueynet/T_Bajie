@@ -6,6 +6,7 @@
 
 * bootstrap文档：https://v4.bootcss.com/docs/getting-started/introduction/
 * font-awesome文档：http://www.fontawesome.com.cn/faicons/
+* layer mobile文档：https://layer.layui.com/mobile/
 
 ### 待办事项
 
