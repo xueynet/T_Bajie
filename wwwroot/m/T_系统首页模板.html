@@ -1,63 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <stl:include file="/include/head.html"></stl:include>
+    <stl:include file="/include/head.html"></stl:include>
 </head>
+
 <body>
-  <!-- 头部的导航 -->
-  <stl:include file="/include/sideNav.html"></stl:include>
-  <!--主体内容-->
-  <div class="swiper-container swiper-container-bn">
-    <div class="swiper-wrapper">
-      <stl:contents channelName='banner'>
-        <div class="swiper-slide">
-          <stl:a class="disblock"><img class="disblock w100" src="{content.ImageUrl}" /></stl:a>
+    <!-- 头部的导航 -->
+    <stl:include file="/include/sideNav.html"></stl:include>
+    <!--主体内容-->
+    <div class="swiper-container swiper-container-bn">
+        <div class="swiper-wrapper">
+            <stl:contents channelName='banner'>
+                <div class="swiper-slide">
+                    <stl:a class="disblock"><img class="disblock w100" src="{content.ImageUrl}" /></stl:a>
+                </div>
+            </stl:contents>
         </div>
-      </stl:contents>
+        <div class="swiper-pagination swiper-pagination-bn"></div>
     </div>
-    <div class="swiper-pagination swiper-pagination-bn"></div>
-  </div>
-  <div class="md mt pt0">
-    <div class="disflex flex_wrap">
-      <stl:a channelName='算造价' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico1_03.png" />
-        <p>算造价</p>
-      </stl:a>
-      <stl:a channelName='免费设计' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico2_03.png" />
-        <p>免费设计</p>
-      </stl:a>
-      <stl:a channelName='别墅定制' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico3_03.png" />
-        <p>别墅定制</p>
-      </stl:a>
-      <stl:a channelName='建房施工' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico4_03.png" />
-        <p>建房施工</p>
-      </stl:a>
-      <stl:a channelIndex="render" class="mta disblock textcenter"><img
-          src="{Stl.SiteUrl}/images/mtico5_03.png" />
-        <p>效果图</p>
-      </stl:a>
-      <stl:a channelName='户型设计' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico6_03.png" />
-        <p>户型设计</p>
-      </stl:a>
-      <stl:a channelName='室内装修' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico7_03.png" />
-        <p>室内装修</p>
-      </stl:a>
-      <stl:a channelName='服务' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico8_03.png" />
-        <p>全部服务</p>
-      </stl:a>
-    </div>
-  </div>
-  <div class="md m1 bgsz">
-    <div class="wrap">
-      <div class="m1t textcenter">
-        <h3>免费发布需求 官方推荐优质服务商</h3>
-      </div>
-      <div class="m1w mt_10">
-        <div class="m1at">
-          <img class="middle mr2" height="15" src="images/m1hot_03.png" />
-          <a href="">别墅设计</a>丨<a href="">自建房</a>丨<a href="">建筑</a>丨<a href="">效果图</a>
+    <div class="md mt pt0">
+        <div class="disflex flex_wrap">
+            <stl:a channelName='算造价' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico1_03.png" />
+                <p>算造价</p>
+            </stl:a>
+            <stl:a channelName='免费设计' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico2_03.png" />
+                <p>免费设计</p>
+            </stl:a>
+            <stl:a channelName='别墅定制' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico3_03.png" />
+                <p>别墅定制</p>
+            </stl:a>
+            <stl:a channelName='建房施工' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico4_03.png" />
+                <p>建房施工</p>
+            </stl:a>
+            <stl:a channelIndex="render" class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico5_03.png" />
+                <p>效果图</p>
+            </stl:a>
+            <stl:a channelName='户型设计' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico6_03.png" />
+                <p>户型设计</p>
+            </stl:a>
+            <stl:a channelName='室内装修' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico7_03.png" />
+                <p>室内装修</p>
+            </stl:a>
+            <stl:a channelName='服务' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico8_03.png" />
+                <p>全部服务</p>
+            </stl:a>
         </div>
-        <stl:include file="/include/form.html"></stl:include>
-      </div>
     </div>
   </div>
   <div class="line"></div>
@@ -75,7 +63,6 @@
             <div class="swiper-slide">
               <a href="" class="pb_a disblock"><img class="disblock w100" src="{content.ImageUrl}" /></a>
             </div>
-          </stl:contents>
         </div>
       </div>
     </div>
@@ -91,132 +78,146 @@
         <a href=""><i class="fa fa-angle-right"></i></a>
       </div>
     </div>
-    <div class="pb_w mt_10 posrelative">
-      <div class="swiper-container swiper-container-public">
-        <div class="swiper-wrapper">
-          <stl:contents channelName="别墅施工" scope="self">
-            <div class="swiper-slide">
-              <a href="" class="pb_a disblock"><img class="disblock w100" src="{content.ImageUrl}" /></a>
+    <div class="line"></div>
+    <div class="md m2">
+        <div class="wrap">
+            <div class="pbt disflex flex_center flex_lmr">
+                <h3>精品别墅</h3>
+                <a href=""><i class="fa fa-angle-right"></i></a>
             </div>
-          </stl:contents>
         </div>
-      </div>
+        <div class="pb_w mt_10 posrelative">
+            <div class="swiper-container swiper-container-public">
+                <div class="swiper-wrapper">
+                    <stl:contents channelName="别墅设计">
+                        <div class="swiper-slide">
+                            <a href="" class="pb_a disblock"><img class="disblock w100" src="{content.ImageUrl}" /></a>
+                        </div>
+                    </stl:contents>
+                </div>
+            </div>
+        </div>
+        <div class="mt_10 textcenter">
+            <a href="" class="btnbg more_a">立即预约</a>
+        </div>
     </div>
-    <div class="mt_10 textcenter">
-      <a href="" class="btnbg more_a">立即预约</a>
+    <div class="line"></div>
+    <div class="md m2">
+        <div class="wrap">
+            <div class="pbt disflex flex_center flex_lmr">
+                <h3>从设计到施工全包服务</h3>
+                <a href=""><i class="fa fa-angle-right"></i></a>
+            </div>
+        </div>
+        <div class="pb_w mt_10 posrelative">
+            <div class="swiper-container swiper-container-public">
+                <div class="swiper-wrapper">
+                    <stl:contents channelName="别墅施工" scope="self">
+                        <div class="swiper-slide">
+                            <a href="" class="pb_a disblock"><img class="disblock w100" src="{content.ImageUrl}" /></a>
+                        </div>
+                    </stl:contents>
+                </div>
+            </div>
+        </div>
+        <div class="mt_10 textcenter">
+            <a href="" class="btnbg more_a">立即预约</a>
+        </div>
     </div>
-  </div>
-  <div class="line"></div>
-  <div class="md m3">
-    <div class="wrap">
-      <div class="pbt disflex flex_center flex_lmr">
-        <h3>新人福利专区</h3>
-      </div>
-      <div class="m3w pdlr75">
-        <stl:contents channelName='优惠券'>
-          <a href="" class="m3a disblock"><img class="disblock w100" src="{content.ImageUrl}" /></a>
-        </stl:contents>
-      </div>
+    <div class="line"></div>
+    <div class="md m3">
+        <div class="wrap">
+            <div class="pbt disflex flex_center flex_lmr">
+                <h3>新人福利专区</h3>
+            </div>
+            <div class="m3w pdlr75">
+                <stl:contents channelName='优惠券'>
+                    <a href="" class="m3a disblock"><img class="disblock w100" src="{content.ImageUrl}" /></a>
+                </stl:contents>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="md m4 bggray">
-    <div class="wrap">
-      <div class="m4t activetop disflex flex_lmr flex_wrap">
-        <span class="active">全部</span>
-        <stl:channels channelName="效果图" parent="工程设计">
-          <span>
+    <div class="md m4 bggray">
+        <div class="wrap">
+            <div class="m4t activetop disflex flex_lmr flex_wrap">
+                <span class="active">全部</span>
+                <stl:channels channelName="效果图" parent="工程设计">
+                    <span>
             <stl:channel></stl:channel>
           </span>
-        </stl:channels>
-        <!-- <span>彩平图</span>
+                </stl:channels>
+                <!-- <span>彩平图</span>
         <span>室内效果图</span>
         <span>鸟瞰图</span> -->
-      </div>
-    </div>
-    <div class="">
-      <div class="swiper-container swiper-container-m4 swiper-no-swiping">
-        <div class="swiper-wrapper">
-          <!-- 全部 -->
-          <div class="swiper-slide">
-            <div class="m4wrap">
-              <ul class="m4w wall posrelative clearfix">
-                <stl:contents channelName="效果图" parent="工程设计" scope="all">
-                  <li class="article">
-                    <div class="m4a disblock w100 bgwhite">
-                      <stl:a href="" class="m4at">
-                        <div class="m4aimg">
-                          <img class="disblock w100" src="{content.ImageUrl}" />
-                        </div>
-                        <div class="m4atxt padding5">
-                          <h3 class="line_1">{content.Title}</h3>
-                          <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                            <span>￥{content.Price}</span>
-                          </div>
-                        </div>
-                      </stl:a>
-                          <a href="" class="m4abtn btnbg">免费咨询</a>
-                    </div>
-                  </li>
-                </stl:contents>
-              </ul>
-              <div class="m4zk textcenter mt_10">
-                <span><img src="images/m4zk_03.png" /></span>
-              </div>
             </div>
-          </div>
-          <stl:channels channelName='效果图' parent="工程设计">
-            <div class="swiper-slide">
-              <div class="m4wrap">
-                <ul class="m4w wall posrelative clearfix">
-                  <stl:contents>
-                    <li class="article">
-                      <div class="m4a disblock w100 bgwhite">
-                        <stl:a href="" class="m4at">
-                          <div class="m4aimg">
-                            <img class="disblock w100" src="{content.ImageUrl}" />
-                          </div>
-                          <div class="m4atxt padding5">
-                            <h3 class="line_1">{content.Title}</h3>
-                            <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                              <span>￥{content.Price}</span>
-                            </div>
-                          </div>
-                        </stl:a>
-                            <a href="" class="m4abtn btnbg">免费咨询</a>
-                      </div>
-                    </li>
-                  </stl:contents>
-                </ul>
-                <div class="m4zk textcenter mt_10">
-                  <span><img src="images/m4zk_03.png" /></span>
-                </div>
-              </div>
-            </div>
-          </stl:channels>
         </div>
-      </div>
+        <div class="">
+            <div class="swiper-container swiper-container-m4 swiper-no-swiping">
+                <div class="swiper-wrapper">
+                    <!-- 全部 -->
+                    <div class="swiper-slide">
+                        <div class="m4wrap">
+                            <ul class="m4w wall posrelative clearfix">
+                                <stl:contents channelName="效果图" parent="工程设计" scope="all">
+                                    <li class="article">
+                                        <div class="m4a disblock w100 bgwhite">
+                                            <stl:a href="" class="m4at">
+                                                <div class="m4aimg">
+                                                    <img class="disblock w100" src="{content.ImageUrl}" />
+                                                </div>
+                                                <div class="m4atxt padding5">
+                                                    <h3 class="line_1">{content.Title}</h3>
+                                                    <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
+                                                        <span>￥{content.Price}</span>
+                                                    </div>
+                                                </div>
+                                            </stl:a>
+                                            <a href="" class="m4abtn btnbg">免费咨询</a>
+                                        </div>
+                                    </li>
+                                </stl:contents>
+                            </ul>
+                            <div class="m4zk textcenter mt_10">
+                                <span><img src="images/m4zk_03.png" /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <stl:channels channelName='效果图' parent="工程设计">
+                        <div class="swiper-slide">
+                            <div class="m4wrap">
+                                <ul class="m4w wall posrelative clearfix">
+                                    <stl:contents>
+                                        <li class="article">
+                                            <div class="m4a disblock w100 bgwhite">
+                                                <stl:a href="" class="m4at">
+                                                    <div class="m4aimg">
+                                                        <img class="disblock w100" src="{content.ImageUrl}" />
+                                                    </div>
+                                                    <div class="m4atxt padding5">
+                                                        <h3 class="line_1">{content.Title}</h3>
+                                                        <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
+                                                            <span>￥{content.Price}</span>
+                                                        </div>
+                                                    </div>
+                                                </stl:a>
+                                                <a href="" class="m4abtn btnbg">免费咨询</a>
+                                            </div>
+                                        </li>
+                                    </stl:contents>
+                                </ul>
+                                <div class="m4zk textcenter mt_10">
+                                    <span><img src="images/m4zk_03.png" /></span>
+                                </div>
+                            </div>
+                        </div>
+                    </stl:channels>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <stl:include file="/include/foot.html"></stl:include>
-  <script src="js/jaliswall.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    $(function () {
-      var serviceswiper = new Swiper(' .swiper-container-m4 ', {
-        speed: 250,
-        autoHeight: true,
-        on: {
-          slideChangeTransitionStart: function () {
-            var elemIndex = this.activeIndex;
-            $(".m4t span").eq(elemIndex).addClass("active").siblings("span").removeClass("active");
-          },
-        },
-      });
-      $(' .m4t span ').click(function () {
-        $(this).addClass("active").siblings("span").removeClass("active");
-        serviceswiper.slideTo($(this).index(), 250, false);
-      })
-      $(' .wall ').jaliswall({ item: ' .article ' });
-    });
-  </script>
+    <stl:include file="/include/footer.html"></stl:include>
+    <script src="js/jaliswall.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
 </body>
+
 </html>
