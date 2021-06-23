@@ -4,10 +4,8 @@
 		<stl:include file="/include/head.html"></stl:include>
 	</head>
 	<body>
-	
 	<!--头部-->
 	<stl:include file="/include/sideNav.html"></stl:include>
-	
 	<!--主体内容-->
 	<div class="listbn posrelative">
 		<stl:channel type='imageUrl' class="disblock w100"></stl:channel>
@@ -26,22 +24,36 @@
 					<h3 class="textshow">算算我的装修要花多少钱</h3>
 				</div>
 				<stl:include file="/include/form.html"></stl:include>
-				<!-- <div class="mipt">
-					<input type="text" placeholder="您的装修类型" name="" id="" value="" />
-				</div>
-				<div class="mipt">
-					<input type="text" placeholder="您的装修面积" name="" id="" value="" />
-				</div>
-				<div class="mipt">
-					<input type="text" placeholder="您的联系方式" name="" id="" value="" />
-				</div>
-				<div class="mipt msbm">
-					<button class="btn btnbg">一键获取报价</button>
-				</div> -->
 			</div>
 		</div>
 	</div>
-	<div class="md xg2">
+
+	<stl:channels channelName="自建房/别墅">
+		<div class="md xg2">
+			<div class="wrap">
+				<div class="pbt disflex flex_center flex_lmr">
+					<h3><stl:channel type='title'></stl:channel></h3></h3>
+					<a href=""><i class="fa fa-angle-right"></i></a>
+				</div>
+			</div>
+			<div class="pb_w mt_10 posrelative">
+				<div class="swiper-container swiper-container-public">
+					<div class="swiper-wrapper">
+						<stl:contents>
+							<div class="swiper-slide"><a href="" class="pb_a disblock"><img class="disblock w100" src="{content.imageUrl}"/></a></div>
+						</stl:contents>
+					</div>
+				</div>
+			</div>
+			<div class="mt_10 textcenter">
+				<a href="" class="btnbg more_a">立即预约</a>
+			</div>
+		</div>
+		<div class="line"></div>
+	</stl:channels>
+
+
+	<!-- <div class="md xg2">
 		<div class="wrap">
 			<div class="pbt disflex flex_center flex_lmr">
 				<h3>餐饮店全案设计</h3>
@@ -54,10 +66,6 @@
 					<stl:contents channelName='餐饮店全案设计'>
 						<div class="swiper-slide"><a href="" class="pb_a disblock"><img class="disblock w100" src="{content.imageUrl}"/></a></div>
 					</stl:contents>
-			    	<!-- <div class="swiper-slide"><a href="" class="pb_a disblock"><img class="disblock w100" src="images/zxpic1_03.jpg"/></a></div>
-			    	<div class="swiper-slide"><a href="" class="pb_a disblock"><img class="disblock w100" src="images/zxpic1_03.jpg"/></a></div>
-			    	<div class="swiper-slide"><a href="" class="pb_a disblock"><img class="disblock w100" src="images/zxpic1_03.jpg"/></a></div>
-			    	<div class="swiper-slide"><a href="" class="pb_a disblock"><img class="disblock w100" src="images/zxpic1_03.jpg"/></a></div> -->
 			    </div>
 			</div>
 		</div>
@@ -149,7 +157,7 @@
 			<a href="" class="btnbg more_a">立即预约</a>
 		</div>
 	</div>
-	
+	 -->
 	<!-- <div class="md bggray">
 		<div class="wrap">
 			<div class="sj4w btnbg disflex flex_center">
