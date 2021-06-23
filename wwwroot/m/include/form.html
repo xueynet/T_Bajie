@@ -1,39 +1,44 @@
 <style>
-.green{
-    color: #429908;
-}
-.xy-error-tip,.xy-phone-error-tip{
-    display: inline-block;
-    font-size: 12px;
-    color: #ff6e6e;
-    background: #ffe4e4;
-    padding: 3px 80px 3px 5px;
-    width: 100%;
-    box-sizing: border-box;
-    word-break: break-all;
-    border: 1px solid #ff6e6e;
-}
-.xy-describe-error, .xy-phone-error {
-    display: none;
-}
+	.green {
+		color: #429908;
+	}
+
+	.xy-error-tip,
+	.xy-phone-error-tip {
+		display: inline-block;
+		font-size: 12px;
+		color: #ff6e6e;
+		background: #ffe4e4;
+		padding: 3px 80px 3px 5px;
+		width: 100%;
+		box-sizing: border-box;
+		word-break: break-all;
+		border: 1px solid #ff6e6e;
+	}
+
+	.xy-describe-error,
+	.xy-phone-error {
+		display: none;
+	}
 </style>
+
 <div class="mipt">
-    <input type="text" placeholder="填写您的需求" name=""  value="" class="xy-describe"/>
-    <p class="xy-describe-error">
-        <span class="xy-error-tip"></span>
-    </p>
+	<input type="text" placeholder="填写您的需求" name=""  value="" class="xy-describe"/>
+	<p class="xy-describe-error">
+		<span class="xy-error-tip"></span>
+	</p>
 </div>
 <div class="mipt">
-    <input type="text" placeholder="您的联系方式" name="" id="tel" value="" class="xy-phone"/>
-    <p class="xy-phone-error mt5">
-        <span class="xy-phone-error-tip"></span>
-    </p>
+	<input type="text" placeholder="您的联系方式" name="" id="tel" value="" class="xy-phone"/>
+	<p class="xy-phone-error mt5">
+		<span class="xy-phone-error-tip"></span>
+	</p>
 </div>
 <div class="mipt">
-    <span class="green">信息保护中，仅官方可见</span>
+	<span class="green">信息保护中，仅官方可见</span>
 </div>
 <div class="mipt msbm">
-    <button class="btn btnbg">马上为我推荐</button>
+	<button class="btn btnbg">马上为我推荐</button>
 </div>
 <script>
     // 验证需求

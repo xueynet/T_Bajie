@@ -1,0 +1,222 @@
+<style>
+	.ui-popup-order-backdrop {
+		background: rgba(0, 0, 0, 0.7);
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		user-select: none;
+		z-index: 1;
+		display: none;
+	}
+
+	.ui-popup-order {
+		/* position: absolute;
+        outline: 0px;
+        left: 50%;
+        margin-left: -327px;
+        top: 135px;
+        z-index: 1031;
+        width: 654px;
+        height: 420px;
+        padding: 20px 0 48px 0;
+        background-color: #fff;
+        display: none; */
+		position: absolute;
+		outline: 0px;
+		top: 100px;
+        left: 10%;
+		z-index: 1031;
+		 width: 80%;
+		height: 50%;
+		padding: 20px 0 20px 0;
+		background-color: #fff;
+		display: none;
+	}
+
+	.section-left--title {
+		color: #333;
+		font-size: 18px;
+		font-weight: 700;
+		padding-left: 25px;
+		margin-left: 15px;
+		border-left: 6px solid #f60;
+		height: 24px;
+		line-height: 24px;
+		margin-bottom: 32px;
+	}
+
+	.section-left--title .section-right--title {
+		margin: 0;
+		color: #666;
+		font-size: 16px;
+		font-weight: 400;
+		margin-left: 20px;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.section-form {
+		padding-left: 50px;
+	}
+
+	.popup-close {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		font-size: 26px;
+	}
+
+	.ui-dialog-order-close {
+		float: right;
+		padding: 0 4px;
+		font-weight: 700;
+		line-height: 1;
+		color: #000;
+		text-shadow: 0 1px 0 #fff;
+		opacity: .2;
+		cursor: pointer;
+		background: transparent;
+		border: 0;
+		-webkit-appearance: none;
+	}
+    .mipt{
+        margin-top:1rem;
+    }
+</style>
+<!--需求开始-->
+<div class="ui-popup-order-backdrop" style="display: none;">
+	<div class="ui-popup-order" style="display: none;">
+		<!-- <h1 class="section-left--title">
+            发布需求<span class="section-right--title">让全球千万专业人才快速响应您的需求</span>
+        </h1>
+        <div class="section-form">
+            <div class="section-form-item">
+                <label class="section-form-item--label">
+                    我需要<span class="section-form-item--red">*</span>
+                </label>
+                <div class="section-form-item--content">
+                    <div class="section-form--input j-placeholder-wrapper" style="position: relative;">
+                        <textarea class="form-textarea__inner" id="xy-form-textarea-name" placeholder="工程设计、效果图制作、规划设计、建筑设计、全域旅游、城市公共品牌、文创设计；乡村振兴"></textarea>
+                    </div>
+                    <p class="j-describe-error">
+                        <span class="j-error-tip"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="mobile-wrapper section-form-item">
+                <label class="section-form-item--label">
+                    手机号码<span class="section-form-item--red">*</span>
+                </label>
+                <div class="section-form-item--content section-form-item--content__new">
+                    <div class="section-form--input eidt-mobile-wrapper">
+                        <input class="form-input__inner" type="text" id="tel" name="modifyphone" placeholder="便于筛选合适人才后，接收告知信息">
+                    </div>
+                    <p class="j-verify-error mt5">
+                        <span class="j-error-tip"></span>
+                    </p>
+                    <p class="J-login-tip hide">
+                        点击“提交”即代表您已同意<a href="//rule.zbj.com/ruleshow-0?pid=2&categoryId=289" class="login-agreement" target="_blank">《猪八戒网服务协议》</a>
+                    </p>
+                </div>
+            </div>
+            <div class="section-form-green">信息保护中，仅官方可见</div>
+            <div class="section-form-item section-form-item__submit">
+                <label class="section-form-item--label">&nbsp;</label>
+                <div class="section-form-item--content">
+                    <button class="btn btn__main btn-submit J-submit" type="submit" data-linkid="10197006">免费发布需求</button>
+                </div>
+            </div>
+        </div> -->
+		<div class="mipt">
+			<input type="text" placeholder="填写您的需求" name=""  value="" class="xy-describe"/>
+			<p class="xy-describe-error">
+				<span class="xy-error-tip"></span>
+			</p>
+		</div>
+		<div class="mipt">
+			<input type="text" placeholder="您的联系方式" name="" id="tel" value="" class="xy-phone"/>
+			<p class="xy-phone-error mt5">
+				<span class="xy-phone-error-tip"></span>
+			</p>
+		</div>
+		<div class="mipt">
+			<span class="green">信息保护中，仅官方可见</span>
+		</div>
+		<div class="mipt msbm">
+			<button class="btn btnbg">马上为我推荐</button>
+		</div>
+		<button i="close" class="ui-dialog-order-close popup-close" title="cancel">×</button>
+	</div>
+</div>
+<script>
+	$('#welfareZone a').click(function () {
+        $('.ui-popup-order-backdrop').show();
+        $('.ui-popup-order').show();
+       
+    });
+    $('.ui-dialog-order-close').click(function () {
+        $('.ui-popup-order-backdrop').hide();
+        $('.ui-popup-order').hide();
+    });
+    function initFormTextholder(str){
+        $('.form-textarea__inner').attr('placeholder',str);
+    }
+    $('.form-textarea__inner').bind('input propertychange', function () {
+        var length = $(".form-textarea__inner").val().length;
+        if (length < 3) {
+            $(".j-describe-error").show();
+            $(".j-describe-error .j-error-tip").text('填写内容不少于2个字')
+        } else {
+            $(".j-describe-error").hide();
+        }
+    });
+    $('.form-input__inner').blur(function () {
+        if (!/^1[345789]\d{9}$/.test($(".form-input__inner").val())) {
+            $(".j-verify-error").show();
+            $(".j-verify-error .j-error-tip").text('填写正确的手机号')
+        } else {
+            $(".j-verify-error").hide();
+        }
+    })
+    $(".btn-submit").on('click', function () {
+        var tel = $.trim($(".form-input__inner").val());
+        var content = $(".form-textarea__inner").val();
+
+        var reg = /(^0?[1][34578][\d]{9}$)|(^0[1-9][\d]{1,2}[- ]?[\d]{7,8}[-| ]?[\d]*$)/;
+        var qq = '';
+        var telephone = tel;
+        var email = '';
+        if (RegExp(reg).test(tel)) {
+            var data = JSON.stringify({ "Mobile": tel, "Content": content, "Source": document.title + " " + window.location.href })
+            $.ajax({
+                type: 'POST',
+                url: "/api/form/1/1",
+                data: data,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (result) {
+                    if (result.id>0) {
+                        $('.section-form-green').text('发布成功！');
+                        $(".form-input__inner").val('');
+                        $(".form-textarea__inner").val('');
+                        setTimeout(function () {
+                            $('.ui-popup-order-backdrop').hide();
+                            $('.ui-popup-order').hide();
+                            $('.section-form-green').text('信息保护中，仅官方可见');
+
+                        }, 1000);
+                    } else {
+                        console.log(result);
+                    }
+                }
+            });
+            // })
+        } else {
+            $(".j-verify-error .j-error-tip").text('填写正确的手机号')
+        }
+    });
+</script>
+<!--需求结束-->

@@ -1,18 +1,15 @@
 <div class="head">
     <div class="wrap h100 disflex flex_center">
-        <i class="hdicon navicon"><img src="{Stl.SiteUrl}/images/hdl_03.png" /></i>
+        <!-- <i class="hdicon navicon"><img src="{Stl.SiteUrl}/images/hdl_03.png" /></i> -->
         <h3 class="flex1 textcenter"><stl:channel></stl:channel></h3>
         <stl:if type="IsUserLoggin">
             <stl:yes>
-                <!-- <a href="{Stl.SiteUrl}/home/#1/10" class="hdicon">
-                    <img src="{Stl.SiteUrl}/images/hdr_03.png"/>
-                </a> -->
                 <a href="https://gc.zbj.com/home/#1/10" class="hdicon">
                     <img src="{Stl.SiteUrl}/images/hdr_03.png"/>
                 </a>
             </stl:yes>
             <stl:no>
-                <a href="https://gc.zbj.com/home" class="hdicon">
+                <a href="/api/login/auth/Zbj?redirectUrl=https://gc.zbj.com/m/" class="hdicon">
                     <img src="{Stl.SiteUrl}/images/hdr_03.png"/>
                 </a>
             </stl:no>
@@ -21,7 +18,7 @@
 </div>
 <div class="head_height"></div>
 <!--导航-->
-<div class="navhide">
+<!-- <div class="navhide">
     <div class="nhbg"></div>
     <div class="nhw">
         <i class="nh_close"><img class="disblock w100" src="{Stl.SiteUrl}/images/close_03.png" /></i>
@@ -52,4 +49,4 @@
             </stl:channels>
         </div>
     </div>
-</div>
+</div> -->

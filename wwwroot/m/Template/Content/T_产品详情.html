@@ -85,25 +85,20 @@
 					</a>
 					<stl:if type="IsUserLoggin">
 						<stl:yes>
-							<a href="{Stl.SiteUrl}/orderConfirm.html?channelId={content.channelId}&id={content.id}&siteId={stl.SiteId}" class="fta buyNow" id="ybuyNow" channelName='确认订单'>
+							<a href="{Stl.SiteUrl}/orderConfirm.html?channelId={content.channelId}&id={content.id}&siteId={content.siteId}&title={content.Title}&Price={content.Price}" class="fta buyNow" channelName='确认订单' id="buyNow">
 								<div class="w100 textcenter">
 									<p>立即购买</p>
 								</div>
 							</a>
 						</stl:yes>
 						<stl:no>
-							<a href="https://gc.zbj.com/home/login/" class="fta buyNow" id="buyNow">
+							<a href="/api/login/auth/Zbj?redirectUrl=%2f" class="fta buyNow" id="ybuyNow">
 								<div class="w100 textcenter">
 									<p>立即购买</p>
 								</div>
 							</a>
 						</stl:no>
 					</stl:if>
-					<!-- <a href="{Stl.SiteUrl}/orderConfirm.html?channelId={content.channelId}&id={content.id}" class="fta buyNow" channelName='确认订单'>
-						<div class="w100 textcenter">
-							<p>立即购买</p>
-						</div>
-					</a> -->
 				</div>
 			</div>
 		</div>

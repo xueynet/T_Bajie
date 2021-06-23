@@ -18,7 +18,6 @@
 			</a>
 		</stl:no>
 	</stl:if>
-
 	<stl:channels topLevel="0" groupChannel="bottomNav" order='default'>
 		<stl:if testType="UpChannelOrSelf">
 			<stl:yes>
@@ -39,10 +38,27 @@
 			</stl:no>
 		</stl:if>
 	</stl:channels>
-	<a href="#1" class="fta">
+	
+	<a class="fta">
 		<div class="w100 textcenter">
-			<img src="{Stl.SiteUrl}/images/fico5_03.png" />
-			<p>我的</p>
+			<stl:if type="IsUserLoggin">
+		<stl:yes>
+			<a href="https://gc.zbj.com/home">
+				<img src="{Stl.SiteUrl}/images/fico5_03.png" />
+				<p>我的</p>
+			</a>
+		</stl:yes>
+		<stl:no>
+			<a href="https://gc.zbj.com/home/login/">
+				<img src="{Stl.SiteUrl}/images/fico5_03.png" />
+				<p>我的</p>
+			</a>
+		</stl:no>
+	</stl:if>
 		</div>
 	</a>
 </div>
+
+
+
+
