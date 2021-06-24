@@ -1,52 +1,14 @@
 <html>
 
 <head>
-	<stl:include file="/include/head.html"></stl:include>
-	<link rel="stylesheet" type="text/css" href="{Stl.SiteUrl}/css/productDetails.css">
+    <stl:include file="/include/head.html"></stl:include>
 </head>
-<style>
-	.service-top-bar-container {
-		width: 100%;
-		min-height: 45px;
-		position: fixed;
-		left: 0;
-		right: 0;
-		top: 0;
-		z-index: 50;
-	}
-
-	.top {
-		display: flex;
-		height: 45px;
-		-webkit-box-pack: justify;
-		justify-content: space-between;
-		-webkit-box-align: center;
-		align-items: center;
-		padding: 10px 15px;
-	}
-
-	.button-item.back-button {
-		width: 28px;
-		height: 28px;
-		border-radius: 50%;
-		background-image: url(//as.zbjimg.com/static/nodejs-mobile-spaweb-api/img/icon-back.29472c5.png);
-		background-position: 50%;
-		background-repeat: no-repeat;
-		background-size: contain;
-	}
-	#buyNow{
-		width: 10rem;
-	}
-	#ybuyNow{
-		width:10rem;
-	}
-</style>
 
 <body>
-	<div class="productDetails">
-		<div class="service-top-bar-container">
-			<div class="top">
-				<span class="button-item back-button" onClick="javascript :history.go(-1);">
+    <div class="productDetails">
+        <div class="service-top-bar-container">
+            <div class="top">
+                <span class="button-item back-button" onClick="javascript :history.go(-1);">
 			</div>
 		</div>
 		<div>
@@ -55,54 +17,16 @@
 		<div class="productDetails-info">
 			<div class="m4atxt padding5">
 				<div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-					<span>￥{content.Price}</span><i>销量{content.Inventory}</i>
-				</div>
-				<h3 class="line_1"><b>{content.Title}</b></h3>
-			</div>
-		</div>
-		<div class="details-info">
-			<div>产品详情</div>
-			<div>{content.Body}<div>
-				</div>
-				<div class="foot_height"></div>
-				<div class="foot disflex">
-					<a href="{Stl.SiteUrl}/index.html" class="fta  collection">
-						<div class="w100 textcenter">
-							<img src="{Stl.SiteUrl}/images/fico1_03.png" />
-							<p>收藏</p>
-						</div>
-					</a>
-					<a href="#1" class="fta callPhone">
-						<div class="w100 textcenter">
-							<img src="{Stl.SiteUrl}/images/fico5_03.png" />
-							<p>打电话</p>
-						</div>
-					</a>
-					<a href="#1" class="fta consult">
-						<div class="w100 textcenter">
-							<p>咨询</p>
-						</div>
-					</a>
-					<stl:if type="IsUserLoggin">
-						<stl:yes>
-							<a href="{Stl.SiteUrl}/orderConfirm.html?channelId={content.channelId}&id={content.id}&siteId={content.siteId}&title={content.Title}&Price={content.Price}" class="fta buyNow" channelName='确认订单' id="buyNow">
-								<div class="w100 textcenter">
-									<p>立即购买</p>
-								</div>
-							</a>
-						</stl:yes>
-						<stl:no>
-							<a href="/api/login/auth/Zbj?redirectUrl=%2f" class="fta buyNow" id="ybuyNow">
-								<div class="w100 textcenter">
-									<p>立即购买</p>
-								</div>
-							</a>
-						</stl:no>
-					</stl:if>
-				</div>
-			</div>
-		</div>
-	</div>
-
+					<span>￥{content.Price}</span>
+            </div>
+            <h3 class="line_1"><b>{content.Title}</b></h3>
+        </div>
+    </div>
+    <div class="details-info">
+        <div>产品详情</div>
+        <div>{content.Body}</div>
+    </div>
+    </div>
 </body>
+
 </html>
