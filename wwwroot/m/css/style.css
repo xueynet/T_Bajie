@@ -765,12 +765,21 @@ a:active {
     z-index: 99;
     top: 10px;
     left: 10px;
-    font-size: 2rem;
+    font-size: 1.2rem;
+    background: #ff6e6e;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 1rem;
 }
 
 .backgo a {
     display: block;
-    color: rgb(0 123 255 / 50%);
+    color: #fff;
+}
+
+.backgo a i {
+    line-height: 1.7rem;
 }
 
 .productSwiper {
