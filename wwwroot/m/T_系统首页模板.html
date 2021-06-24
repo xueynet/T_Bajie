@@ -47,52 +47,31 @@
             </stl:a>
         </div>
     </div>
-    <div class="line"></div>
-    <div class="md m2">
-        <div class="wrap">
-            <div class="pbt disflex flex_center flex_lmr">
-                <h3>别墅设计</h3>
-                <a href=""><i class="fa fa-angle-right"></i></a>
-            </div>
-        </div>
-        <div class="pb_w mt_10 posrelative">
-            <div class="swiper-container swiper-container-public">
-                <div class="swiper-wrapper">
-                    <stl:contents channelName="别墅设计">
-                        <div class="swiper-slide">
-                            <a href="" class="pb_a disblock"><img class="disblock w100" src="{content.ImageUrl}" /></a>
-                        </div>
-                    </stl:contents>
+    <stl:contents channelName="广告" isImage="true" totalNum="3">
+        <div class="line"></div>
+        <div class="md m2">
+            <div class="wrap">
+                <div class="pbt disflex flex_center flex_lmr">
+                    <h3>{content.Title}</h3>
+                    <stl:a><i class="fa fa-angle-right"></i></stl:a>
                 </div>
             </div>
-        </div>
-        <div class="mt_10 textcenter">
-            <a href="" class="btnbg more_a">立即预约</a>
-        </div>
-    </div>
-    <div class="line"></div>
-    <div class="md m2">
-        <div class="wrap">
-            <div class="pbt disflex flex_center flex_lmr">
-                <h3>别墅施工</h3>
-                <a href=""><i class="fa fa-angle-right"></i></a>
-            </div>
-        </div>
-        <div class="pb_w mt_10 posrelative">
-            <div class="swiper-container swiper-container-public">
-                <div class="swiper-wrapper">
-                    <stl:contents channelName="别墅施工" scope="self">
-                        <div class="swiper-slide">
-                            <a href="" class="pb_a disblock"><img class="disblock w100" src="{content.ImageUrl}" /></a>
-                        </div>
-                    </stl:contents>
+            <div class="pb_w mt_10 posrelative">
+                <div class="swiper-container swiper-container-public">
+                    <div class="swiper-wrapper">
+                        <stl:each type="imageUrl">
+                            <div class="swiper-slide">
+                                <stl:image class="disblock w100"></stl:image>
+                            </div>
+                        </stl:each>
+                    </div>
                 </div>
             </div>
+            <div class="mt_10 textcenter">
+                <stl:a class="btnbg more_a">查看详情</stl:a>
+            </div>
         </div>
-        <div class="mt_10 textcenter">
-            <a href="" class="btnbg more_a">立即预约</a>
-        </div>
-    </div>
+    </stl:contents>
     <div class="line"></div>
     <div class="md m3">
         <div class="wrap">
