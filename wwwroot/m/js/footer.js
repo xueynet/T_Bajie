@@ -17,7 +17,7 @@ $(function() {
             shadeClose: true,
             offset: 't',
             title: '客服咨询',
-            content: 'http://p.qiao.baidu.com/cps/chat?siteId=16900753&userId=20703937&siteToken=341222a5aa508b29714bfb4370241cf3'
+            content: 'https://p.qiao.baidu.com/cps/chat?siteId=16900753&userId=20703937&siteToken=341222a5aa508b29714bfb4370241cf3'
         });
     }
     $('.requireLink').on("click", function() {
