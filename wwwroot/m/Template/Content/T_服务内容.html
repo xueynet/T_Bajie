@@ -24,12 +24,17 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
+
         <!-- Initialize Swiper -->
         <script>
-            var swiper = new Swiper(".productSwiper", {
+            new Swiper(".productSwiper", {
+                loop: true, // 循环模式选项
                 autoplay: {
-                    delay: 5000,
+                    delay: 3000,
+                    disableOnInteraction: false,
                 },
+                observer: true,
+                observeParents: true,
                 pagination: {
                     el: ".swiper-pagination",
                 },
