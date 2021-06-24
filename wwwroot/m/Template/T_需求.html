@@ -93,13 +93,6 @@
 		margin-bottom: 17px;
 		margin-top: 11px;
 	}
-	.jian,.jia{
-		width: 24px;
-		height: 24px;
-		line-height: 24px;
-		font-size: 20px;
-		font-weight: bold;
-	}
 </style>
 
 <body>
@@ -120,9 +113,7 @@
 						<span class="input-addon">价格</span>
 						<input value="" class="v-input content-input" id="unitPrice">
 						<div class="number-addon">
-							<span class="jian">-</span>
 							<input id="number" value="1" class="number-addon-num">
-							<span class="jia">+</span>
 						</div>
 					</div>
 				</div>
@@ -143,7 +134,6 @@
 	</div>
 
 	<script>
-		
 		var search = window.location.search;
 		console.log(search);
 		var id = getSearchString('id', search);
@@ -171,13 +161,6 @@
 		$('#contentTitle').val(title);
 		$('#unitPrice').val();
 		// 计算总价
-		function add(){
-			var danjia=$('#unitPrice').val();
-			var number=$('#number').val();
-			let totl=danjia*number;
-			$('#totalPrice').html(totl);
-		}
-		add();
 	</script>
 </body>
 </html>
