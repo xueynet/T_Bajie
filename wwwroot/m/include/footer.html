@@ -9,7 +9,7 @@
                 <a href="{Stl.SiteUrl}/"><i class="fa fa-home d-block" aria-hidden="true"></i>首页</a>
             </stl:no>
         </stl:if>
-        <a href="javascript:void(0)" onclick="publishRequire()"><i class="fa fa-edit d-block" aria-hidden="true"></i>发布需求</a>
+        <a href="javascript:void(0)" class="requireLink"><i class="fa fa-edit d-block" aria-hidden="true"></i>发布需求</a>
         <a href="javascript:void(0)" class="consultLink"><i class="fa fa-comments d-block" aria-hidden="true"></i>咨询</a>
         <stl:if type="TemplateName" op="Equals" value="服务">
             <stl:yes>
@@ -24,5 +24,6 @@
 </footer>
 
 <stl:layer funcName="publishRequire" title="发布需求" url="{Stl.SiteUrl}/channels/243.html" width="90%" height="80%"></stl:layer>
+<stl:layer funcName="connectConsult" title="客服咨询" url="http://p.qiao.baidu.com/cps/chat?siteId=16900753&userId=20703937&siteToken=341222a5aa508b29714bfb4370241cf3" width="100%" height="100%"></stl:layer>
 
-<script src="{Stl.SiteUrl}/js/footer.js"></script>
+<script src="{Stl.SiteUrl}/js/footer.js?v=20210624"></script>
