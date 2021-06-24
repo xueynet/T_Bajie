@@ -9,14 +9,7 @@
                 <a href="{Stl.SiteUrl}/"><i class="fa fa-home d-block" aria-hidden="true"></i>首页</a>
             </stl:no>
         </stl:if>
-        <stl:if type="TemplateName" op="Equals" value="需求">
-            <stl:yes>
-                <a class="active" href="{Stl.SiteUrl}/channels/243.html"><i class="fa fa-edit d-block" aria-hidden="true"></i>发布需求</a>
-            </stl:yes>
-            <stl:no>
-                <a href="{Stl.SiteUrl}/channels/243.html"><i class="fa fa-edit d-block" aria-hidden="true"></i>发布需求</a>
-            </stl:no>
-        </stl:if>
+        <a href="javascript:void(0)" onclick="publishRequire()"><i class="fa fa-edit d-block" aria-hidden="true"></i>发布需求</a>
         <a href="javascript:void(0)" id="consultLink"><i class="fa fa-comments d-block" aria-hidden="true"></i>咨询</a>
         <stl:if type="TemplateName" op="Equals" value="服务">
             <stl:yes>
@@ -29,5 +22,7 @@
         <a href="{stl.HomeUrl}"><i class="fa fa-user d-block" aria-hidden="true"></i>我的</a>
     </nav>
 </footer>
+
+<stl:layer funcName="publishRequire" title="发布需求" url="{Stl.SiteUrl}/channels/243.html" width="90%" height="80%"></stl:layer>
 
 <script src="{Stl.SiteUrl}/js/footer.js"></script>
