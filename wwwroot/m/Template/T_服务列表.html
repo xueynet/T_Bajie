@@ -8,84 +8,38 @@
   <!--头部-->
   <stl:include file="/include/sideNav.html"></stl:include>
   <!-- 主体部分 -->
-  <div class="listbn posrelative">
-    <stl:channel type='imageUrl' class="disblock w100"></stl:channel>
-  </div>
   <div class="md m4 bggray">
     <div class="wrap">
       <div class="m4t activetop disflex flex_lmr flex_wrap">
-        <stl:channels>
-          <span>
-            <stl:channel></stl:channel>
-          </span>
-        </stl:channels>
+        <span class="active">全部</span>
       </div>
     </div>
-    <div class="">
-      <div class="swiper-container swiper-container-m4 swiper-no-swiping">
-        <div class="swiper-wrapper">
-          <!-- 全部 -->
-          <div class="swiper-slide">
-            <div class="m4wrap">
-              <ul class="m4w wall posrelative clearfix">
-                <stl:contents scope="all">
-                  <li class="article">
-                    <div class="m4a disblock w100 bgwhite">
-                      <stl:a href="" class="m4at">
-                        <div class="m4aimg">
-                          <img class="disblock w100" src="{content.ImageUrl}" />
-                        </div>
-                        <div class="m4atxt padding5">
-                          <h3 class="line_1">{content.Title}</h3>
-                          <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                            <span>￥{content.Price}</span>
-                          </div>
-                        </div>
-                      </stl:a>
-                      <a href="" class="m4abtn btnbg">免费咨询</a>
-                    </div>
-                  </li>
-                </stl:contents>
-              </ul>
-              <div class="m4zk textcenter mt_10">
-                <span><img src="images/m4zk_03.png" /></span>
-              </div>
-            </div>
-          </div>
-          <stl:channels>
-            <div class="swiper-slide">
-              <div class="m4wrap">
-                <ul class="m4w wall posrelative clearfix">
-                  <stl:contents>
-                    <li class="article w-50">
-                      <div class="m4a disblock w100 bgwhite">
-                        <stl:a href="" class="m4at">
-                          <div class="m4aimg">
-                            <img class="disblock w100" src="{content.ImageUrl}" />
-                          </div>
-                          <div class="m4atxt padding5">
-                            <h3 class="line_1">{content.Title}</h3>
-                            <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                              <span>￥{content.Price}</span>
-                            </div>
-                          </div>
-                        </stl:a>
-                        <a href="" class="m4abtn btnbg">免费咨询</a>
-                      </div>
-                    </li>
-                  </stl:contents>
-                </ul>
-                <div class="m4zk textcenter mt_10">
-                  <span><img src="{stl.siteUrl}/images/m4zk_03.png" /></span>
+    <!-- 列表 -->
+    <div class="list bggray">
+      <ul class="listview fluid">
+        <stl:contents>
+          <li class="float-left w-50 p-3">
+            <div class="m4a disblock w100 bgwhite">
+              <stl:a href="" class="m4at">
+                <div class="m4aimg">
+                  <img class="disblock w100" src="{content.ImageUrl}" />
                 </div>
-              </div>
+                <div class="m4atxt padding5">
+                  <h3 class="line_1">{content.Title}</h3>
+                  <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
+                    <span>￥{content.Price}</span>
+                  </div>
+                </div>
+              </stl:a>
+              <stl:a class="m4abtn btnbg">免费咨询</stl:a>
             </div>
-          </stl:channels>
-        </div>
-      </div>
+          </li>
+        </stl:contents>
+        <li class="clearfix"></li>
+      </ul>
     </div>
   </div>
   <stl:include file="/include/footer.html"></stl:include>
 </body>
-
 </html>
+
