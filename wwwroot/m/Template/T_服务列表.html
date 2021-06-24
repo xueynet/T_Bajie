@@ -8,36 +8,44 @@
   <!--头部-->
   <stl:include file="/include/sideNav.html"></stl:include>
   <!-- 主体部分 -->
-  <div class="md m4 bggray">
-    <div class="wrap">
-      <div class="m4t activetop disflex flex_lmr flex_wrap">
-        <span class="active">全部</span>
-      </div>
-    </div>
-    <!-- 列表 -->
-    <div class="list bggray">
-      <ul class="listview fluid">
-        <stl:contents>
-          <li class="float-left w-50 p-3">
-            <div class="m4a disblock w100 bgwhite">
-              <stl:a href="" class="m4at">
-                <div class="m4aimg">
-                  <img class="disblock w100" src="{content.ImageUrl}" />
+  <stl:if type='CountOfContents' op="NotEmpty">
+    <stl:yes>
+      <div class="md m4 bggray">
+        <div class="wrap">
+          <div class="m4t activetop disflex flex_lmr flex_wrap">
+            <span class="active">全部</span>
+          </div>
+        </div>
+        <!-- 列表 -->
+        <div class="list bggray">
+          <ul class="listview fluid">
+            <stl:contents>
+              <li class="float-left w-50 p-3">
+                <div class="m4a disblock w100 bgwhite">
+                  <stl:a href="" class="m4at">
+                    <div class="m4aimg">
+                      <img class="disblock w100" src="{content.ImageUrl}" />
+                    </div>
+                    <div class="m4atxt padding5">
+                      <h3 class="line_1">{content.Title}</h3>
+                      <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
+                        <span>￥{content.Price}</span>
+                      </div>
+                    </div>
+                  </stl:a>
+                  <stl:a class="m4abtn btnbg">免费咨询</stl:a>
                 </div>
-                <div class="m4atxt padding5">
-                  <h3 class="line_1">{content.Title}</h3>
-                  <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                    <span>￥{content.Price}</span>
-                  </div>
-                </div>
-              </stl:a>
-              <stl:a class="m4abtn btnbg">免费咨询</stl:a>
-            </div>
-          </li>
-        </stl:contents>
-        <li class="clearfix"></li>
-      </ul>
-    </div>
+              </li>
+            </stl:contents>
+            <li class="clearfix"></li>
+          </ul>
+        </div>
+    </stl:yes>
+    <stl:no>
+    <li>暂时没有数据</li>
+    </stl:no>
+  </stl:if>
+  
   </div>
   <stl:include file="/include/footer.html"></stl:include>
 </body>
