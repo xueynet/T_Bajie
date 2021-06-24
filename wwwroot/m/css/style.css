@@ -722,7 +722,7 @@ a:active {
 
 .backgo a {
     display: block;
-    color: #ff6505;
+    color: rgb(0 123 255 / 50%);
 }
 
 .productSwiper {
