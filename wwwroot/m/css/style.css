@@ -726,8 +726,26 @@ a:active {
 }
 
 .productSwiper {
-    height: 400px;
+    height: 250px;
     overflow: hidden;
+}
+
+.product-title {
+    position: relative;
+    padding-left: 8px;
+    font-weight: bold;
+}
+
+.product-title:before {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 15px;
+    border-radius: 3px;
+    background-color: #ff6900;
+    position: absolute;
+    left: 0;
+    top: 3px;
 }
 
 .product-info img {
