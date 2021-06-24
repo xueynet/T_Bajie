@@ -713,38 +713,37 @@ a:active {
 
 /* 服务详情 */
 
-.service-top-bar-container {
-    width: 100%;
-    min-height: 45px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 50;
+.backgo {
+    z-index: 99;
+    top: 10px;
+    left: 10px;
+    font-size: 2rem;
 }
 
-.top {
-    display: flex;
-    height: 45px;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    padding: 10px 15px;
+.backgo a {
+    display: block;
+    color: #ff6505;
 }
 
-.button-item.back-button {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-image: url(../images/icon-back.29472c5.png);
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: contain;
+.productSwiper {
+    height: 400px;
+    overflow: hidden;
+}
+
+.product-info img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
 }
 
 
 /* footer */
+
+.footer {
+    height: 54px;
+    background: #F8F9FB;
+    overflow: hidden;
+}
 
 footer .navbar a {
     color: #777;
