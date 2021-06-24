@@ -55,3 +55,61 @@
 	</body>
 </html>
 
+<body>
+    <!--头部-->
+    <stl:include file="/include/sideNav.html"></stl:include>
+    <!--主体内容-->
+    <div class="listbn posrelative">
+        <stl:channel type='imageUrl' class="disblock w100"></stl:channel>
+        <div class="lbnpsb disflex flex_center">
+            <div class="lbntxt zxsjbntxt wrap w100 textright">
+                <h3>好设计更懂你</h3>
+                <p class="mt_75">我们在全国有10000+专业设计师</p>
+                <p class="mt_2">海量设计师真实案例 期待为您服务</p>
+            </div>
+        </div>
+    </div>
+    <div class="md hx1">
+        <div class="wrap">
+            <div class="bs1bg zx1bg bgsz">
+                <div class="toptitle toptitle_wt textcenter">
+                    <h3 class="textshow">算算我的装修要花多少钱</h3>
+                </div>
+                <stl:include file="/include/form.html"></stl:include>
+            </div>
+        </div>
+    </div>
+
+    <stl:channels channelName="自建房/别墅">
+        <div class="md xg2">
+            <div class="wrap">
+                <div class="pbt disflex flex_center flex_lmr">
+                    <h3>
+                        <stl:channel type='title'></stl:channel>
+                    </h3>
+                    </h3>
+                    <a href=""><i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <div class="pb_w mt_10 posrelative">
+                <div class="swiper-container swiper-container-public">
+                    <div class="swiper-wrapper">
+                        <stl:contents totalNum='3'>
+                            <div class="swiper-slide">
+                                <a href="" class="pb_a disblock"><img class="disblock w100" src="{content.imageUrl}" /></a>
+                            </div>
+                        </stl:contents>
+                    </div>
+                </div>
+            </div>
+            <div class="mt_10 textcenter">
+                <a href="" class="btnbg more_a">立即预约</a>
+            </div>
+        </div>
+        <div class="line"></div>
+    </stl:channels>
+    <stl:include file="/include/consult.html"></stl:include>
+    <stl:include file="/include/footer.html"></stl:include>
+</body>
+
+</html>

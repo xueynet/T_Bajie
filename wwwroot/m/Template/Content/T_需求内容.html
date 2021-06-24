@@ -1,59 +1,58 @@
 <html>
 
 <head>
-	<stl:include file="/include/head.html"></stl:include>
-	<link rel="stylesheet" type="text/css" href="{Stl.SiteUrl}/css/productDetails.css">
+    <stl:include file="/include/head.html"></stl:include>
+    <link rel="stylesheet" type="text/css" href="{Stl.SiteUrl}/css/productDetails.css">
 </head>
 <style>
-	.service-top-bar-container {
-		width: 100%;
-		min-height: 45px;
-		position: fixed;
-		left: 0;
-		right: 0;
-		top: 0;
-		z-index: 50;
-	}
-
-	.top {
-		display: flex;
-		height: 45px;
-		-webkit-box-pack: justify;
-		justify-content: space-between;
-		-webkit-box-align: center;
-		align-items: center;
-		padding: 10px 15px;
-	}
-
-	.button-item.back-button {
-		width: 28px;
-		height: 28px;
-		border-radius: 50%;
-		background-image: url(//as.zbjimg.com/static/nodejs-mobile-spaweb-api/img/icon-back.29472c5.png);
-		background-position: 50%;
-		background-repeat: no-repeat;
-		background-size: contain;
-	}
-
-	#buyNow {
-		width: 10rem;
-	}
-
-	#ybuyNow {
-		width: 10rem;
-	}
-
-	.details-info div p img {
-		max-width: 100%;
-	}
-
+    .service-top-bar-container {
+        width: 100%;
+        min-height: 45px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 50;
+    }
+    
+    .top {
+        display: flex;
+        height: 45px;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        align-items: center;
+        padding: 10px 15px;
+    }
+    
+    .button-item.back-button {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-image: url(//as.zbjimg.com/static/nodejs-mobile-spaweb-api/img/icon-back.29472c5.png);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    
+    #buyNow {
+        width: 10rem;
+    }
+    
+    #ybuyNow {
+        width: 10rem;
+    }
+    
+    .details-info div p img {
+        max-width: 100%;
+    }
 </style>
 
 <body>
-	<div class="productDetails">
-		<div class="service-top-bar-container">
-			<div class="top">
-				<span class="button-item back-button" onClick="javascript :history.go(-1);">
+    <div class="productDetails">
+        <div class="service-top-bar-container">
+            <div class="top">
+                <span class="button-item back-button" onClick="javascript :history.go(-1);">
 			</div>
 		</div>
 		<div>
@@ -71,6 +70,6 @@
 			</div>
 		</div>
 	</div>
-  <stl:include file="/include/foot.html"></stl:include>
+  <stl:include file="/include/footer.html"></stl:include>
 </body>
 </html>

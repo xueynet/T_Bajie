@@ -1,10 +1,28 @@
 <!--底部菜单-->
-<footer class="footer mt-auto py-3">
+<footer class="footer mt-auto py-3" id="footer">
     <nav class="navbar fixed-bottom navbar-light bg-light mx-2 text-center">
-        <a class="active" href="#"><i class="fa fa-home d-block" aria-hidden="true"></i> 首页</a>
-        <a href="#"><i class="fa fa-edit d-block" aria-hidden="true"></i> 发布需求</a>
-        <a href="#"><i class="fa fa-commenting d-block" aria-hidden="true"></i> 咨询</a>
-        <a href="#"><i class="fa fa-cloud d-block" aria-hidden="true"></i> 全部服务</a>
-        <a href="#"><i class="fa fa-user d-block" aria-hidden="true"></i> 我的</a>
+        <stl:if type="TemplateName" op="Equals" value="系统首页模板">
+            <stl:yes>
+                <a class="active" href="{Stl.SiteUrl}/"><i class="fa fa-home d-block" aria-hidden="true"></i>首页</a>
+            </stl:yes>
+            <stl:no>
+                <a href="{Stl.SiteUrl}/"><i class="fa fa-home d-block" aria-hidden="true"></i>首页</a>
+            </stl:no>
+        </stl:if>
+        <a href="javascript:void(0)" onclick="publishRequire()"><i class="fa fa-edit d-block" aria-hidden="true"></i>发布需求</a>
+        <a href="javascript:void(0)" id="consultLink"><i class="fa fa-comments d-block" aria-hidden="true"></i>咨询</a>
+        <stl:if type="TemplateName" op="Equals" value="服务">
+            <stl:yes>
+                <a class="active" href="{Stl.SiteUrl}/channels/188.html"><i class="fa fa-cloud d-block" aria-hidden="true"></i>全部服务</a>
+            </stl:yes>
+            <stl:no>
+                <a href="{Stl.SiteUrl}/channels/188.html"><i class="fa fa-cloud d-block" aria-hidden="true"></i>全部服务</a>
+            </stl:no>
+        </stl:if>
+        <a href="{stl.HomeUrl}"><i class="fa fa-user d-block" aria-hidden="true"></i>我的</a>
     </nav>
 </footer>
+
+<stl:layer funcName="publishRequire" title="发布需求" url="{Stl.SiteUrl}/channels/243.html" width="90%" height="80%"></stl:layer>
+
+<script src="{Stl.SiteUrl}/js/footer.js"></script>
