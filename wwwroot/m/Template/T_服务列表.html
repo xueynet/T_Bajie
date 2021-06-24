@@ -1,53 +1,96 @@
 <html>
 
 <head>
-  <stl:include file="/include/head.html"></stl:include>
+    <stl:include file="/include/head.html"></stl:include>
 </head>
 
 <body>
-  <!--头部-->
-  <stl:include file="/include/sideNav.html"></stl:include>
-  <!-- 主体部分 -->
-  <stl:if type='CountOfContents' op="NotEmpty">
-    <stl:yes>
-      <div class="md m4 bggray">
-        <div class="wrap">
-          <div class="m4t activetop disflex flex_lmr flex_wrap">
-            <span class="active">全部</span>
-          </div>
-        </div>
-        <!-- 列表 -->
-        <div class="list bggray">
-          <ul class="listview fluid">
-            <stl:contents>
-              <li class="float-left w-50 p-3">
-                <div class="m4a disblock w100 bgwhite">
-                  <stl:a class="m4at">
-                    <div class="m4aimg">
-                      <img class="disblock w100" src="{content.ImageUrl}" />
+    <!--头部-->
+    <stl:include file="/include/sideNav.html"></stl:include>
+    <!-- 主体部分 -->
+    <stl:if type='CountOfContents' op="NotEmpty">
+        <stl:yes>
+            <div class="md mt-2 bggray">
+                <div class="wrap">
+                    <div class="m4t activetop disflex flex_lmr flex_wrap">
+                        <span class="active">全部</span>
+                        <stl:channels>
+                            <span><stl:a></stl:a></span>
+                        </stl:channels>
                     </div>
-                    <div class="m4atxt padding5">
-                      <h3 class="line_1">{content.Title}</h3>
-                      <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                        <span>￥{content.Price}</span>
-                      </div>
-                    </div>
-                  </stl:a>
-                  <stl:a class="m4abtn btnbg">免费咨询</stl:a>
                 </div>
-              </li>
-            </stl:contents>
-            <li class="clearfix"></li>
-          </ul>
-        </div>
-    </stl:yes>
-    <stl:no>
-    <li>暂时没有数据</li>
-    </stl:no>
-  </stl:if>
-  
-  </div>
-  <stl:include file="/include/footer.html"></stl:include>
+                <div class="swiper-wrapper">
+                    <!-- 全部 -->
+                    <div class="swiper-slide">
+                        <div class="m4wrap">
+                            <ul class="m4w wall posrelative clearfix">
+                                <stl:contents scope="descendant" totalNum="20" isImage="true">
+                                    <li class="article">
+                                        <div class="m4a disblock w100 bgwhite">
+                                            <stl:a class="m4at">
+                                                <div class="m4aimg">
+                                                    <img class="disblock w100" src="{content.ImageUrl}" />
+                                                </div>
+                                                <div class="m4atxt padding5">
+                                                    <h3 class="line_1">{content.Title}</h3>
+                                                    <stl:if type="Price" op="In" value="0,0.00">
+                                                        <stl:no>
+                                                            <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
+                                                                <span>￥{content.Price}</span>
+                                                            </div>
+                                                        </stl:no>
+                                                    </stl:if>
+                                                </div>
+                                            </stl:a>
+                                        </div>
+                                    </li>
+                                </stl:contents>
+                            </ul>
+                            <div class="m4zk textcenter mt_10">
+                                <span><img src="images/m4zk_03.png" /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <stl:channels scope="children">
+                        <div class="swiper-slide">
+                            <div class="m4wrap">
+                                <ul class="m4w wall posrelative clearfix">
+                                    <stl:contents scope="all" totalNum="20" isImage="true">
+                                        <li class="article">
+                                            <div class="m4a disblock w100 bgwhite">
+                                                <stl:a class="m4at">
+                                                    <div class="m4aimg">
+                                                        <img class="disblock w100" src="{content.ImageUrl}" />
+                                                    </div>
+                                                    <div class="m4atxt padding5">
+                                                        <h3 class="line_1">{content.Title}</h3>
+                                                        <stl:if type="Price" op="In" value="0,0.00">
+                                                            <stl:no>
+                                                                <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
+                                                                    <span>￥{content.Price}</span>
+                                                                </div>
+                                                            </stl:no>
+                                                        </stl:if>
+                                                    </div>
+                                                </stl:a>
+                                            </div>
+                                        </li>
+                                    </stl:contents>
+                                </ul>
+                                <div class="m4zk textcenter mt_10">
+                                    <span><img src="images/m4zk_03.png" /></span>
+                                </div>
+                            </div>
+                        </div>
+                    </stl:channels>
+                </div>
+            </div>
+        </stl:yes>
+        <stl:no>
+            <div>暂时没有数据</div>
+        </stl:no>
+    </stl:if>
+    <stl:include file="/include/footer.html"></stl:include>
 </body>
-</html>
 
+</html>
