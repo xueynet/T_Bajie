@@ -6,8 +6,11 @@ var _hmt = _hmt || [];
     s.parentNode.insertBefore(hm, s);
 })();
 $(function() {
-    $('#consultLink').on("click", function() {
+    $('.consultLink').on("click", function() {
+        consultLink();
+    });
+    function consultLink(){
         console.log("start consult.");
         $('#nb_icon_wrap').click();
-    });
+    }
 });

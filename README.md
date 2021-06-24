@@ -7,7 +7,7 @@
 * bootstrap 4.1.0 文档：https://v4.bootcss.com/docs/getting-started/introduction/
 * font-awesome 4.6 文档：http://www.fontawesome.com.cn/faicons/
 * layer3.1.1 弹出层文档：https://layer.layui.com/
-* swiper 4.5.0 文档：
+* swiper 4.5.0 文档：http://www.idangero.us/swiper/
 
 ### 待办事项
 

@@ -4,6 +4,7 @@
 <head>
     <stl:include file="/include/head.html"></stl:include>
 </head>
+
 <body>
     <!-- 头部的导航 -->
     <stl:include file="/include/sideNav.html"></stl:include>
@@ -32,8 +33,7 @@
             <stl:a channelName='建房施工' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico4_03.png" />
                 <p>建房施工</p>
             </stl:a>
-            <stl:a channelIndex="render" class="mta disblock textcenter"><img
-                    src="{Stl.SiteUrl}/images/mtico5_03.png" />
+            <stl:a channelIndex="render" class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico5_03.png" />
                 <p>效果图</p>
             </stl:a>
             <stl:a channelName='户型设计' class="mta disblock textcenter"><img src="{Stl.SiteUrl}/images/mtico6_03.png" />
@@ -110,7 +110,7 @@
         <div class="wrap">
             <div class="m4t activetop disflex flex_lmr flex_wrap">
                 <span class="active">全部</span>
-                <stl:channels channelName="效果图" parent="工程设计">
+                <stl:channels channelName="服务">
                     <span>
                         <stl:channel></stl:channel>
                     </span>
@@ -124,21 +124,24 @@
                     <div class="swiper-slide">
                         <div class="m4wrap">
                             <ul class="m4w wall posrelative clearfix">
-                                <stl:contents channelName="效果图" parent="工程设计" scope="all">
+                                <stl:contents channelName="服务" scope="descendant" totalNum="20" isImage="true">
                                     <li class="article">
                                         <div class="m4a disblock w100 bgwhite">
-                                            <stl:a href="" class="m4at">
+                                            <stl:a class="m4at">
                                                 <div class="m4aimg">
                                                     <img class="disblock w100" src="{content.ImageUrl}" />
                                                 </div>
                                                 <div class="m4atxt padding5">
                                                     <h3 class="line_1">{content.Title}</h3>
-                                                    <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                                                        <span>￥{content.Price}</span>
-                                                    </div>
+                                                    <stl:if type="Price" op="In" value="0,0.00">
+                                                        <stl:no>
+                                                            <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
+                                                                <span>￥{content.Price}</span>
+                                                            </div>
+                                                        </stl:no>
+                                                    </stl:if>
                                                 </div>
                                             </stl:a>
-                                            <a href="" class="m4abtn btnbg">免费咨询</a>
                                         </div>
                                     </li>
                                 </stl:contents>
@@ -148,25 +151,28 @@
                             </div>
                         </div>
                     </div>
-                    <stl:channels channelName='效果图' parent="工程设计">
+                    <stl:channels channelName="服务" scope="children">
                         <div class="swiper-slide">
                             <div class="m4wrap">
                                 <ul class="m4w wall posrelative clearfix">
-                                    <stl:contents>
+                                    <stl:contents scope="all" totalNum="20" isImage="true">
                                         <li class="article">
                                             <div class="m4a disblock w100 bgwhite">
-                                                <stl:a href="" class="m4at">
+                                                <stl:a class="m4at">
                                                     <div class="m4aimg">
                                                         <img class="disblock w100" src="{content.ImageUrl}" />
                                                     </div>
                                                     <div class="m4atxt padding5">
                                                         <h3 class="line_1">{content.Title}</h3>
-                                                        <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                                                            <span>￥{content.Price}</span>
-                                                        </div>
+                                                        <stl:if type="Price" op="In" value="0,0.00">
+                                                            <stl:no>
+                                                                <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
+                                                                    <span>￥{content.Price}</span>
+                                                                </div>
+                                                            </stl:no>
+                                                        </stl:if>
                                                     </div>
                                                 </stl:a>
-                                                <a href="" class="m4abtn btnbg">免费咨询</a>
                                             </div>
                                         </li>
                                     </stl:contents>
@@ -185,4 +191,5 @@
     <script src="js/jaliswall.js" type="text/javascript"></script>
     <script src="js/index.js" type="text/javascript"></script>
 </body>
+
 </html>

@@ -2,74 +2,53 @@
 
 <head>
     <stl:include file="/include/head.html"></stl:include>
-    <link rel="stylesheet" type="text/css" href="{Stl.SiteUrl}/css/productDetails.css">
 </head>
-<style>
-    .service-top-bar-container {
-        width: 100%;
-        min-height: 45px;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        z-index: 50;
-    }
-    
-    .top {
-        display: flex;
-        height: 45px;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        -webkit-box-align: center;
-        align-items: center;
-        padding: 10px 15px;
-    }
-    
-    .button-item.back-button {
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        background-image: url(//as.zbjimg.com/static/nodejs-mobile-spaweb-api/img/icon-back.29472c5.png);
-        background-position: 50%;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-    
-    #buyNow {
-        width: 10rem;
-    }
-    
-    #ybuyNow {
-        width: 10rem;
-    }
-    
-    .details-info div p img {
-        max-width: 100%;
-    }
-</style>
 
 <body>
-    <div class="productDetails">
-        <div class="service-top-bar-container">
-            <div class="top">
-                <span class="button-item back-button" onClick="javascript :history.go(-1);">
-			</div>
-		</div>
-		<div>
-			<img class="disblock w100" src="{content.ImageUrl}" />
-		</div>
-		<div class="productDetails-info">
-			<div class="m4atxt padding5">
-				<h3 class="line_1"><b>{content.Title}</b></h3>
-			</div>
-		</div>
-		<div class="details-info">
-			<div>{content.Body}<div>
-				</div>
-				<div class="foot_height"></div>
-			</div>
-		</div>
-	</div>
-  <stl:include file="/include/footer.html"></stl:include>
+    <div class="container p-0" id="product">
+
+        <!--返回上页-->
+        <div class="position-absolute backgo">
+            <a href="javascript:void(0)" click="javascript:history.go(-1);"><i class="fa fa-chevron-circle-left"></i></a>
+        </div>
+
+        <!--封面图片-->
+        <!--滚动图-->
+        <div class="swiper-container productSwiper">
+            <div class="swiper-wrapper">
+                <stl:each type="imageUrl">
+                    <div class="swiper-slide">
+                        <stl:image class="img-fluid"></stl:image>
+                    </div>
+                </stl:each>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".productSwiper", {
+                autoplay: {
+                    delay: 5000,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+            });
+        </script>
+
+        <!--标题显示-->
+        <div class="shadow-sm p-3 bg-white rounded">
+            <div class="product-title">{content.Title}</div>
+        </div>
+
+        <!--内容详情-->
+        <div class="product-info">
+            {content.Body}
+        </div>
+
+    </div>
+
+    <stl:include file="/include/footer.html"></stl:include>
 </body>
+
 </html>
