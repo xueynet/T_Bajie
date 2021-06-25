@@ -96,14 +96,44 @@
                 </stl:channels>
             </div>
         </div>
-        <div class="">
-            <div class="swiper-container swiper-container-m4 swiper-no-swiping">
-                <div class="swiper-wrapper">
-                    <!-- 全部 -->
+        <div class="swiper-container swiper-container-m4 swiper-no-swiping">
+            <div class="swiper-wrapper">
+                <!-- 全部 -->
+                <div class="swiper-slide">
+                    <div class="m4wrap">
+                        <ul class="m4w wall posrelative clearfix">
+                            <stl:contents channelName="服务" scope="descendant" totalNum="20" isImage="true">
+                                <li class="article">
+                                    <div class="m4a disblock w100 bgwhite">
+                                        <stl:a class="m4at">
+                                            <div class="m4aimg">
+                                                <img class="disblock w100" src="{content.ImageUrl}" />
+                                            </div>
+                                            <div class="m4atxt padding5">
+                                                <h3 class="line_1">{content.Title}</h3>
+                                                <stl:if type="Price" op="In" value="0,0.00">
+                                                    <stl:no>
+                                                        <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
+                                                            <span>￥{content.Price}</span>
+                                                        </div>
+                                                    </stl:no>
+                                                </stl:if>
+                                            </div>
+                                        </stl:a>
+                                    </div>
+                                </li>
+                            </stl:contents>
+                        </ul>
+                        <div class="m4zk textcenter mt_10">
+                            <span><img src="images/m4zk_03.png" /></span>
+                        </div>
+                    </div>
+                </div>
+                <stl:channels channelName="服务" scope="children">
                     <div class="swiper-slide">
                         <div class="m4wrap">
                             <ul class="m4w wall posrelative clearfix">
-                                <stl:contents channelName="服务" scope="descendant" totalNum="20" isImage="true">
+                                <stl:contents scope="all" totalNum="20" isImage="true">
                                     <li class="article">
                                         <div class="m4a disblock w100 bgwhite">
                                             <stl:a class="m4at">
@@ -126,43 +156,11 @@
                                 </stl:contents>
                             </ul>
                             <div class="m4zk textcenter mt_10">
-                                <span><img src="images/m4zk_03.png" /></span>
+                                <span><img src="{stl.siteUrl}/images/m4zk_03.png" /></span>
                             </div>
                         </div>
                     </div>
-                    <stl:channels channelName="服务" scope="children">
-                        <div class="swiper-slide">
-                            <div class="m4wrap">
-                                <ul class="m4w wall posrelative clearfix">
-                                    <stl:contents scope="all" totalNum="20" isImage="true">
-                                        <li class="article">
-                                            <div class="m4a disblock w100 bgwhite">
-                                                <stl:a class="m4at">
-                                                    <div class="m4aimg">
-                                                        <img class="disblock w100" src="{content.ImageUrl}" />
-                                                    </div>
-                                                    <div class="m4atxt padding5">
-                                                        <h3 class="line_1">{content.Title}</h3>
-                                                        <stl:if type="Price" op="In" value="0,0.00">
-                                                            <stl:no>
-                                                                <div class="m4atxtb mt_5 disflex flex_lmr flex_center">
-                                                                    <span>￥{content.Price}</span>
-                                                                </div>
-                                                            </stl:no>
-                                                        </stl:if>
-                                                    </div>
-                                                </stl:a>
-                                            </div>
-                                        </li>
-                                    </stl:contents>
-                                </ul>
-                                <div class="m4zk textcenter mt_10">
-                                    <span><img src="images/m4zk_03.png" /></span>
-                                </div>
-                            </div>
-                        </div>
-                    </stl:channels>
-                </div>
+                </stl:channels>
             </div>
         </div>
     </div>
