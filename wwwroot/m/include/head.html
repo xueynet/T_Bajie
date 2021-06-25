@@ -1,7 +1,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="format-detection" content="telephone=no" />
-<title>{Stl.SeoTitle} - {Stl.SiteName}</title>
+<stl:if type="TemplateName" op="Equals" value="系统首页模板">
+    <stl:yes>
+        <title>八戒工程</title>
+        <li>
+            <A href="/" class="current">首 页</A>
+        </li>
+    </stl:yes>
+    <stl:no>
+        <title>{Stl.SeoTitle} - 八戒工程</title>
+    </stl:no>
+</stl:if>
 <link rel='stylesheet' href='/sitefiles/assets/css/bootstrap-4.1.0.min.css' type='text/css' />
 <link rel='stylesheet' href='/sitefiles/assets/css/font-awesome-4.7.0.min.css' type='text/css' />
 <link rel="stylesheet" type="text/css" href="{Stl.SiteUrl}/css/sanren.css" />
