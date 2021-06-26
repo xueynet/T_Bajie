@@ -832,3 +832,12 @@ footer .navbar a i {
 footer .navbar a.active {
     color: #FF6505;
 }
+
+.price {
+    color: #FF6505;
+}
+
+footer .navbar div a.btn {
+    color: #fff;
+    font-weight: bold;
+}

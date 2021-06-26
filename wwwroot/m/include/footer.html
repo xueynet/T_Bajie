@@ -1,25 +1,76 @@
 <!--底部菜单-->
 <footer class="footer" id="footer">
     <nav class="navbar fixed-bottom navbar-light bg-light text-center">
-        <stl:if type="TemplateName" op="Equals" value="系统首页模板">
+        <stl:if type="TemplateName" op="Equals" value="服务内容">
             <stl:yes>
-                <a class="active" href="{Stl.SiteUrl}/"><i class="fa fa-home d-block" aria-hidden="true"></i>首页</a>
+                <stl:if type="Price" op="NotIn" value="0,0.00">
+                    <stl:yes>
+                        <div class="col-2 price"><i class="fa fa-jpy" aria-hidden="true"></i> {content.Price}</div>
+                        <div class="col"><a href="javascript:void(0)" class="btn btn-warning consultLink">咨询</a></div>
+                        <div class="col"><a href="javascript:void(0)" class="btn btn-danger orderLink" data-siteId="{content.siteId}">立即购买</a></div>
+                        <!--订单确认模板-->
+                        <div class="d-none" id="orderConfirmForm">
+                            <form class="orderConfirm">
+                                <div class="container">
+                                    <div class="text-muted my-3"><b>八戒工程</b> 将为您提供服务</div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            {content.Title}
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="card-title">支付金额：<span class="price"><i class="fa fa-jpy" aria-hidden="true"></i> {content.Price}</span></div>
+                                            <div class="form-group">
+                                                <label for="telphone">联系电话：</label>
+                                                <input type="text" class="form-control" id="telphone" placeholder="您的联系电话">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="orderRequire">备注：</label>
+                                                <input type="text" class="form-control" id="orderRequire" placeholder="(选填)简要描述您的需求">
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <!--支付渠道-->
+                                            <div class="row">
+                                                <div class="col"><button type="button" class="btn btn-warning text-white">微信支付</button></div>
+                                                <div class="col"><button type="button" class="btn btn-warning text-white">支付宝支付</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </stl:yes>
+                    <stl:no>
+                        <a href="{Stl.SiteUrl}/"><i class="fa fa-home d-block" aria-hidden="true"></i>首页</a>
+                        <a href="javascript:void(0)" class="requireLink"><i class="fa fa-edit d-block" aria-hidden="true"></i>发布需求</a>
+                        <a href="javascript:void(0)" class="consultLink"><i class="fa fa-comments d-block" aria-hidden="true"></i>咨询</a>
+                        <a href="{Stl.SiteUrl}/channels/188.html"><i class="fa fa-cloud d-block" aria-hidden="true"></i>全部服务</a>
+                        <a href="{stl.HomeUrl}"><i class="fa fa-user d-block" aria-hidden="true"></i>我的</a>
+                    </stl:no>
+                </stl:if>
             </stl:yes>
             <stl:no>
-                <a href="{Stl.SiteUrl}/"><i class="fa fa-home d-block" aria-hidden="true"></i>首页</a>
+                <stl:if type="TemplateName" op="Equals" value="系统首页模板">
+                    <stl:yes>
+                        <a class="active" href="{Stl.SiteUrl}/"><i class="fa fa-home d-block" aria-hidden="true"></i>首页</a>
+                    </stl:yes>
+                    <stl:no>
+                        <a href="{Stl.SiteUrl}/"><i class="fa fa-home d-block" aria-hidden="true"></i>首页</a>
+                    </stl:no>
+                </stl:if>
+                <a href="javascript:void(0)" class="requireLink"><i class="fa fa-edit d-block" aria-hidden="true"></i>发布需求</a>
+                <a href="javascript:void(0)" class="consultLink"><i class="fa fa-comments d-block" aria-hidden="true"></i>咨询</a>
+                <stl:if type="TemplateName" op="Equals" value="服务">
+                    <stl:yes>
+                        <a class="active" href="{Stl.SiteUrl}/channels/188.html"><i class="fa fa-cloud d-block" aria-hidden="true"></i>全部服务</a>
+                    </stl:yes>
+                    <stl:no>
+                        <a href="{Stl.SiteUrl}/channels/188.html"><i class="fa fa-cloud d-block" aria-hidden="true"></i>全部服务</a>
+                    </stl:no>
+                </stl:if>
+                <a href="{stl.HomeUrl}"><i class="fa fa-user d-block" aria-hidden="true"></i>我的</a>
             </stl:no>
         </stl:if>
-        <a href="javascript:void(0)" class="requireLink"><i class="fa fa-edit d-block" aria-hidden="true"></i>发布需求</a>
-        <a href="javascript:void(0)" class="consultLink"><i class="fa fa-comments d-block" aria-hidden="true"></i>咨询</a>
-        <stl:if type="TemplateName" op="Equals" value="服务">
-            <stl:yes>
-                <a class="active" href="{Stl.SiteUrl}/channels/188.html"><i class="fa fa-cloud d-block" aria-hidden="true"></i>全部服务</a>
-            </stl:yes>
-            <stl:no>
-                <a href="{Stl.SiteUrl}/channels/188.html"><i class="fa fa-cloud d-block" aria-hidden="true"></i>全部服务</a>
-            </stl:no>
-        </stl:if>
-        <a href="{stl.HomeUrl}"><i class="fa fa-user d-block" aria-hidden="true"></i>我的</a>
     </nav>
 </footer>
 
