@@ -7,9 +7,24 @@
                     <stl:yes>
                         <div class="col-2 price"><i class="fa fa-jpy" aria-hidden="true"></i> {content.Price}</div>
                         <div class="col"><a href="javascript:void(0)" class="btn btn-warning consultLink">咨询</a></div>
-                        <div class="col"><a href="javascript:void(0)" class="btn btn-danger orderLink" data-siteId="{content.siteId}">立即购买</a></div>
+                        <div class="col"><a href="javascript:void(0)" class="btn btn-danger orderLink">立即购买</a></div>
                         <!--订单确认模板-->
                         <div class="d-none" id="orderConfirmForm">
+                            <script type="text/javascript">
+                                //1.全局定义
+                                var ACCESS_TOKEN_NAME = "xy_user_access_token";
+                                var $token = localStorage.getItem(ACCESS_TOKEN_NAME);
+                                var ua = navigator.userAgent.toLowerCase();
+                                var openId;
+
+                                //2.赋值
+                                var siteId = parseInt("{content.SiteId}");
+                                var channelId = parseInt("{content.ChannelId}");
+                                var productId = parseInt("{content.Id}");
+                                var title = "{content.Title}";
+                                var price = "{content.Price}";
+                                var num = 1;
+                            </script>
                             <form class="orderConfirm">
                                 <div class="container">
                                     <div class="text-muted my-3"><b>八戒工程</b> 将为您提供服务</div>
@@ -21,18 +36,17 @@
                                             <div class="card-title">支付金额：<span class="price"><i class="fa fa-jpy" aria-hidden="true"></i> {content.Price}</span></div>
                                             <div class="form-group">
                                                 <label for="telphone">联系电话：</label>
-                                                <input type="text" class="form-control" id="telphone" placeholder="您的联系电话">
+                                                <input type="text" class="form-control" name="telphone" placeholder="您的联系电话">
                                             </div>
                                             <div class="form-group">
                                                 <label for="orderRequire">备注：</label>
-                                                <input type="text" class="form-control" id="orderRequire" placeholder="(选填)简要描述您的需求">
+                                                <input type="text" class="form-control" name="orderRequire" placeholder="(选填)简要描述您的需求">
                                             </div>
                                         </div>
                                         <div class="card-footer">
                                             <!--支付渠道-->
                                             <div class="row">
-                                                <div class="col"><button type="button" class="btn btn-warning text-white">微信支付</button></div>
-                                                <div class="col"><button type="button" class="btn btn-warning text-white">支付宝支付</button></div>
+                                                <div class="col text-center">支付渠道加载中...</div>
                                             </div>
                                         </div>
                                     </div>
@@ -75,3 +89,5 @@
 </footer>
 
 <script src="{Stl.SiteUrl}/js/footer.js?v=2021062501"></script>
+
+<stl:include file="/include/cnzz.html"></stl:include>
