@@ -1,4 +1,5 @@
 <!--底部菜单-->
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script type="text/javascript">
     //1.全局定义
     var ACCESS_TOKEN_NAME = "xy_user_access_token";
@@ -9,22 +10,41 @@
     var siteId = parseInt("{content.SiteId}");
     var channelId = parseInt("{content.ChannelId}");
     var productId = parseInt("{content.Id}");
-    var title = "{content.Title}";
     var price = "{content.Price}";
     var num = 1;
 
     var webhost = window.location.protocol + "//" + window.location.host;
     var link = webhost + '{stl:a}';
-    var imgUrl = '{content.imageUrl}';
-    if (imgUrl == null || imgUrl == '') {
-        imgUrl = '/images/logo.png';
-    }
-    if (imgUrl.substring(0, 1) == '/') {
-        imgUrl = webhost + imgUrl;
-    }
-    var desc = '{content.summary}';
 </script>
-<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<stl:if type="TemplateType" op="Equals" value="ContentTemplate">
+    <stl:yes>
+        <script type="text/javascript">
+            var title = "{content.Title}";
+            var imgUrl = '{content.imageUrl}';
+            if (imgUrl == null || imgUrl == '') {
+                imgUrl = '/images/logo.png';
+            }
+            if (imgUrl.substring(0, 1) == '/') {
+                imgUrl = webhost + imgUrl;
+            }
+            var desc = '{content.summary}';
+        </script>
+    </stl:yes>
+    <stl:no>
+        <script type="text/javascript">
+            var title = "{channel.Title}";
+            var imgUrl = '{channel.imageUrl}';
+            if (imgUrl == null || imgUrl == '') {
+                imgUrl = '/images/logo.png';
+            }
+            if (imgUrl.substring(0, 1) == '/') {
+                imgUrl = webhost + imgUrl;
+            }
+            var desc = '{channel.content}';
+        </script>
+    </stl:no>
+</stl:if>
 
 <footer class="footer" id="footer">
     <nav class="navbar fixed-bottom navbar-light bg-light text-center">
