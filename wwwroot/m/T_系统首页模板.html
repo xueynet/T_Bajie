@@ -102,8 +102,8 @@
                     <!-- 全部 -->
                     <div class="swiper-slide">
                         <div class="m4wrap">
-                            <ul class="m4w wall posrelative clearfix">
-                                <stl:contents channelName="服务" scope="descendant" totalNum="20" isImage="true">
+                            <ul class="m4w wall posrelative clearfix listAll">
+                                <stl:contents channelName="服务" scope="descendant" totalNum="6" isImage="true">
                                     <li class="article">
                                         <div class="m4a disblock w100 bgwhite">
                                             <stl:a class="m4at">
@@ -126,15 +126,15 @@
                                 </stl:contents>
                             </ul>
                             <div class="m4zk textcenter mt_10">
-                                <span><img src="images/m4zk_03.png" /></span>
+                                <span class="load-more-listAll"><img src="images/m4zk_03.png" /></span>
                             </div>
                         </div>
                     </div>
                     <stl:channels channelName="服务" scope="children">
                         <div class="swiper-slide">
                             <div class="m4wrap">
-                                <ul class="m4w wall posrelative clearfix">
-                                    <stl:contents scope="all" totalNum="20" isImage="true">
+                                <ul class="m4w wall posrelative clearfix listItem">
+                                    <stl:contents scope="all" totalNum="6" isImage="true">
                                         <li class="article">
                                             <div class="m4a disblock w100 bgwhite">
                                                 <stl:a class="m4at">
@@ -157,7 +157,7 @@
                                     </stl:contents>
                                 </ul>
                                 <div class="m4zk textcenter mt_10">
-                                    <span><img src="images/m4zk_03.png" /></span>
+                                    <span class="load-more-listItem"><img src="images/m4zk_03.png" /></span>
                                 </div>
                             </div>
                         </div>
@@ -169,6 +169,62 @@
     <stl:include file="/include/footer.html"></stl:include>
     <script src="js/jaliswall.js" type="text/javascript"></script>
     <script src="js/index.js" type="text/javascript"></script>
+    <script>
+        // 首页全部列表调用
+        let siteId = 180; //站点id
+        let apiKey = '306b878f-ff15-4c82-b798-5236a42cee30'; //apikey
+        // 获取全部内容
+        var listAllPages = parseInt('1') + 1;
+        let listAllperPage = 6; //每页显示6条数据
+        var Dom = jQuery('ul.m4w.wall.posrelative.clearfix.listAll');
+        $('.load-more-listAll').click(function() {
+            $.ajax({
+                url: "/api/v1/contents?apiKey=" + apiKey,
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify({
+                    'siteId': siteId,
+                    'channelId': 170,
+                    'page': listAllPages,
+                    'perPage': listAllperPage,
+                }),
+                dataType: "text",
+                success: function(result) {
+                    if (JSON.parse(result).contents.length > 0) {
+                        var arry = JSON.parse(result).contents;
+                        for (var i = 0; i < arry.length; i++) {
+                            console.log(arry[i]);
+                            var Html = `
+                            <div class="wall-column">
+                                <div class="article" id="">
+                                    <div class="m4a disblock w100 bgwhite">
+                                        <a class="m4at" href="${arry[i].navigationUrl}">
+                                            <div class="m4aimg">
+                                                <img class="disblock w100" src="${arry[i].imageUrl}">
+                                            </div>
+                                            <div class="m4atxt padding5">
+                                                <h3 class="line_1">${arry[i].title}</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>`;
+                            Dom.append(Html);
+                            //分页+=1
+                            listAllPages += 1;
+                        }
+                    } else {
+                        jQuery('.load-more-listAll').text("没有更多内容");
+                    }
+                },
+                error: function(msg) {
+                    console.log(msg);
+                }
+            })
+        });
+
+        // 首页获取栏目列表
+    </script>
 </body>
 
 </html>
