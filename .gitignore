@@ -23,3 +23,6 @@ upload/
 
 #排除文件（特定文件：覆盖原文件）
 !/wwwroot/xy-admin/index.html
+!/wwwroot/sitefiles/assets/images/logo.png
+!/wwwroot/sitefiles/assets/images/favicon.png
+!/wwwroot/sitefiles/assets/js/cloud.js
