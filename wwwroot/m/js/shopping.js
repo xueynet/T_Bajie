@@ -176,8 +176,8 @@ function orderConfirm() {
                     data: JSON.stringify(params),
                     contentType: "application/json",
                     dataType: "json",
-                    success: function(t) {
-                        openId = t.data;
+                    success: function(openId) {
+                        console.log(openId);
                         if (openId == null || openId == "") {
                             window.location.href = "/api/login/auth/Weixin?userId=" + result.userIdKey + "&redirectUrl=" + encodeURIComponent(window.location.href)
                         }
