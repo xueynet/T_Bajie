@@ -1,4 +1,31 @@
 <!--底部菜单-->
+<script type="text/javascript">
+    //1.全局定义
+    var ACCESS_TOKEN_NAME = "xy_user_access_token";
+    var $token = localStorage.getItem(ACCESS_TOKEN_NAME);
+    var openId;
+
+    //2.赋值
+    var siteId = parseInt("{content.SiteId}");
+    var channelId = parseInt("{content.ChannelId}");
+    var productId = parseInt("{content.Id}");
+    var title = "{content.Title}";
+    var price = "{content.Price}";
+    var num = 1;
+
+    var webhost = window.location.protocol + "//" + window.location.host;
+    var link = webhost + '{stl:a}';
+    var imgUrl = '{content.imageUrl}';
+    if (imgUrl == null || imgUrl == '') {
+        imgUrl = '/images/logo.png';
+    }
+    if (imgUrl.substring(0, 1) == '/') {
+        imgUrl = webhost + imgUrl;
+    }
+    var desc = '{content.summary}';
+</script>
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
 <footer class="footer" id="footer">
     <nav class="navbar fixed-bottom navbar-light bg-light text-center">
         <stl:if type="TemplateName" op="Equals" value="服务内容">
@@ -10,21 +37,6 @@
                         <div class="col"><a href="javascript:void(0)" class="btn btn-danger orderLink">立即购买</a></div>
                         <!--订单确认模板-->
                         <div class="d-none" id="orderConfirmForm">
-                            <script type="text/javascript">
-                                //1.全局定义
-                                var ACCESS_TOKEN_NAME = "xy_user_access_token";
-                                var $token = localStorage.getItem(ACCESS_TOKEN_NAME);
-                                var ua = navigator.userAgent.toLowerCase();
-                                var openId;
-
-                                //2.赋值
-                                var siteId = parseInt("{content.SiteId}");
-                                var channelId = parseInt("{content.ChannelId}");
-                                var productId = parseInt("{content.Id}");
-                                var title = "{content.Title}";
-                                var price = "{content.Price}";
-                                var num = 1;
-                            </script>
                             <form class="orderConfirm">
                                 <div class="container">
                                     <div class="text-muted my-3"><b>八戒工程</b> 将为您提供服务</div>
@@ -52,6 +64,7 @@
                                     </div>
                                 </div>
                             </form>
+                            <script src="{Stl.SiteUrl}/js/shopping.js?v=2021062801"></script>
                         </div>
                     </stl:yes>
                     <stl:no>
@@ -88,6 +101,6 @@
     </nav>
 </footer>
 
-<script src="{Stl.SiteUrl}/js/footer.js?v=2021062501"></script>
+<script src="{Stl.SiteUrl}/js/footer.js?v=2021062801"></script>
 
 <stl:include file="/include/cnzz.html"></stl:include>
