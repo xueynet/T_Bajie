@@ -4,8 +4,7 @@
     <stl:include file="/include/head.html"></stl:include>
     <style>
         .swiper-container-tabar span {
-            width: 50px;
-            ]
+            width: auto;
         }
     </style>
 </head>
@@ -34,8 +33,8 @@
                         <!-- 全部 -->
                         <div class="swiper-slide">
                             <div class="m4wrap">
-                                <ul class="m4w wall posrelative clearfix">
-                                    <stl:contents scope="descendant" totalNum="20" isImage="true">
+                                <ul class="m4w wall posrelative clearfix all">
+                                    <stl:contents scope="descendant" totalNum="20" isImage="true" totalNum='6'>
                                         <li class="article">
                                             <div class="m4a disblock w100 bgwhite">
                                                 <stl:a class="m4at">
@@ -57,16 +56,16 @@
                                         </li>
                                     </stl:contents>
                                 </ul>
-                                <div class="m4zk textcenter mt_10">
-                                    <span><img src="{stl.siteUrl}/images/m4zk_03.png" /></span>
+                                <div class="m4zk textcenter mt_10 ">
+                                    <span class="load-more-all"><img src="{stl.siteUrl}/images/m4zk_03.png" /></span>
                                 </div>
                             </div>
                         </div>
                         <stl:channels scope="children">
                             <div class="swiper-slide">
                                 <div class="m4wrap">
-                                    <ul class="m4w wall posrelative clearfix">
-                                        <stl:contents scope="all" totalNum="20" isImage="true">
+                                    <ul class="m4w wall posrelative clearfix children">
+                                        <stl:contents scope="all" totalNum="20" isImage="true" totalNum='6'>
                                             <li class="article">
                                                 <div class="m4a disblock w100 bgwhite">
                                                     <stl:a class="m4at">
@@ -88,8 +87,8 @@
                                             </li>
                                         </stl:contents>
                                     </ul>
-                                    <div class="m4zk textcenter mt_10 load-more">
-                                        <span><img src="{stl.siteUrl}/images/m4zk_03.png" /></span>
+                                    <div class="m4zk textcenter mt_10 ">
+                                        <span><img class="load-more-children" src="{stl.siteUrl}/images/m4zk_03.png"/></span>
                                     </div>
                                 </div>
                             </div>
@@ -112,6 +111,112 @@
                 slidesPerView: 'auto',
                 freeMode: true
             });
+        })
+
+        // 获取当前网站的siteId
+        let siteId = 180;
+        let apiKey = '306b878f-ff15-4c82-b798-5236a42cee30';
+        // 获取全部内容
+        var allPages = parseInt('1') + 1;
+
+        let allperPage = 6; //每页显示6条数据
+        var Dom = jQuery('ul.m4w.wall.posrelative.clearfix.all');
+
+        $('.load-more-all').click(function() {
+            $.ajax({
+                url: "/api/v1/contents?apiKey=" + apiKey,
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify({
+                    'siteId': siteId,
+                    'channelId': 170,
+                    'page': allPages,
+                    'perPage': allperPage,
+                }),
+                dataType: "text",
+                success: function(result) {
+                    if (JSON.parse(result).contents.length > 0) {
+                        var arry = JSON.parse(result).contents;
+                        for (var i = 0; i < arry.length; i++) {
+                            console.log(arry[i]);
+                            var Html = `<div class="wall-column">
+                            <div class="article" id="">
+                                <div class="m4a disblock w100 bgwhite">
+                                    <a class="m4at" href="${arry[i].navigationUrl}">
+                                        <div class="m4aimg">
+                                            <img class="disblock w100" src="${arry[i].imageUrl}">
+                                        </div>
+                                        <div class="m4atxt padding5">
+                                            <h3 class="line_1">${arry[i].title}</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>`;
+                            Dom.append(Html);
+                            //分页+=1
+                            allPages += 1;
+                        }
+                    } else {
+                        jQuery('.load-more-all').text("没有更多内容");
+                    }
+                },
+                error: function(msg) {
+                    console.log(msg);
+                }
+            })
+        });
+
+
+        // 子栏目加载更多
+        let childrenPages = parseInt('1') + 1;
+        let childrenPerPage = 6; //每页显示6条
+        //追加到元素下
+        var childrenDom = jQuery('ul.m4w.wall.posrelative.clearfix.children');
+        $('.load-more-children').click(function() {
+            $.ajax({
+                url: "/api/v1/contents?apiKey=" + apiKey,
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify({
+                    'siteId': siteId,
+                    'channelId': 172,
+                    'page': childrenPages,
+                    'perPage': childrenPerPage,
+                }),
+                dataType: "text",
+                success: function(result) {
+                    console.log(result);
+                    if (JSON.parse(result).contents.length > 0) {
+                        var arry = JSON.parse(result).contents;
+                        for (var i = 0; i < arry.length; i++) {
+                            console.log(arry[i]);
+                            var Html = `<div class="wall-column">
+                            <div class="article" id="">
+                                <div class="m4a disblock w100 bgwhite">
+                                    <a class="m4at" href="${arry[i].navigationUrl}">
+                                        <div class="m4aimg">
+                                            <img class="disblock w100" src="${arry[i].imageUrl}">
+                                        </div>
+                                        <div class="m4atxt padding5">
+                                            <h3 class="line_1">${arry[i].title}</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>`;
+                            childrenDom.append(Html);
+                            //分页+=1
+                            childrenPages += 1;
+                        }
+                    } else {
+                        jQuery('.load-more-children').text("没有更多内容");
+                    }
+                },
+                error: function(msg) {
+                    console.log(msg);
+                }
+            })
         })
     </script>
 </body>
