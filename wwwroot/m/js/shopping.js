@@ -15,9 +15,11 @@ function apiShoppingCartAdd(channel, subtype) {
     switch (channel) {
         case "WeChatPay":
             console.log("开始微信支付" + subtype);
+            $('.layui-layer-content .card-footer>div.row :button[name="btnWeChatPay"]').addClass('disabled');
             break;
         case "AliPay":
             console.log("开始支付宝支付" + subtype);
+            $('.layui-layer-content .card-footer>div.row :button[name="btnAliPay"]').addClass('disabled');
             break;
     }
     var data = {
@@ -210,14 +212,14 @@ function orderConfirm() {
                 } else {
                     subtype = "H5Pay";
                 }
-                $('#orderConfirmForm .card .card-footer>div.row').append('<div class="col"><button type="button" class="btn btn-warning text-white" data-toggle="button" aria-pressed="false" onclick="apiShoppingCartAdd(\'' + channel + '\',\'' + subtype + '\')">微信支付</button></div>');
+                $('#orderConfirmForm .card .card-footer>div.row').append('<div class="col"><button type="button" name="btnWeChatPay" class="btn btn-warning text-white" onclick="apiShoppingCartAdd(\'' + channel + '\',\'' + subtype + '\')">微信支付</button></div>');
             }
             //当前不为微信浏览器
             if (ua.indexOf('micromessenger') == -1 && result.isAliPay) {
                 hasPayChannel = true;
                 channel = "AliPay";
                 subtype = "WapPay";
-                $('#orderConfirmForm .card .card-footer>div.row').append('<div class="col"><button id="btn_alipay" type="button" class="btn btn-warning text-white" data-toggle="button" aria-pressed="false" onclick="apiShoppingCartAdd(\'' + channel + '\',\'' + subtype + '\')">支付宝支付</button></div>');
+                $('#orderConfirmForm .card .card-footer>div.row').append('<div class="col"><button type="button" name="btnAlipay" class="btn btn-warning text-white" onclick="apiShoppingCartAdd(\'' + channel + '\',\'' + subtype + '\')">支付宝支付</button></div>');
             }
 
             if (!hasPayChannel) {
@@ -233,7 +235,7 @@ function orderConfirm() {
                 title: '确认订单信息',
                 content: orderConfirmForm,
                 cancel: function() {
-                    layer.msg('已取消订单', { time: 5000, icon: 6 });
+                    $('.orderLink').removeClass('disabled');
                 }
             });
         }
@@ -242,5 +244,6 @@ function orderConfirm() {
 
 
 $('.orderLink').off().on("click", function() {
+    $(this).addClass('disabled');
     orderConfirm();
 });
