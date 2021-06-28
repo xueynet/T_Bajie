@@ -88,10 +88,10 @@ $(function() {
     }
 
     //3.事件绑定
-    $('.requireLink').on("click", function() {
+    $('.requireLink').off().on("click", function() {
         publishRequire();
     });
-    $('.consultLink').on("click", function() {
+    $('.consultLink').off().on("click", function() {
         connectConsult();
     });
 });

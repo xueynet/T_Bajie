@@ -1,3 +1,8 @@
+//1.全局定义
+var ACCESS_TOKEN_NAME = "xy_user_access_token";
+var $token = localStorage.getItem(ACCESS_TOKEN_NAME);
+var openId;
+
 function Guid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = Math.random() * 16 | 0,
@@ -56,7 +61,8 @@ function apiShoppingCartAdd(channel, subtype) {
 }
 
 function apiPay(orderId, orderNo, channel, subtype) {
-    var returnUrl = window.location.protocol + "//" + window.location.host + "/assets/shopping/layer/paysuccess.html?siteId=" + siteId
+    var returnUrl = window.location.protocol + "//" + window.location.host + "/assets/shopping/layer/paysuccess.html?siteId=" + siteId;
+    console.log(openId);
     var data = {
         SiteId: siteId,
         OrderNo: orderNo,
@@ -86,19 +92,19 @@ function apiPay(orderId, orderNo, channel, subtype) {
         success: function(r) {
             console.log(r);
             if (subtype == "PubPay") {
-                var result = r.split("|||")[1];
-                console.log(result);
-
+                var obj = jQuery.parseJSON(r.url.split("|||")[1]);
+                console.log(obj);
                 //微信支付jsapi初始方法
                 function onBridgeReady() {
+                    console.log(obj.appId);
                     WeixinJSBridge.invoke(
                         'getBrandWCPayRequest', {
-                            "appId": result.appId, //公众号ID，由商户传入     
-                            "timeStamp": result.timestamp, //时间戳，自1970年以来的秒数     
-                            "nonceStr": result.nonceStr, //随机串     
-                            "package": result.package,
-                            "signType": result.signType, //微信签名方式：     
-                            "paySign": result.signature //微信签名 
+                            "appId": obj.appId, //公众号ID，由商户传入     
+                            "timeStamp": obj.timeStamp, //时间戳，自1970年以来的秒数     
+                            "nonceStr": obj.nonceStr, //随机串     
+                            "package": obj.package,
+                            "signType": obj.signType, //微信签名方式：     
+                            "paySign": obj.paySign //微信签名 
                         },
                         function(res) {
                             if (res.err_msg === "get_brand_wcpay_request:ok") {
@@ -109,16 +115,18 @@ function apiPay(orderId, orderNo, channel, subtype) {
                             }
                         });
                 }
-                if (typeof WeixinJSBridge == "undefined") {
-                    if (document.addEventListener) {
-                        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-                    } else if (document.attachEvent) {
-                        document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-                        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+                setTimeout(() => {
+                    if (typeof WeixinJSBridge == "undefined") {
+                        if (document.addEventListener) {
+                            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+                        } else if (document.attachEvent) {
+                            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+                        }
+                    } else {
+                        onBridgeReady();
                     }
-                } else {
-                    onBridgeReady();
-                }
+                }, 1000);
             }
             if (r.isRedirect) {
                 if (channel == "AliPay") {
@@ -166,6 +174,7 @@ function orderConfirm() {
             var ua = navigator.userAgent.toLowerCase();
             if (ua.indexOf('micromessenger') != -1) {
                 //获取微信OpenId
+                console.log("获取微信OpenId");
                 $.ajax({
                     type: "GET",
                     url: "/api/login/auth/Weixin/getuniqueId",
@@ -173,14 +182,20 @@ function orderConfirm() {
                         Accept: "application/json; charset=utf-8",
                         Authorization: "Bearer " + $token,
                     },
-                    data: JSON.stringify(params),
-                    contentType: "application/json",
-                    dataType: "json",
-                    success: function(openId) {
+                    dataType: "text",
+                    success: function(r) {
+                        openId = r;
                         console.log(openId);
                         if (openId == null || openId == "") {
                             window.location.href = "/api/login/auth/Weixin?userId=" + result.userIdKey + "&redirectUrl=" + encodeURIComponent(window.location.href)
                         }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        /*输出jqXHR对象的信息*/
+                        console.log(jqXHR);
+                        /*输出其他两个参数的信息*/
+                        console.log(textStatus);
+                        console.log(errorThrown);
                     }
                 });
             }
@@ -195,14 +210,14 @@ function orderConfirm() {
                 } else {
                     subtype = "H5Pay";
                 }
-                $('#orderConfirmForm .card .card-footer>div.row').append('<div class="col"><button type="button" class="btn btn-warning text-white" onclick="apiShoppingCartAdd(\'' + channel + '\',\'' + subtype + '\')">微信支付</button></div>');
+                $('#orderConfirmForm .card .card-footer>div.row').append('<div class="col"><button type="button" class="btn btn-warning text-white" data-toggle="button" aria-pressed="false" onclick="apiShoppingCartAdd(\'' + channel + '\',\'' + subtype + '\')">微信支付</button></div>');
             }
             //当前不为微信浏览器
             if (ua.indexOf('micromessenger') == -1 && result.isAliPay) {
                 hasPayChannel = true;
                 channel = "AliPay";
                 subtype = "WapPay";
-                $('#orderConfirmForm .card .card-footer>div.row').append('<div class="col"><button id="btn_alipay" type="button" class="btn btn-warning text-white" onclick="apiShoppingCartAdd(\'' + channel + '\',\'' + subtype + '\')">支付宝支付</button></div>');
+                $('#orderConfirmForm .card .card-footer>div.row').append('<div class="col"><button id="btn_alipay" type="button" class="btn btn-warning text-white" data-toggle="button" aria-pressed="false" onclick="apiShoppingCartAdd(\'' + channel + '\',\'' + subtype + '\')">支付宝支付</button></div>');
             }
 
             if (!hasPayChannel) {
@@ -226,6 +241,6 @@ function orderConfirm() {
 }
 
 
-$('.orderLink').on("click", function() {
+$('.orderLink').off().on("click", function() {
     orderConfirm();
 });
