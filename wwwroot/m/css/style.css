@@ -247,27 +247,20 @@ a:active {
     padding: 0 .3rem;
 }
 
-.wall {
-    display: block;
-    position: relative;
-}
-
-.wall-column {
-    display: block;
+.grid-item {
     position: relative;
     width: 50%;
-    float: left;
-    padding: 0 2%;
+    padding: 10px;
     box-sizing: border-box;
+    counter-increment: count;
+    text-align: center;
 }
 
-.article {
+.grid-item img {
     display: block;
-    margin-top: .8rem;
-    border-radius: 3px;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    position: relative;
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
 }
 
 .activetop {

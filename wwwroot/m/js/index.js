@@ -13,7 +13,6 @@ $(function() {
         $(this).addClass("active").siblings("span").removeClass("active");
         serviceswiper.slideTo($(this).index(), 250, false);
     })
-    $('.wall ').jaliswall({ item: '.article ' });
 
     // 首页轮播图
     var bannetSwiper = new Swiper('.swiper-container-bn', {

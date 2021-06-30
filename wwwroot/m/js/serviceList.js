@@ -13,5 +13,4 @@ $(function() {
         $(this).addClass("active").siblings("span").removeClass("active");
         serviceswiper.slideTo($(this).index(), 250, false);
     })
-    $('.wall ').jaliswall({ item: '.article ' });
 });
