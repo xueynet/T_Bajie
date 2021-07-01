@@ -1,60 +1,19 @@
 <div class="md sj4 bggray">
-	<div class="wrap">
-		<div class="sj4w btnbg disflex flex_center">
-			<div class="sj4l">
-				<h3>自己找服务太麻烦？</h3>
-				<p>顾问在线帮您解决一切问题</p>
-				<a href="">立即获取服务<i class="fa fa-caret-right ml2"></i></a>
-			</div>
-			<div class="sj4r flex1">
-				<input type="text" placeholder="请输入您的电话" name="" id="" value="" class="phone"/>
-				<div class="sj4rbox disflex flex_lrcenter flex_center">
-					<button class="forMyServices">为我服务</button>
-					<button class="active" id="onlineConsul">在线咨询</button>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="wrap">
+        <div class="sj4w btnbg disflex flex_center">
+            <div class="sj4l">
+                <h3>自己找服务太麻烦？</h3>
+                <p>顾问在线帮您解决一切问题</p>
+                <a href="">立即获取服务<i class="fa fa-caret-right ml2"></i></a>
+            </div>
+            <div class="sj4r flex1">
+                <input type="text" placeholder="请输入您的电话" name="" id="" value="" class="phone" />
+                <div class="sj4rbox disflex flex_lrcenter flex_center">
+                    <button class="forMyServices">为我服务</button>
+                    <button class="active" id="onlineConsul">在线咨询</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<script>
-
-	$(".forMyServices").on('click', function () {
-        // 获取电话
-        var tel = $.trim($(".phone").val());
-        var reg = /(^0?[1][34578][\d]{9}$)|(^0[1-9][\d]{1,2}[- ]?[\d]{7,8}[-| ]?[\d]*$)/;
-        var qq = '';
-        var telephone = tel;
-        var email = '';
-        if (RegExp(reg).test(tel)) {
-            var data = JSON.stringify({ "Mobile": tel, "Source": document.title + " " + "https://gc.zbj.com/"})
-            $.ajax({
-                type: 'POST',
-                url: "/api/form/1/1",
-                data: data,
-                contentType: "application/json",
-                dataType: "json",
-                success: function (result) {
-                    if (result.id>0) {
-                        $('.green').text('提交成功！');
-                        $(".phone").val('');
-						console.log(result);
-                        setTimeout(function () {
-							alert('稍后联系您!');
-                            // $('.green').text('信息保护中，仅官方可见');
-                        }, 3000);
-                    } else {
-                        console.log(result);
-                    }
-                }
-            });
-            // })
-        } else {
-			alert('填写正确的手机号');
-            $(".j-verify-error .j-error-tip").text('填写正确的手机号')
-        }
-    });
-	$("#onlineConsul").click(function(){
-    	window.open("//p.qiao.baidu.com/cps/chat?siteId=9257917&userId=20703937&siteToken=a25cb6e03bf7c10ac76134bcc03779b1");
-  });
-</script>
+<script src="{stl.siteUrl}/js/consult.js?v=20210701"></script>
