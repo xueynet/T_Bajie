@@ -29,7 +29,11 @@
      var telephone = tel;
      var email = '';
      if (RegExp(reg).test(tel)) {
-         var data = JSON.stringify({ "Mobile ": tel, "Content ": content, "Name ": name, "Source ": document.title + " " + window.location.href })
+         var data = JSON.stringify({
+             "Mobile": tel,
+             "Content": content,
+             "Source": document.title + " " + window.location.href
+         })
          $.ajax({
              type: 'POST',
              url: "/api/form/1/1 ",
