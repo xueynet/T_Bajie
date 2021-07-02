@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>八戒工程 - 八戒工程</title>
+<link rel='stylesheet' href='/sitefiles/assets/css/bootstrap.min.css' type='text/css' />
+<link rel='stylesheet' href='/sitefiles/assets/css/font-awesome-4.7.0.min.css' type='text/css' />
+<link rel="stylesheet" type="text/css" href="/m/css/sanren.css" />
+<link rel="stylesheet" type="text/css" href="/m/css/style.css?v=20210624" />
+<script src="/sitefiles/assets/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/sitefiles/assets/lib/layer/layer-3.1.1.js" type="text/javascript"></script>
+<script src="/m/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/m/js/public.js" type="text/javascript" charset="utf-8"></script>
+<script src="/sitefiles/assets/lib/jquery-1.9.1.min.js" type="text/javascript"></script><script src="/sitefiles/resources/components/lodash-4.17.4.min.js" type="text/javascript"></script><script src="/sitefiles/resources/components/stlclient.js" type="text/javascript"></script></head>
+
+<body>
+    <!-- 头部的导航 -->
+    <div class="head">
+    <div class="wrap h100 disflex flex_center">
+        <!-- <i class="hdicon navicon"><img src="/m/images/hdl_03.png" /></i> -->
+        <h3 class="flex1 textcenter">
+            首页
+        </h3>
+        
+<span id="e_83833acc63c565ed_loading"></span>
+<span id="e_83833acc63c565ed_success" style="display: none"></span>
+<span id="e_83833acc63c565ed_failure" style="display: none"></span>
+<script type="text/javascript" language="javascript">
+function stlDynamice_83833acc63c565ed(page)
+{
+    document.getElementById('e_83833acc63c565ed_loading').style.display = 'inline-block';
+    document.getElementById('e_83833acc63c565ed_success').style.display = 'none';
+    document.getElementById('e_83833acc63c565ed_failure').style.display = 'none';
+    
+    stlClient.post('/api/stl/actions/if?' + StlClient.getQueryString(), {
+        value: '0slash0tX8AyESeoxAXbXA4tZyMfu2ZXZ60r74PzwbGuQTexvBs30slash0SLS5Z0slash0nY4lkd7Eu95ef5VCdCC0slash00eoOvp1ZkXArDAZzP1T5IOJz2WI0slash0fIbXeC8m7I0sV7RrhRxjwuw7rD9kD3k1fOOtvwIkYBHS7Yeno0slash095JYMTF0Djm31C9pXPQa0slash0Wp0slash0gVF9Wx5PgbRHXo70D7p0GN1yuG45nQo0iLCd58xS0wS633Xr9shZhPNJrQskFi0add0iSNOgn4770slash01oEEV9QiYvbNRsxfpiqXG0LiP43h0slash0l7u6zG2RHPrv6D7JoPeEgTW8iUN15GC6DWKrn0slash0EvavkINAlORDGO7GI4y6r8jerd2VQlmRW4gQSJ0UN2oJKvfjxk2LmGpo6CvrnKccAiHHlzZOm8fqtfCeqQiHZwd3L0UenjD5tu0add0utwJ6OQzAF5lh5mH2pYcxZdA83tS2UIjtf22CbHD3F5QAH8A6nHPgr7UBrja2epjcDIPM7sWQ0add0ri54WWfr0qfURZUb3B8Hg5gIaKbyv0slash0PBE2BE7tfjeD0kp1KXisRHutajtj0slash0WggP6qSFPq11WmljbdLhfjZN4AX6lYrUwbDp0slash0G7HZHYO0add0OVw9TO9XPqCsk5cXQ8eE0add0YoRJberSueWBgLSrq1M9urwNE1BY0add0ubuG6w3Yo0slash0lza9IlFaHWuus1aFH7VnNVVUEIgVwaxl0I86L4I3CE0slash07JuYl7RcM19O2KhUcoJD5cc50add0RIAREa30slash0xLEGRTMaLpmrdKyC50add0SuTCzW3qOcijSIUNp85yJyab3XRZPOa1GvYAmkiTMqAywNbmiTgCjSQiXO5z3w7uK666sIqTelmOTeSLFEoidUO4jOktLbkObpsP1yYDjLwmu5MIbdYCklr4QjxcCx8iw92k6VQcElOT0JqJLpqpgVi0slash0Osh354CtKs50slash0W4TXdrMw0equals00equals00secret0',
+        page: page
+    }, function (err, data, status) {
+        if (!err) {
+            if (data.value) {
+                
+                document.getElementById('e_83833acc63c565ed_success').innerHTML = data.html;
+                document.getElementById('e_83833acc63c565ed_success').style.display = 'inline-block';
+            } else {
+                document.getElementById('e_83833acc63c565ed_failure').innerHTML = data.html;
+                document.getElementById('e_83833acc63c565ed_failure').style.display = 'inline-block';
+            }
+        } else {
+            
+        }
+        
+    });
+}
+
+function stlGetPagee_83833acc63c565ed(){
+    var page = 1;
+    var queryString = document.location.search;
+    if (queryString && queryString.length > 1) {
+        queryString = queryString.substring(1);
+        var arr = queryString.split('&');
+        for(var i=0; i < arr.length; i++) {
+            var item = arr[i];
+            var arr2 = item.split('=');
+            if (arr2 && arr2.length == 2) {
+                if (arr2[0] === 'page') {
+                    page = parseInt(arr2[1]);
+                }
+            }
+        }
+    }
+    return page;
+}
+
+stlDynamice_83833acc63c565ed(stlGetPagee_83833acc63c565ed());
+
+function stlRedirecte_83833acc63c565ed(page)
+{
+    var queryString = document.location.search;
+    var parameters = '';
+    if (queryString && queryString.length > 1) {
+        queryString = queryString.substring(1);
+        
+        var arr = queryString.split('&');
+        for(var i=0; i < arr.length; i++) {
+            var item = arr[i];
+            var arr2 = item.split('=');
+            if (arr2 && arr2.length == 2) {
+                if (arr2[0] !== 'page') {
+                    parameters += item + '&';
+                }
+            }
+        }
+    }
+    parameters += 'page=' + page;
+    location.href = location.protocol + '//' + location.host + location.pathname + location.hash + '?' + parameters;
+}
+</script>
+
+    </div>
+</div>
+<div class="head_height"></div>
+    <!--主体内容-->
+    <div class="swiper-container swiper-container-bn">
+        <div class="swiper-wrapper">
+            
+                <div class="swiper-slide">
+                    <a class="disblock" href="/m/contents/191/150.html"><img class="disblock w100" src="/m/upload/images/2021/7/2d7022cf0ec3de0c.jpg"></a>
+                </div>
+            
+                <div class="swiper-slide">
+                    <a class="disblock" href="/m/contents/207/212.html"><img class="disblock w100" src="/m/upload/images/2021/6/83767d35c15eafc0.jpg"></a>
+                </div>
+            
+                <div class="swiper-slide">
+                    <a class="disblock" href="/m/contents/191/13.html"><img class="disblock w100" src="/m/upload/images/2021/7/6b8bf170e8cfa105.jpg"></a>
+                </div>
+            
+        </div>
+        <div class="swiper-pagination swiper-pagination-bn"></div>
+    </div>
+    <div class="md mt pt0">
+        <div class="disflex flex_wrap">
+            <a class="mta disblock textcenter" href="/m/channels/181.html"><img src="/m/images/mtico1_03.png">
+                <p>算造价</p>
+            </a>
+            <a class="mta disblock textcenter" href="/m/channels/182.html"><img src="/m/images/mtico2_03.png">
+                <p>免费设计</p>
+            </a>
+            <a class="mta disblock textcenter" href="/m/channels/183.html"><img src="/m/images/mtico3_03.png">
+                <p>别墅定制</p>
+            </a>
+            <a class="mta disblock textcenter" href="/m/channels/247.html"><img src="/m/images/mtico4_03.png">
+                <p>建房施工</p>
+            </a>
+            <a class="mta disblock textcenter" href="/m/channels/186.html"><img src="/m/images/mtico5_03.png">
+                <p>效果图</p>
+            </a>
+            <a class="mta disblock textcenter" href="/m/channels/185.html"><img src="/m/images/mtico6_03.png">
+                <p>户型设计</p>
+            </a>
+            <a class="mta disblock textcenter" href="/m/channels/187.html"><img src="/m/images/mtico7_03.png">
+                <p>室内装修</p>
+            </a>
+            <a class="mta disblock textcenter" href="/m/channels/188.html"><img src="/m/images/mtico8_03.png">
+                <p>全部服务</p>
+            </a>
+        </div>
+    </div>
+    
+        <div class="line"></div>
+        <div class="md m2">
+            <div class="wrap">
+                <div class="pbt disflex flex_center flex_lmr">
+                    <h3>别墅施工</h3>
+                    <a href="https://gc.zbj.com/m/channels/183.html"><i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <div class="pb_w mt_10 posrelative">
+                <div class="swiper-container swiper-container-public">
+                    <div class="swiper-wrapper">
+                        
+                            <div class="swiper-slide">
+                                <img class="disblock w100" src="/m/upload/images/2021/6/9c859f77fca72653.jpg">
+                            </div>
+                        
+                            <div class="swiper-slide">
+                                <img class="disblock w100" src="/m/upload/images/2021/6/210cd4d8b8eb5a6a.jpg">
+                            </div>
+                        
+                            <div class="swiper-slide">
+                                <img class="disblock w100" src="/m/upload/images/2021/6/4fd4b074ce9f3e71.jpg">
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="mt_10 textcenter">
+                <a class="btnbg more_a" href="https://gc.zbj.com/m/channels/183.html">查看详情</a>
+            </div>
+        </div>
+    
+        <div class="line"></div>
+        <div class="md m2">
+            <div class="wrap">
+                <div class="pbt disflex flex_center flex_lmr">
+                    <h3>别墅设计</h3>
+                    <a href="https://gc.zbj.com/m/channels/247.html"><i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <div class="pb_w mt_10 posrelative">
+                <div class="swiper-container swiper-container-public">
+                    <div class="swiper-wrapper">
+                        
+                            <div class="swiper-slide">
+                                <img class="disblock w100" src="/m/upload/images/2021/6/83e58c873445c8b6.png">
+                            </div>
+                        
+                            <div class="swiper-slide">
+                                <img class="disblock w100" src="/m/upload/images/2021/6/df5d60e9f8f99c9.png">
+                            </div>
+                        
+                            <div class="swiper-slide">
+                                <img class="disblock w100" src="/m/upload/images/2021/6/97bcaabea730b044.png">
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="mt_10 textcenter">
+                <a class="btnbg more_a" href="https://gc.zbj.com/m/channels/247.html">查看详情</a>
+            </div>
+        </div>
+    
+    <div class="line"></div>
+    <div class="md m3">
+        <div class="wrap">
+            <div class="pbt disflex flex_center flex_lmr">
+                <h3>新人福利专区</h3>
+            </div>
+            <div class="m3w pdlr75">
+                
+                    <a href="javascript:void(0)" class="m3a disblock requireLink"><img class="disblock w100" src="/m/upload/images/2021/6/1c6c003e1586b157.png"></a>
+                
+                    <a href="javascript:void(0)" class="m3a disblock requireLink"><img class="disblock w100" src="/m/upload/images/2021/6/7a8bf9578f7e995a.png"></a>
+                
+                    <a href="javascript:void(0)" class="m3a disblock requireLink"><img class="disblock w100" src="/m/upload/images/2021/6/f9dc706325fb3b70.png"></a>
+                
+            </div>
+        </div>
+    </div>
+    <div class="md m4 bggray">
+        <div class="wrap">
+            <div class="m4t activetop disflex flex_lmr flex_wrap">
+                <span class="active">全部</span>
+                
+                    <span>
+                        工程设计
+                    </span>
+                
+                    <span>
+                        企业服务
+                    </span>
+                
+            </div>
+        </div>
+        <div class="service-list">
+            <div class="swiper-container swiper-container-m4 swiper-no-swiping">
+                <div class="swiper-wrapper">
+                    <!-- 全部 -->
+                    <div class="swiper-slide">
+                        <div class="container">
+                            <div class="row row-cols-2">
+                                
+                                    <div class="col mb-3">
+                                        <div class="card h-100">
+                                            <img src="/m/upload/images/2021/6/2cbea61ae5e4705c.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-title">
+                                                    <a class="stretched-link" href="/m/contents/250/262.html">室内效果图</a>
+                                                    
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col mb-3">
+                                        <div class="card h-100">
+                                            <img src="/m/upload/images/2021/6/873a537f22e53b3b.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-title">
+                                                    <a class="stretched-link" href="/m/contents/251/261.html">建筑效果图</a>
+                                                    
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col mb-3">
+                                        <div class="card h-100">
+                                            <img src="/m/upload/images/2021/6/8ea5c5bafb13c723.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-title">
+                                                    <a class="stretched-link" href="/m/contents/193/260.html">鸟瞰图</a>
+                                                    
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col mb-3">
+                                        <div class="card h-100">
+                                            <img src="/m/upload/images/2021/6/30928063f9365951.png" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-title">
+                                                    <a class="stretched-link" href="/m/contents/212/227.html">享受型别墅设计自建房设计建筑设计效果图设计提供施工服务</a>
+                                                    <span class="float-right text-muted">￥0.01</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col mb-3">
+                                        <div class="card h-100">
+                                            <img src="/m/upload/images/2021/6/f319f301b81e5497.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-title">
+                                                    <a class="stretched-link" href="/m/contents/207/212.html">工程资质办理</a>
+                                                    
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                            <div class="m4zk text-center mt-3">
+                                <div class="load-more" data-page="1" data-pagenum="10"><img src="/m/images/m4zk_03.png" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="swiper-slide">
+                            <div class="m4wrap">
+                                <ul class="grid">
+                                    
+                                        <li class="grid-item">
+                                            <img src="/m/upload/images/2021/6/c23437a31fca85e7.jpg">
+                                            <span>鸟瞰图</span>
+                                            
+                                        </li>
+                                    
+                                        <li class="grid-item">
+                                            <img src="/m/upload/images/2021/6/9c89a61ee1f85b81.jpg">
+                                            <span>建筑效果图</span>
+                                            
+                                        </li>
+                                    
+                                        <li class="grid-item">
+                                            <img src="/m/upload/images/2021/6/f4defec6b377bb8a.jpg">
+                                            <span>室内效果图</span>
+                                            
+                                        </li>
+                                    
+                                        <li class="grid-item">
+                                            <img src="/m/upload/images/2021/6/cd73bc28c737bfae.jpg">
+                                            <span>彩平图</span>
+                                            
+                                        </li>
+                                    
+                                        <li class="grid-item">
+                                            <img src="/m/upload/images/2021/6/7809074fce5977b6.jpg">
+                                            <span>鸟瞰图</span>
+                                            
+                                        </li>
+                                    
+                                        <li class="grid-item">
+                                            <img src="/m/upload/images/2021/6/760494b32b644f46.png">
+                                            <span>建筑效果图</span>
+                                            
+                                        </li>
+                                    
+                                        <li class="grid-item">
+                                            <img src="/m/upload/images/2021/6/a813f1af62654c51.jpg">
+                                            <span>室内效果图</span>
+                                            
+                                        </li>
+                                    
+                                        <li class="grid-item">
+                                            <img src="/m/upload/images/2021/6/89b6a2bd4701bfa1.jpg">
+                                            <span>彩平图</span>
+                                            
+                                        </li>
+                                    
+                                        <li class="grid-item">
+                                            <img src="/m/upload/images/2021/6/a050f62604325077.jpg">
+                                            <span>室内设计</span>
+                                            
+                                        </li>
+                                    
+                                        <li class="grid-item">
+                                            <img src="/m/upload/images/2021/6/b1d6e03829fec16a.jpg">
+                                            <span>彩平图</span>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                                <div class="m4zk textcenter mt_10">
+                                    <div class="load-more" data-page="1" data-pagenum="10"><img src="/m/images/m4zk_03.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="swiper-slide">
+                            <div class="m4wrap">
+                                <ul class="grid">
+                                    
+                                        <li class="grid-item">
+                                            <img src="/m/upload/images/2021/6/f319f301b81e5497.jpg">
+                                            <span>工程资质办理</span>
+                                            
+                                        </li>
+                                    
+                                </ul>
+                                <div class="m4zk textcenter mt_10">
+                                    <div class="load-more" data-page="1" data-pagenum="10"><img src="/m/images/m4zk_03.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部菜单-->
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    //初始化赋值
+    var siteId = parseInt("");
+    var channelId = parseInt("");
+    var productId = parseInt("");
+    var price = "";
+    var num = 1;
+
+    var webhost = window.location.protocol + "//" + window.location.host;
+    var link = webhost + '/m/index.html';
+</script>
+
+<script type="text/javascript">
+            var title = "首页";
+            var imgUrl = '';
+            if (imgUrl == null || imgUrl == '') {
+                imgUrl = '/images/logo.png';
+            }
+            if (imgUrl.substring(0, 1) == '/') {
+                imgUrl = webhost + imgUrl;
+            }
+            var desc = '';
+        </script>
+
+<footer class="footer" id="footer">
+    <nav class="navbar fixed-bottom navbar-light bg-light text-center">
+        <a href="/m/"><i class="fa fa-home d-block" aria-hidden="true"></i>首页</a>
+                <a href="javascript:void(0)" class="requireLink"><i class="fa fa-edit d-block" aria-hidden="true"></i>发布需求</a>
+                <a href="javascript:void(0)" class="consultLink"><i class="fa fa-comments d-block" aria-hidden="true"></i>咨询</a>
+                <a href="/m/channels/188.html"><i class="fa fa-cloud d-block" aria-hidden="true"></i>全部服务</a>
+                <a href="/home"><i class="fa fa-user d-block" aria-hidden="true"></i>我的</a>
+    </nav>
+</footer>
+
+<script src="/m/js/footer.js?v=2021062802"></script>
+
+<!--友盟cnzz站点统计-->
+<div class="none hidden">
+    <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279850217&web_id=1279850217"></script>
+</div>
+    <script src="js/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //下拉加载更多实现
+        var state = true;
+        var data = {
+            siteId: 180,
+            channelId: 0,
+            checked: false,
+            top: false,
+            recommend: false,
+            color: false,
+            hot: false,
+            page: 1,
+            perPage: 10
+        };
+        var $apiToken = "24e64d3b-f9d6-4072-965a-b673bfea241b";
+        //滚动条滚动的时候
+        $(window).scroll(function() {
+            //获取当前加载更多按钮距离顶部的距离
+            var bottomsubmit = $('.service-list .swiper-slide-active .load-more').offset().top;
+            //获取当前页面底部距离顶部的高度距离
+            var nowtop = $(document).scrollTop() + $(window).height();
+            //获取当前页数，默认第一页
+            var now = $('.service-list .swiper-slide-active .load-more').attr('data-page');
+            //获取总页数，分页的总页数
+            var num = $('.service-list .swiper-slide-active .load-more').attr('data-pagenum');
+            //当当前页面的高度大于按钮的高度的时候开始触发加载更多数据
+            if (nowtop > bottomsubmit) {
+                //如果为真继续执行，这个是用于防止滚动获取过多的数据情况
+                if (state == true) {
+                    //执行一次获取数据并停止再进来获取数据
+                    state = false;
+
+                    setTimeout(function() {
+                        //当前页数++
+                        now++;
+                        //记录当前为第二页
+                        $('.service-list .swiper-slide-active .load-more').attr('data-page', now);
+                        data.page = now;
+                        $.ajax({
+                            //通过ajax传页数参数获取当前页数的数据
+                            type: 'POST',
+                            url: '/api/v1/contents',
+                            headers: { //请求头
+                                "X-XY-API-KEY": $apiToken,
+                            },
+                            data: JSON.stringify(data),
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function(data) {
+                                console.log(data);
+                                //each 循环加入列
+                                $('.service-list .swiper-slide-active .row').append(data);
+                                //如果当前页大于等于总页数就提示没有更多数据
+                                if (now >= num) {
+                                    $('.service-list .swiper-slide-active .load-more').empty().text('没有更多数据');
+                                    //并把状态设置为假，下次下滑滚动时不再通过ajax获取数据
+                                    state = false;
+                                } else {
+                                    //否则继续
+                                    state = true;
+                                }
+                            },
+                            error: function() {
+                                $('.service-list .swiper-slide-active .load-more').empty().text('加载错误,请刷新页面！');
+                            }
+                        });
+                    }, 500);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

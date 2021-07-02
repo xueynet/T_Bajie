@@ -243,24 +243,16 @@ a:active {
 
 /*瀑布流开始*/
 
-.m4wrap {
-    padding: 0 .3rem;
+.service-list {
+    margin-top: 1rem;
 }
 
-.grid-item {
-    position: relative;
-    width: 50%;
-    padding: 10px;
-    box-sizing: border-box;
-    counter-increment: count;
-    text-align: center;
+.service-list .card .card-img-top {
+    height: 100px;
 }
 
-.grid-item img {
-    display: block;
-    height: auto;
-    width: 100%;
-    border-radius: 5px;
+.service-list .card .card-body {
+    padding: 0.25rem 1.25rem;
 }
 
 .activetop {
