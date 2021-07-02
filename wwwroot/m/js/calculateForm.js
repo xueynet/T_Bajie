@@ -8,6 +8,15 @@ $('.phone').blur(function() {
     }
 });
 
+$('.hourse').bind('input propertychange', function () {
+    if ($('#hourse1').val() != '' && $('#hourse2').val() != '' && $('#hourse3').val() != '') {
+        var price = $('#hourse1').val() * $('#hourse2').val() * $('#hourse3').val() * 1300 + "元"
+        $('#hourseprice').val(price)
+    } else {
+        $('#hourseprice').val('')
+    }
+});
+
 $("#calculateSubmit").on('click', function() {
     // 获取建房地区
     var address = $('.address').val();
