@@ -1,6 +1,13 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>{Stl.SeoTitle} - {Stl.SiteName}</title>
+<stl:if type="index">
+    <stl:yes>
+        <title>{Stl.SiteName}</title>
+    </stl:yes>
+    <stl:no>
+        <title>{Stl.SeoTitle} - {Stl.SiteName}</title>
+    </stl:no>
+</stl:if>
 <meta name="description" content="{Stl.Description}" />
 <meta name="keywords" content="{Stl.Keywords}" />
 <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -169,7 +169,7 @@ function orderConfirm() {
         success: function(result) {
             console.log(result);
             if (!result.isLogin) {
-                window.location.href = "/api/login/auth/Zbj?redirectUrl=" + encodeURIComponent(window.location.href);
+                window.location.href = "/home/login/?returnUrl=" + encodeURIComponent(window.location.href);
                 return;
             }
             //2.3.2 当前为微信浏览器
