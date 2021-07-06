@@ -29,7 +29,7 @@ $(function() {
                 });
                 wx.error(function(res) {
                     console.log(res);
-                    alert('验证失败');
+                    //alert('验证失败');
                 });
                 wx.ready(function() {
                     //转发到朋友圈

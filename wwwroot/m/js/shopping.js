@@ -189,7 +189,7 @@ function orderConfirm() {
                         openId = r;
                         console.log(openId);
                         if (openId == null || openId == "") {
-                            window.location.href = "/api/login/auth/Weixin?userId=" + result.userIdKey + "&redirectUrl=" + encodeURIComponent(window.location.href)
+                            window.location.href = "/api/login/auth/Weixin?userId=" + result.userIdKey + "&redirectUrl=" + encodeURIComponent(window.location.href);
                         }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
