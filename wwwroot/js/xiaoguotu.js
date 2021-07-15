@@ -68,6 +68,6 @@ $("#ljdzsjtj").click(function() {
             alert("提交失败，手机号错误")
         }
     } else {
-        alert("提交失败，请完善表单再提交")
+        alert("提交失败，请完善信息再提交")
     }
 })
