@@ -2085,11 +2085,19 @@ ul.cjwt li p {
     font-size: 24px;
 }
 
-.visiblexs{
+.visiblexs {
     width: auto;
     height: 40px;
     margin-left: 5px;
     font-size: 14px;
     padding-top: 10px;
     color: #ff6900;
+}
+
+
+/*在线咨询+商机提交*/
+
+.zxbtn,
+.xy-form-btn {
+    cursor: pointer;
 }

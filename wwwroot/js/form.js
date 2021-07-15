@@ -1,4 +1,32 @@
+var frmTitle;
+var frmPlaceholder;
+var frmSuccessTxt;
+var frmHref;
 $('.xy-form-btn').click(function() {
+    frmTitle = $(this).attr("data-title");
+    frmPlaceholder = $(this).attr("data-placeholder");
+    frmSuccessTxt = $(this).attr("data-successTxt");
+    if (!$.isEmptyObject($(this).attr("data-title"))) {
+        frmTitle = $(this).attr("data-title");
+    } else {
+        frmTitle = document.title;
+    }
+    if (!$.isEmptyObject($(this).attr("data-placeholder"))) {
+        frmPlaceholder = $(this).attr("data-placeholder");
+    } else {
+        frmPlaceholder = "工程设计、效果图制作、规划设计、建筑设计、全域旅游、城市公共品牌、文创设计；乡村振兴"
+    }
+    initFormTextholder(frmPlaceholder);
+    if (!$.isEmptyObject($(this).attr("data-successTxt"))) {
+        frmSuccessTxt = $(this).attr("data-successTxt");
+    } else {
+        frmSuccessTxt = "发布成功！";
+    }
+    if (!$.isEmptyObject($(this).attr("data-href"))) {
+        frmHref = $(this).attr("data-href");
+    } else {
+        frmHref = window.location.href;
+    }
     $('.ui-popup-order-backdrop').show();
     $('.ui-popup-order').show();
 });
@@ -32,14 +60,11 @@ $(".btn-submit").on('click', function() {
     var content = $(".form-textarea__inner").val();
 
     var reg = /^1[3-9]\d{9}$/;
-    var qq = '';
-    var telephone = tel;
-    var email = '';
     if (RegExp(reg).test(tel)) {
         var data = JSON.stringify({
             "Mobile": tel,
             "Content": content,
-            "Source": document.title + " " + window.location.href
+            "Source": frmTitle + " " + frmHref
         })
         $.ajax({
             type: 'POST',
@@ -49,7 +74,8 @@ $(".btn-submit").on('click', function() {
             dataType: "json",
             success: function(result) {
                 if (result.id > 0) {
-                    $('.section-form-green').text('发布成功！');
+                    layer.msg(frmSuccessTxt);
+                    $('.section-form-green').text(frmSuccessTxt);
                     $(".form-input__inner").val('');
                     $(".form-textarea__inner").val('');
                     setTimeout(function() {
