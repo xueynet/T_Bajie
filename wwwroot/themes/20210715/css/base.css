@@ -31,3 +31,11 @@ li {
     width: 1200px;
     margin: 0 auto;
 }
+
+.scm {
+    font-weight: bold;
+}
+
+.scr {
+    font-weight: 500;
+}
