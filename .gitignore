@@ -13,6 +13,7 @@ node_modules/
 #站点生成目录
 channels/
 contents/
+wwwroot/88/
 
 #上传目录
 upload/
