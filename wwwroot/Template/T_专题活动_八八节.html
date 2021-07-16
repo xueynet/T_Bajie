@@ -256,68 +256,6 @@
 
     <stl:include file="{Stl.SiteUrl}/include/footer.html"></stl:include>
 
-
-
-
-    <div class="floatCtro">
-
-        <img src="/themes/20210715/images/dh_lep.png">
-        <a href="">
-            <img src="/themes/20210715/images/zhc.png" class="zhc">
-        </a>
-        <ul class="">
-            <li class="">
-                <a href="" class="fll_a1">知识产权分会场></a>
-                <div class="fll_a2">
-                    <p><a href="" class="axs">商标注册</a> <a href="">版权登记</a></p>
-                </div>
-            </li>
-            <li class="">
-                <a href="" class="fll_a1">工商财税分会场></a>
-                <div class="fll_a2">
-                    <p><a href="" class="">公司注册</a> <a href="">代理记账</a></p>
-                </div>
-            </li>
-            <li class="">
-                <a href="" class="fll_a1">品牌设计分会场></a>
-                <div class="fll_a2">
-                    <p><a href="" class="">logo设计</a> <a href="">包装设计</a></p>
-                </div>
-            </li>
-            <li class="">
-                <a href="" class="fll_a1">营销推广分会场></a>
-                <div class="fll_a2">
-                    <p><a href="" class="">营销策划</a> <a href="">电商运营</a></p>
-                </div>
-            </li>
-            <li class="">
-                <a href="" class="fll_a1">软件开发分会场></a>
-                <div class="fll_a2">
-                    <p><a href="" class="">微信开发</a> <a href="">网站建设</a></p>
-                </div>
-            </li>
-            <li class="">
-                <a href="" class="fll_a1">科技服务分会场></a>
-                <div class="fll_a2">
-                    <p><a href="" class="">高企认证</a> <a href="">软著登记</a></p>
-                </div>
-            </li>
-            <li class="">
-                <a href="" class="fll_a1">工程设计分会场></a>
-                <div class="fll_a2">
-                    <p><a href="https://gc.zbj.com/88/" class="">装修设计</a> <a href="">建筑景观</a></p>
-                </div>
-            </li>
-        </ul>
-        <div class="dhle_btn">
-            <div class="" align="center">
-                <img src="/themes/20210715/images/jt.png" class="jt">
-                <p>收起导航</p>
-            </div>
-        </div>
-
-    </div>
-
     <div class="floatCtrori">
         <div class="">
             <ul class="clearfix">
@@ -503,6 +441,36 @@
 
     <!--商机提交-->
     <stl:include file="include/form.html"></stl:include>
+
+    <!--活动导航-->
+    <script type='text/javascript'>
+        window.ZBJInfo = {
+            baseURI: "zbj.com",
+            pageDomain: "zbj.com",
+            staticLibURI: "//as.zbjimg.com",
+            runtime: "product",
+        };
+    </script>
+    <script id="seajsnode" src="//as.zbjimg.com/rake-component/fe-common/utopia-core/0.2.18/index.js"></script>
+    <script type="text/javascript" src="//utopiacs.zbj.com/module-version.js"></script>
+    <script>
+        // pc端用
+        seajs.use("zbj-fe/fe-zbj-88venue-res", function(Venue) {
+            Venue.init({
+                position: 'fixed', //定位方式，包括fixed和page,默认page
+                left: 20, //组件距页面左距离，position=fixed时会用到，默认0
+                top: 100, //组件距页面高度，默认100
+                pageWidth: 990, //页面主体宽度，position=page时会用到，默认990
+                linkid: 'main', //linkid标示，不使用可不传
+                venue: '', //分会场标示
+                always: true, //始终显示在页面上，窗口过窄时可能会遮挡页面主题内容
+                zIndex: 10, //组件的z-index，自行调节，默认10
+                cb: function(rs) { //回调
+                    console.log(rs);
+                }
+            });
+        });
+    </script>
 
     <!--友盟cnzz站点统计-->
     <div style="display: none;">
