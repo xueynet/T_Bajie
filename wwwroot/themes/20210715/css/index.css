@@ -4,7 +4,6 @@
     height: 60px;
     background: url(../images/top_bac.png);
     width: 100%;
-    z-index: 30;
     position: relative;
 }
 
@@ -83,7 +82,6 @@
     position: relative;
     background-position: center center;
     min-width: 1200px;
-    z-index: 20
 }
 
 .banner_pic {
@@ -102,7 +100,7 @@
     margin-top: -145px;
     padding-top: 80px;
     position: relative;
-    z-index: 10
+    z-index: -1
 }
 
 .ind_bt {
@@ -444,19 +442,13 @@
     font-size: 30px;
 }
 
-.foot {
-    padding-top: 50px;
-    padding-bottom: 22px;
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.4);
-}
-
 .floatCtro {
     width: 125px;
-    position: absolute;
+    position: fixed;
     left: 195px;
-    top: 0;
-    z-index: 100
+    top: 50%;
+    z-index: 100;
+    transform: translate(0, -50%)
 }
 
 .zhc {
@@ -468,6 +460,10 @@
     position: relative;
     z-index: 20;
     display: block;
+}
+
+.floatCtro ul li {
+    width: 100%;
 }
 
 .floatCtro li:nth-child(1) .fll_a1 {
@@ -562,12 +558,13 @@
     background: #7c0000;
     width: 100px;
     height: 270px;
-    position: absolute;
+    position: fixed;
     right: 195px;
-    top: 0;
+    top: 50%;
     z-index: 100;
     padding-top: 23px;
     border-radius: 10px;
+    transform: translate(0, -50%)
 }
 
 .floatCtrori li {
@@ -605,21 +602,22 @@
     margin-left: 18px;
 }
 
-@media screen and (max-width: 1440px) {
+.floatCtro img,
+.floatCtrori img {
+    max-width: none;
+}
+
+@media screen and (max-width: 1680px) {
     .floatCtro {
         width: 125px;
-        position: absolute;
         left: 20px;
-        top: 0;
         z-index: 100
     }
     .floatCtrori {
         background: #7c0000;
         width: 100px;
         height: 270px;
-        position: absolute;
         right: 20px;
-        top: 0;
         z-index: 100;
         padding-top: 23px;
         border-radius: 10px;

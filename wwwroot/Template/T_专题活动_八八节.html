@@ -2,10 +2,15 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/animate.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/animated-headlines.css">
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/default.css?v=2021071602">
     <link rel="stylesheet" href="{Stl.SiteUrl}/css/rootstyle.css?v=202104232">
     <link rel="stylesheet" href="{Stl.SiteUrl}/css/style.css?v=202100601">
-    <link rel="stylesheet" type="text/css" href="/themes/20210715/css/base.css?v=2021071601">
-    <link rel="stylesheet" type="text/css" href="/themes/20210715/css/index.css?v=2021071601">
+    <link rel="stylesheet" type="text/css" href="/themes/20210715/css/base.css?v=2021071602">
+    <link rel="stylesheet" type="text/css" href="/themes/20210715/css/index.css?v=2021071604">
     <link rel="stylesheet" type="text/css" href="/themes/20210715/css/swiper-bundle.min.css">
     <title>{Stl.SeoTitle} - {Stl.SiteName}</title>
     <meta name="description" content="{Stl.Description}" />
@@ -22,6 +27,8 @@
 </head>
 
 <body>
+    <stl:include file="{Stl.SiteUrl}/include/header.html"></stl:include>
+    <stl:include file="{Stl.SiteUrl}/include/menu.html"></stl:include>
     <div class="nav_top">
         <div class="wid1200 clearfix">
             <a href="https://88.zbj.com/m?fr=gcfhc" target="_blank"><img src="/themes/20210715/images/logo_88.png" class="fl logo_88"></a>
@@ -246,9 +253,7 @@
         </div>
     </div>
 
-    <div class="foot be000e" align="center">
-        <p class="scl">Copyright © 2021 八戒工程</p>
-    </div>
+    <stl:include file="{Stl.SiteUrl}/include/footer.html"></stl:include>
 
 
 
@@ -460,85 +465,6 @@
 
             autoHeight: true
         });
-    </script>
-
-
-
-    <script>
-        $(function() {
-
-            var AllHet = $(window).height();
-
-            var mainHet = $('.floatCtro').height();
-
-            var fixedTop = (AllHet - mainHet) / 35
-
-            $('div.floatCtro').css({
-                top: fixedTop + 'px'
-            });
-
-
-            $(window).scroll(scrolls)
-
-            scrolls()
-
-            function scrolls() {
-
-                var fixRight = $('div.floatCtro p');
-
-                var blackTop = $('div.floatCtro a')
-
-                var sTop = $(window).scrollTop();
-
-
-                var topPx = sTop + fixedTop
-
-                $('div.floatCtro').stop().animate({
-                    top: topPx
-                });
-            }
-
-
-
-            var AllHetri = $(window).height();
-
-            var mainHetri = $('.floatCtrori').height();
-
-            var fixedTopri = (AllHetri - mainHetri) / 35
-
-            $('div.floatCtrori').css({
-                top: fixedTop + 'px'
-            });
-
-
-            $('div.floatCtrori .up').click(function() {
-
-                $('body,html').animate({
-                    scrollTop: 0
-                }, 1000)
-
-            })
-
-            $(window).scroll(scrollsri)
-
-            scrollsri()
-
-            function scrollsri() {
-
-                var fixRightri = $('div.floatCtrori p');
-
-                var blackTopri = $('div.floatCtrori a')
-
-                var sTopri = $(window).scrollTop();
-
-
-                var topPxri = sTopri + fixedTopri
-
-                $('div.floatCtrori').stop().animate({
-                    top: topPxri
-                });
-            }
-        })
     </script>
 
     <script type="text/javascript">
