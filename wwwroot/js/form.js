@@ -3,9 +3,6 @@ var frmPlaceholder;
 var frmSuccessTxt;
 var frmHref;
 $('.xy-form-btn').click(function() {
-    frmTitle = $(this).attr("data-title");
-    frmPlaceholder = $(this).attr("data-placeholder");
-    frmSuccessTxt = $(this).attr("data-successTxt");
     if (!$.isEmptyObject($(this).attr("data-title"))) {
         frmTitle = $(this).attr("data-title");
     } else {
@@ -13,7 +10,7 @@ $('.xy-form-btn').click(function() {
     }
     if (!$.isEmptyObject($(this).attr("data-placeholder"))) {
         frmPlaceholder = $(this).attr("data-placeholder");
-    } else {
+    } else if ($.isEmptyObject(frmPlaceholder)) {
         frmPlaceholder = "工程设计、效果图制作、规划设计、建筑设计、全域旅游、城市公共品牌、文创设计；乡村振兴"
     }
     initFormTextholder(frmPlaceholder);
@@ -36,6 +33,7 @@ $('.ui-dialog-order-close').click(function() {
 });
 
 function initFormTextholder(str) {
+    frmPlaceholder = str;
     $('.form-textarea__inner').attr('placeholder', str);
 }
 $('.form-textarea__inner').bind('input propertychange', function() {
