@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{Stl.SiteUrl}/css/rootstyle.css?v=202104232">
     <link rel="stylesheet" href="{Stl.SiteUrl}/css/style.css?v=202100601">
     <link rel="stylesheet" type="text/css" href="/themes/20210715/css/base.css?v=2021071602">
-    <link rel="stylesheet" type="text/css" href="/themes/20210715/css/index.css?v=2021071605">
+    <link rel="stylesheet" type="text/css" href="/themes/20210715/css/index.css?v=2021071608">
     <link rel="stylesheet" type="text/css" href="/themes/20210715/css/swiper-bundle.min.css">
     <title>{Stl.SeoTitle} - {Stl.SiteName}</title>
     <meta name="description" content="{Stl.Description}" />
@@ -333,7 +333,7 @@
                 <li class="">
                     <img src="/themes/20210715/images/dhlx.png">
                     <div class="dds">
-                        <img src="/themes/20210715/images/dhlx_tel.png" class="ewm">
+                        <img src="/themes/20210715/images/dhlx_tel.png?v=20210716" class="ewm">
                     </div>
                 </li>
                 <li class="">
@@ -465,6 +465,18 @@
             },
 
             autoHeight: true
+        });
+
+        $(document).ready(function() {
+            $("a.up").click(function() {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, {
+                    duration: 500,
+                    easing: "swing"
+                });
+                return false;
+            });
         });
     </script>
 

@@ -72,8 +72,7 @@ $(".btn-submit").on('click', function() {
             dataType: "json",
             success: function(result) {
                 if (result.id > 0) {
-                    layer.msg(frmSuccessTxt);
-                    $('.section-form-green').text(frmSuccessTxt);
+                    $('.section-form-green').text(frmSuccessTxt).css("font-size", "16px");
                     $(".form-input__inner").val('');
                     $(".form-textarea__inner").val('');
                     setTimeout(function() {
