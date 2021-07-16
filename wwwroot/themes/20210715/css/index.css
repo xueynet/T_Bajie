@@ -4,6 +4,7 @@
     height: 60px;
     background: url(../images/top_bac.png);
     width: 100%;
+    z-index: 1;
     position: relative;
 }
 
