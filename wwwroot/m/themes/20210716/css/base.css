@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: '微软雅黑';
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+p {
+    max-height: 100%
+}
+
+p {
+    -webkit-text-size-adjust: none;
+}
+
+a {
+    text-decoration: none
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+li {
+    list-style: none
+}
+
+.wrap {
+    width: 710px;
+    margin: 0 auto;
+}
+
+.be000b {
+    background: #be000b
+}
+
+.be000e {
+    background: #be000e
+}
+
+.scm {
+    font-weight: bold;
+}
+
+.scr {
+    font-weight: 500;
+}
