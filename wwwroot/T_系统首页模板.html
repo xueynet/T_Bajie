@@ -14,17 +14,30 @@
             <stl:contents channelName="1大图">
                 <stl:itemTemplate type="Item">
                     <div class="slide">
-                        <div class="slidetext flex-c">
-                            <div class="container">
-                                <stl:form name="frm-gczbj" type="submitforzbj"></stl:form>
-                            </div>
-                        </div>
                         <div class="slidesvg">
-                            <stl:image class="lazy" data-original="{content.imageUrl}"></stl:image>
+                            <stl:if type="linkUrl" op="NotEmpty">
+                                <stl:yes>
+                                    <stl:a target="_blank">
+                                        <stl:image class="lazy" data-original="{content.imageUrl}"></stl:image>
+                                    </stl:a>
+                                </stl:yes>
+                                <stl:no>
+                                    <stl:image class="lazy" data-original="{content.imageUrl}"></stl:image>
+                                </stl:no>
+                            </stl:if>
                         </div>
                     </div>
                 </stl:itemTemplate>
             </stl:contents>
+        </div>
+    </div>
+    <div class="tabpage" id="homefrm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <stl:form name="frm-gczbj" type="submitforzbj"></stl:form>
+                </div>
+            </div>
         </div>
     </div>
     <div class="tabpage hidden-xs">
