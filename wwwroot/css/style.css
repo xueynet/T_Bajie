@@ -840,7 +840,6 @@ ul.news a:hover .desc h3 {
     position: relative;
     height: 100vh;
     max-height: 542px;
-    z-index: 9;
     overflow: hidden;
 }
 
