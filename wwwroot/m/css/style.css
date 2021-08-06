@@ -2,7 +2,7 @@
  * recover css
  */
 
-body {
+ body {
     max-width: 750px;
     overflow-x: hidden;
     margin: 0 auto;
@@ -243,16 +243,31 @@ a:active {
 
 /*瀑布流开始*/
 
-.service-list {
-    margin-top: 1rem;
+.m4wrap {
+    padding: 0 .3rem;
 }
 
-.service-list .card .card-img-top {
-    height: 100px;
+.wall {
+    display: block;
+    position: relative;
 }
 
-.service-list .card .card-body {
-    padding: 0.25rem 1.25rem;
+.wall-column {
+    display: block;
+    position: relative;
+    width: 50%;
+    float: left;
+    padding: 0 2%;
+    box-sizing: border-box;
+}
+
+.article {
+    display: block;
+    margin-top: .8rem;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
 }
 
 .activetop {
@@ -829,39 +844,35 @@ footer .navbar div a.btn {
 
 /* 右侧悬浮图标 */
 
-.rightCtrori .rightCtroriBox{
+.rightCtrori{
+    z-index: 2;
     position: fixed;
     right:3%;
     top: 40%; 
-    z-index: 2;
+    color:#fff;
+    line-height: 35px; 
 }
 
-.rightCtrori .rightCtroriBox .consultLink,.rightCtrori .rightCtroriBox .requireLink{
+.rightCtrori .consultLink,.rightCtrori .requireLink{
     text-align: center;
     display: flex; 
     justify-content: space-around; 
-    padding-right: 20px;
-    padding-left: 20px; 
+    padding-right: 15px;
+    padding-left: 15px; 
     border-radius: 20px; 
     margin: 5px;
 }
 
-.rightCtrori .rightCtroriBox .consultLink{
+.rightCtrori .consultLink{
     background-color: #FF7D0F; 
 }
 
-.rightCtrori .rightCtroriBox .requireLink{
+.rightCtrori .requireLink{
     background-color: #F6605B;
 }
 
-.rightCtrori .rightCtroriBox .consultLink i,.rightCtrori .rightCtroriBox .requireLink i{
-    font-size:32px;
-    color:#fff
+.rightCtrori i{
+    font-size: 20px;
+    line-height: 35px;
+    margin-right: 5px;
 }
-.rightCtrori .rightCtroriBox .consultLink div,.rightCtrori .rightCtroriBox .requireLink div{
-    text-align: center; 
-    line-height: 32px; 
-    color: #fff;
-}
-
-
