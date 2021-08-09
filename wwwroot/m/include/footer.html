@@ -2,10 +2,7 @@
 <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script type="text/javascript">
     //初始化赋值
-    var siteId = parseInt("{content.SiteId}");
-    var channelId = parseInt("{content.ChannelId}");
-    var productId = parseInt("{content.Id}");
-    var price = "{content.Price}";
+    var siteId = parseInt("{stl.SiteId}");
     var num = 1;
 
     var webhost = window.location.protocol + "//" + window.location.host;
@@ -15,6 +12,9 @@
 <stl:if type="TemplateType" op="Equals" value="ContentTemplate">
     <stl:yes>
         <script type="text/javascript">
+            var channelId = parseInt("{Content.ChannelId}");
+            var productId = parseInt("{Content.Id}");
+            var price = "{content.Price}";
             var title = "{content.Title}";
             var imgUrl = '{content.imageUrl}';
             if (imgUrl == null || imgUrl == '') {
@@ -28,6 +28,7 @@
     </stl:yes>
     <stl:no>
         <script type="text/javascript">
+            var channelId = parseInt("{channel.Id}");
             var title = "{channel.Title}";
             var imgUrl = '{channel.imageUrl}';
             if (imgUrl == null || imgUrl == '') {
