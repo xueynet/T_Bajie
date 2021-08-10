@@ -1,6 +1,6 @@
+
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -40,7 +40,6 @@
             position: relative;
             min-height: 652px;
         }
-
         .pos-sub {
             position: absolute;
             top: 20px;
@@ -51,14 +50,27 @@
             height: 450px;
             overflow: hidden;
         }
-        .formBox,.formBox .el-input-group__append button.el-button{
-            background-color:#54AC34 !important;
+        .row .formBox{
+            background-color:#54AC34;
         }
-        .formBox #main .el-input-group__append button.el-button span{
-            background-color:#2B95EB !important;
+        .row .formBox .container .row form input{
+            font-size: 20px;
+            color: #676767;
+            height: 60px;
+            background-color: #fff;
+            font-family: cursive;
         }
-        .formBox #main .el-input-group--append .el-input__inner{
-            border: none !important;
+        .row .formBox .container .row form button{
+            height: 60px;
+            border-radius: 0; 
+            background-color: #2B95EB; 
+            outline:none;
+        }
+        .row .formBox .container .row form button span{
+            font-size: 22px;
+        }
+        .row .formBox .container .row .phone_error{
+            color: #f56c6c;
         }
     </style>
 </head>
@@ -70,31 +82,45 @@
         <div class="row">
             <img src="images/bg_zt_01.png" class="img-responsive center-block" alt="" />
         </div>
-        <div class="row formBox pt-20 pb-20">
-            <div class="col-md-6 col-md-offset-3">
-                <stl:form name="frm-gczbj" type="submitforzbj"></stl:form>
+        <div class="row">
+            <div class="formBox">
+                <div class="container pt-20 pb-20">
+                    <div class="row pt-20  pb-20">
+                        <form role="form" class="row" id="formMfbj">
+                            <div class="row">
+                                <input class="col-md-6 col-md-offset-2"  type="text" placeholder="请留下您的联系电话，设计师将免费为您提供专业意见" id="formMfbjPhone">
+                                <button type="button" class="btn btn-info col-md-2" id="mfbjButton">
+                                    <span> 免费报价</span>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <span class="col-md-offset-2 phone_error">信息保护中，仅官方可见</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
-            <a href="javascript:void(0);" class="xy-form-btn"><img src="images/bg_zt_02.png" class="img-responsive center-block" alt="" /></a>
+            <a href="javascript:void(0);" data-title="餐饮效果图设计" class="xy-form-btn"><img src="images/bg_zt_02.png" class="img-responsive center-block" alt="" /></a>
         </div>
         <div class="row">
-            <a href="javascript:void(0);" class="xy-form-btn"><img src="images/bg_zt_03.png" class="img-responsive center-block" alt="" /></a>
+            <a href="javascript:void(0);" data-title="办公室效果设计图" class="xy-form-btn"><img src="images/bg_zt_03.png" class="img-responsive center-block" alt="" /></a>
         </div>
         <div class="row">
-            <a href="javascript:void(0);" class="xy-form-btn"><img src="images/bg_zt_04.png" class="img-responsive center-block" alt="" /></a>
+            <a href="javascript:void(0);"  data-title="展会展厅效果图"  class="xy-form-btn"><img src="images/bg_zt_04.png" class="img-responsive center-block" alt="" /></a>
         </div>
         <div class="row">
-            <a href="javascript:void(0);" class="xy-form-btn"><img src="images/bg_zt_05.png" class="img-responsive center-block" alt="" /></a>
+            <a href="javascript:void(0);" data-title="别墅民宿/酒店会所效果图设计" class="xy-form-btn"><img src="images/bg_zt_05.png" class="img-responsive center-block" alt="" /></a>
         </div>
         <div class="row">
-            <a href="javascript:void(0);" class="xy-form-btn"><img src="images/bg_zt_06.png" class="img-responsive center-block" alt="" /></a>
+            <a href="javascript:void(0);" data-title="建筑效果图设计" class="xy-form-btn"><img src="images/bg_zt_06.png" class="img-responsive center-block" alt="" /></a>
         </div>
         <div class="row">
-            <a href="javascript:void(0);" class="xy-form-btn"><img src="images/bg_zt_07.png" class="img-responsive center-block" alt="" /></a>
+            <a href="javascript:void(0);"  data-title="景观效果图设计"  class="xy-form-btn"><img src="images/bg_zt_07.png" class="img-responsive center-block" alt="" /></a>
         </div>
         <div class="row">
-            <a href="javascript:void(0);" class="xy-form-btn"><img src="images/bg_zt_08.png" class="img-responsive center-block" alt="" /></a>
+            <a href="javascript:void(0);" data-title="规划鸟瞰效果图设计" class="xy-form-btn"><img src="images/bg_zt_08.png" class="img-responsive center-block" alt="" /></a>
         </div>
         <div class="row">
             <img src="images/bg_zt_09.png" class="img-responsive center-block" alt="" />
@@ -127,7 +153,47 @@
         $(function() {
             initFormTextholder("例如：我有个500平的办公室需要设计");
         });
-       
+        $('#formMfbjPhone').blur(function() {
+            if (!/^1[3-9]\d{9}$/.test($("#formMfbjPhone").val())) {
+                $(".phone_error").show();
+                $(".phone_error").text('填写正确的手机号')
+            } else {
+                // $(".phone_error").hide();
+                $(".phone_error").text('')
+            }
+        });
+
+        $("#mfbjButton").on('click', function() {
+            var tel = $.trim($("#formMfbjPhone").val());
+            var reg = /^1[3-9]\d{9}$/;
+            if (RegExp(reg).test(tel)) {
+                var data = JSON.stringify({
+                    "Mobile": tel,
+                    "Source": document.title + " " + window.location.href
+                })
+                $.ajax({
+                    type: 'POST',
+                    url: "/api/form/1/1",
+                    data: data,
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function(result) {
+                        if (result.id > 0) {
+                            $("#formMfbjPhone").val('');
+                            $('.phone_error').text('提交成功！');
+                            setTimeout(function() {
+                                $('.phone_error').text('信息保护中，仅官方可见');
+                            }, 3000);
+                        } else {
+                            console.log(result);
+                        }
+                    }
+                });
+                // })
+            } else {
+                $(".phone_error").text('填写正确的手机号')
+            }
+        });
     </script>
 </body>
 
