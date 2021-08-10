@@ -45,6 +45,9 @@ $("#mfbj").click(function() {
     }
 
 })
+
+
+
 $("#ljdzsjtj").click(function() {
     var item1 = $("#ljdzsjxm").val()
     var item2 = $("#ljdzsjdh").val()
