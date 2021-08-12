@@ -104,7 +104,7 @@ docker run -d \
 
 
 ```sh
-docker run -d --name gcbj-xycms -p 80:80 --restart=always -v D:\Work\T_Bajie\wwwroot:/app/wwwroot -e XYCMS_SECURITY_KEY=e2a3d303-ac9b-41ff-9154-930710af0845 -e XYCMS_DATABASE_TYPE=MySql -e XYCMS_DATABASE_CONNECTION_STRING="Server=10.10.1.11;Database=gcbj;Uid=gcbjuser;Pwd=xuey.net;" xueynet/xycms:latest
+docker run -d --name gcbj-xycms -p 80:80 --restart=always -v D:\Work\T_Bajie\wwwroot:/app/wwwroot -e XYCMS_SECURITY_KEY=e2a3d303-ac9b-41ff-9154-930710af0845 -e XYCMS_DATABASE_TYPE=MySql -e XYCMS_DATABASE_CONNECTION_STRING="Server=10.10.1.11;Database=gcbj;Uid=gcbjuser;Pwd=xuey.net;" xueynet/xycms:8.0.2
 ```
 
 ::: tip

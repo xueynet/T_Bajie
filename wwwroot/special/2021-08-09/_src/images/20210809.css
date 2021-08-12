@@ -1,0 +1,108 @@
+/*卡片效果*/
+
+.card-s {
+    /* margin: 40px 0; */
+    padding: 40px 0;
+}
+
+.bg2 {
+    background-color: #FAFAFA;
+}
+
+.box.row {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box.row .pic {
+    padding: 5px;
+}
+
+.btnbox {
+    border-radius: 5px;
+}
+
+.btnbox button.btn.btn-green.xy-form-btn {
+    width: 300px;
+    height: 50px;
+    background: #54AC34;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 25px;
+    outline: none;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.card-s h5 {
+    font-size: 24px;
+    color: #52AB32;
+    letter-spacing: 2px
+}
+
+.card-s .col.text-center .description {
+    padding: 5px 0;
+    color: #A0A0A0;
+}
+
+.card-s .col.text-center .line {
+    font-size: 22px;
+    font-weight: bold;
+    color: #52AB32;
+}
+
+.pos-parent {
+    position: relative;
+    min-height: 652px;
+    width: 65%;
+    margin: 0 auto;
+    box-shadow: #F8F8F8 0px 0px 10px;
+}
+
+.pos-sub {
+    position: absolute;
+    top: 20px;
+    /* left: 50%; */
+    /* margin-left: -25%; */
+    z-index: 99;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+
+.row .formBox {
+    background-color: #54AC34;
+}
+
+.row .formBox .container .row form input {
+    font-size: 20px;
+    color: #676767;
+    height: 60px;
+    background-color: #fff;
+    font-family: cursive;
+}
+
+.row .formBox .container .row form button {
+    height: 60px;
+    border-radius: 0;
+    background-color: #2B95EB;
+    outline: none;
+}
+
+.container.pt-20.pb-20 .row.pt-20.pb-20 {
+    margin-right: 0;
+}
+
+.row .formBox .container .row form button span {
+    font-size: 16px;
+}
+
+.row .formBox .container .row.error {
+    padding-top: 8px;
+}
+
+.row .formBox .container .row .phone_error {
+    color: red;
+}
