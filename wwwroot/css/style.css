@@ -83,7 +83,7 @@ body {
 }
 
 .cbanner .bg {
-    background: url(../img/banner/2.png) no-repeat;
+    background: url("//gc.zbjimg.com/project/web/2021/08/25/c7edaf0f27abf630.png/origine/d2af3d67-fc1f-4d66-af92-c411f947043c") no-repeat;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1784,7 +1784,6 @@ ul.cjwt li p {
 
 .footer_formbtn {
     bottom: 110px;
-    background: url(https://xc.zbj.com/sitefiles/library/images/2021/2/a86f9e8d76d344a4.png) no-repeat;
     position: absolute;
     left: 100%;
     cursor: pointer;
@@ -1843,7 +1842,6 @@ ul.cjwt li p {
 }
 
 .footer_form_innerfl .sousou {
-    background: url(https://xc.zbj.com/sitefiles/library/images/2021/2/faaa06f0a37e4663.png) no-repeat 8px center;
     float: left;
     margin: 40px 0 0 450px;
     padding: 0 10px 0 30px;
@@ -1872,7 +1870,6 @@ ul.cjwt li p {
 .footer_form_fixed_inner .form_close {
     width: 35px;
     height: 35px;
-    background: url(https://xc.zbj.com/sitefiles/library/images/2021/2/d788d83ceec2ed1d.png) no-repeat;
     cursor: pointer;
     text-indent: -9999px;
     position: absolute;
@@ -1933,7 +1930,7 @@ ul.cjwt li p {
 
 .citybg {
     padding-top: 415px;
-    background: #fff url(../images/img1920.png) center top no-repeat;
+    background: #fff url("//gc.zbjimg.com/project/web/2021/08/25/edc192d581feec1c.png/origine/c1ff08b1-0405-4e80-94d3-22f0dd7d7fe0") center top no-repeat;
 }
 
 .wal {
@@ -1943,7 +1940,7 @@ ul.cjwt li p {
 
 .city_01 {
     min-height: 892px;
-    background: url(../images/img1190.png) center top no-repeat;
+    background: url("//gc.zbjimg.com/project/web/2021/08/25/2ef6b906d2da838c.png/origine/bf195487-4dec-4596-a70b-25fe87b4441e") center top no-repeat;
 }
 
 .city_01 .img-1 {
@@ -1976,32 +1973,32 @@ ul.cjwt li p {
 
 .city_01 .list li:nth-child(1) a {
     top: 24px;
-    background: url(../images/img180_1.png);
+    background: url("//gc.zbjimg.com/project/web/2021/08/25/4a6d592448aac359.png/origine/e36b23e9-6c5f-4ad1-8f5b-9198593113a4");
 }
 
 .city_01 .list li:nth-child(2) a {
     top: 12px;
-    background: url(../images/img180_2.png);
+    background: url("//gc.zbjimg.com/project/web/2021/08/25/8b1d2a36ff563ef4.png/origine/a9325aca-62a6-4b4d-879f-3b95e63a0788");
 }
 
 .city_01 .list li:nth-child(3) a {
     top: 0;
-    background: url(../images/img180_3.png);
+    background: url("//gc.zbjimg.com/project/web/2021/08/25/1d2d4b448f257e4c.png/origine/c903858f-1704-4cdc-9c2b-e2c54820e24f");
 }
 
 .city_01 .list li:nth-child(4) a {
     top: 18px;
-    background: url(../images/img180_4.png);
+    background: url("//gc.zbjimg.com/project/web/2021/08/25/a0aeffb4b374f2b8.png/origine/4a4581ec-f934-46ab-9f71-bb53eb0fb933");
 }
 
 .city_01 .list li:nth-child(5) a {
     top: 0;
-    background: url(../images/img180_5.png);
+    background: url("//gc.zbjimg.com/project/web/2021/08/25/dd6684d9fa72e80d.png/origine/caaacf04-6a2b-4b30-9fe9-64d7c2590f0e");
 }
 
 .city_01 .list li:nth-child(6) a {
     top: 20px;
-    background: url(../images/img180_6.png);
+    background: url("//gc.zbjimg.com/project/web/2021/08/25/c699b3576b533f76.png/origine/83f296eb-4934-41b7-9c58-e7bf19c4674d");
 }
 
 .city_01 .btn {
