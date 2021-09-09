@@ -542,6 +542,7 @@ ul.news a:hover .desc h3 {
 
 .newscontent .raw .box {
     min-height: 400px;
+    line-height: 1.8em;
 }
 
 .contentbox .info {
