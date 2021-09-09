@@ -409,9 +409,10 @@ ul.hot .desc h3 {
 ul.hot .desc p {
     margin: unset;
     font-size: 12px;
-    overflow: hidden;
-    max-height: 46px;
+    max-height: 50px;
+    line-height: 1.4;
     text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 ul.news .imgbox {
@@ -448,6 +449,7 @@ ul.news .desc {
     height: 30vw;
     max-height: 120px;
     padding-left: unset;
+    line-height: 1.6;
     overflow: hidden;
 }
 

@@ -2,33 +2,7 @@
 <html class="no-js" lang="zh-cn">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{Channel.Title} - {Stl.SiteName}</title>
-    <meta name="description" content="{Channel.description}">
-    <meta name="keywords" content="{Channel.keywords}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="../img/icon/favicon.ico">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-icons.css">
-    <link rel="stylesheet" href="../css/owl.carousel.css">
-    <link rel="stylesheet" href="../css/owl.theme.css">
-    <link rel="stylesheet" href="../css/owl.transitions.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/animated-headlines.css">
-    <link rel="stylesheet" href="../css/default.css">
-    <link rel="stylesheet" href="../css/aos.css">
-    <link rel="stylesheet" href="../css/rootstyle.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?0103cfac04c0efb249421b756d92b383";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
+    <stl:include file="include/head.html"></stl:include>
 </head>
 
 <body>
@@ -166,11 +140,7 @@
         </div>
     </div>
     <stl:include file="{Stl.SiteUrl}/include/footer.html"></stl:include>
-    <script src="../js/jquery-1.12.4.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/owl.carousel.min.js"></script>
-    <script src="../js/aos.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="{Stl.SiteUrl}/js/main.js"></script>
 </body>
 
 </html>
