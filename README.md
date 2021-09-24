@@ -9,6 +9,35 @@
 * layer3.1.1 弹出层文档：https://layer.layui.com/
 * swiper 4.5.0 文档：http://www.idangero.us/swiper/
 
+### 主程序更新至8.0.2时需要更新数据库(MySQL)
+
+``` mysql
+update siteserver_20210420_1 set IsMainContent=1,AllowAddSubContent=0,RelatedContentId=0,SubContentNum=0 where IsMainContent is null;
+update siteserver_20210420_2 set IsMainContent=1,AllowAddSubContent=0,RelatedContentId=0,SubContentNum=0 where IsMainContent is null;
+update siteserver_20210420_3 set IsMainContent=1,AllowAddSubContent=0,RelatedContentId=0,SubContentNum=0 where IsMainContent is null;
+update siteserver_20210615_2 set IsMainContent=1,AllowAddSubContent=0,RelatedContentId=0,SubContentNum=0 where IsMainContent is null;
+drop table siteserver_20210615_1;
+```
+
+### 测试环境搭建
+
+访问域名：wl.zbj.com
+
+docker拉取：xueynet/xycms:8.0.2
+使用数据库mysql: T_gcbj  dbuser_test_gcbj   ZXc^&*()8
+使用Redis 端口：6311  Password:gczbjcom
+
+
+### 更新说明
+
+一、主程序更新
+
+二、插件更新
+
+三、模板更新
+
+
+
 ### 移动端模板制作工作
 
 ##### 首页模板
