@@ -63,21 +63,30 @@
                                         <div class="card-body">
                                             <style>
                                                 .numberbtn, .numbertext{
-                                                    border-radius: 5px;
+                                                    border-radius: 0px;
                                                     padding: 5px 10px;
                                                     border: 1px solid #ddd;
+                                                    min-width: 35px;
+                                                    display: inline-block;
+                                                    text-align: center;
                                                     color: #333;
+                                                    margin-left: unset;
                                                     background-color: #f1f1f1;
-                                                    margin-left: 10px;
                                                 }.numbertext{
                                                     margin-left: 0px;
                                                     width: 60px;
                                                     text-align: center;
                                                     background-color: #fff;
+                                                }.numberjian{
+                                                   border-top-left-radius: 5px;
+                                                   border-bottom-left-radius: 5px;
+                                                }.numberjia{
+                                                   border-top-right-radius: 5px;
+                                                   border-bottom-right-radius: 5px;
                                                 }
                                             </style>
                                             <div class="card-title">支付金额：<span class="price "><i class="fa fa-jpy" aria-hidden="true"></i><span class="updataprice">{content.Price}</span></span></div>
-                                            <div class="card-title">商品数量：<input oninput="changeEvent(event)" type="number" class="numbertext" id="numbertext" value="1"/><span onclick="numberjian(event)" class="numberbtn numberjian">-</span><span onclick="numberjia(event)" class="numberbtn numberjia">+</span></div>
+                                            <div class="card-title">商品数量：<span onclick="numberjian(event)" class="numberbtn numberjian">-</span><input oninput="changeEvent(event)" type="number" class="numbertext" id="numbertext" value="1"/><span onclick="numberjia(event)" class="numberbtn numberjia">+</span></div>
                                             <div class="form-group">
                                                 <label for="telphone">联系电话：</label>
                                                 <input type="tel" class="form-control" name="telphone" placeholder="您的联系电话">
@@ -97,7 +106,7 @@
                                 </div>
                             </form>
                         </div>
-                        <script src="{Stl.SiteUrl}/js/shopping.js?v=202109120197"></script>
+                        <script src="{Stl.SiteUrl}/js/shopping.js?v=202109120198"></script>
                     </stl:yes>
                     <stl:no>
                         <a href="{Stl.SiteUrl}/"><i class="fa fa-home d-block" aria-hidden="true"></i>首页</a>

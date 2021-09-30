@@ -268,14 +268,14 @@ function changeEvent(e){
 }
 
 function numberjia(e) {
-    numbert = parseInt(e.path[1].children[0].value)
+    numbert = parseInt(e.path[1].children[1].value)
     $('.numbertext').val(numbert+1)
     numbert++
     changeprice()
 }
 
 function numberjian(e) {
-    numbert = parseInt(e.path[1].children[0].value)
+    numbert = parseInt(e.path[1].children[1].value)
     if(numbert>1){
         $('.numbertext').val(numbert-1)
         numbert--
