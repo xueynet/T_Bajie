@@ -2,6 +2,8 @@
 var ACCESS_TOKEN_NAME = "xy_user_access_token";
 var $token = localStorage.getItem(ACCESS_TOKEN_NAME);
 var openId;
+var prices = 0
+var numbert = 1
 
 function Guid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -30,7 +32,7 @@ function apiShoppingCartAdd(channel, subtype) {
         Message: $('.layui-layer-content input[name="orderRequire"]').val(),
         Channel: channel,
         SubType: subtype,
-        Count: num,
+        Count: numbert,
         SessionId: Guid()
     };
     console.log(JSON.stringify(data));
@@ -71,7 +73,7 @@ function apiPay(orderId, orderNo, channel, subtype) {
         ProductId: productId,
         ProductName: title,
         Message: $('.layui-layer-content input[name="orderRequire"]').val(),
-        Fee: parseFloat(price) * num,
+        Fee: parseFloat(price) * numbert,
         Channel: channel,
         SubType: subtype,
         OrignChannel: channel,
@@ -238,12 +240,45 @@ function orderConfirm() {
                     $('.orderLink').removeClass('disabled');
                 }
             });
+            $('.numbertext').removeAttr('disabled');
+
         }
     });
-}
-
+};
 
 $('.orderLink').off().on("click", function() {
     $(this).addClass('disabled');
+    prices = parseFloat($('.updataprice').text())
     orderConfirm();
 });
+function changeprice(){
+    let num = prices*numbert
+    num = num.toFixed(2)
+    
+    $('.updataprice').text(num)
+}
+
+function changeEvent(e){
+    numbert = e.target.value
+    if(numbert == null || numbert == "") {
+        numbert = 1
+        $('.numbertext').val(1)
+    }
+    changeprice(numbert)
+}
+
+function numberjia(e) {
+    numbert = parseInt(e.path[1].children[0].value)
+    $('.numbertext').val(numbert+1)
+    numbert++
+    changeprice()
+}
+
+function numberjian(e) {
+    numbert = parseInt(e.path[1].children[0].value)
+    if(numbert>1){
+        $('.numbertext').val(numbert-1)
+        numbert--
+        changeprice()
+    }
+}

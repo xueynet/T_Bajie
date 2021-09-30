@@ -876,3 +876,17 @@ footer .navbar div a.btn {
     line-height: 35px;
     margin-right: 5px;
 }
+
+.numberbtn, .numbertext{
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    color: #333;
+    background-color: #f1f1f1;
+    margin-left: 10px;
+}.numbertext{
+    margin-left: 0px;
+    width: 60px;
+    text-align: center;
+    background-color: #fff;
+}
