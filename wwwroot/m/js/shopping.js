@@ -4,6 +4,7 @@ var $token = localStorage.getItem(ACCESS_TOKEN_NAME);
 var openId;
 var prices = 0
 var numbert = 1
+prices = parseFloat($('.updataprice').text())
 
 function Guid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -248,7 +249,7 @@ function orderConfirm() {
 
 $('.orderLink').off().on("click", function() {
     $(this).addClass('disabled');
-    prices = parseFloat($('.updataprice').text())
+    $('.updataprice').text(prices)
     orderConfirm();
 });
 function changeprice(){
