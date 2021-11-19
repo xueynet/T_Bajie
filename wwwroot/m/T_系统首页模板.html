@@ -7,7 +7,6 @@
 
 <body>
     <!-- 头部的导航 -->
-    <stl:include file="/include/sideNav.html"></stl:include>
     <!--主体内容-->
     <div class="swiper-container swiper-container-bn">
         <div class="swiper-wrapper">
@@ -47,6 +46,205 @@
             </stl:a>
         </div>
     </div>
+    <!--发布需求模板-->
+    <div class="container">
+        <div class="row xqtemp">
+            <div class="xqtitle text-center col-12 mb-3">
+                <h3><img class="hot" src="https://gc.zbj.com/images/hot.png">免费发布需求<img class="hot" src="https://gc.zbj.com/images/hot.png"></h3>
+                <p>官方推荐优质服务商</p>
+                <div class="btn-group mr-2 xqtags" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-danger btn-sm">效果图</button>
+                    <button type="button" class="btn btn-danger btn-sm">自建房/别墅</button>
+                    <button type="button" class="btn btn-danger btn-sm">建筑设计</button>
+                    <button type="button" class="btn btn-danger btn-sm">装修设计</button>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="inputt form-group">
+                    <div class="d-flex flex-row">
+                        <label class="col-form-label">我需要:</label>
+                        <input type="text" oninput="checkdescribe()" class="sy-describe form-control-plaintext" id="staticEmail" placeholder="效果图/自建房/别墅/装修设计">
+                    </div>
+                    <div class="describeerror error" style="display: none;">请填写需求或选择需求</div>
+                </div>
+                <div class="inputt form-group">
+                    <div class="d-flex flex-row">
+                        <label class="col-form-label">手机号:</label>
+                        <input type="text" oninput="checkphone()" class="sy-phone form-control-plaintext" id="staticEmail" placeholder="便于及时联系您">
+                    </div>
+                    <div class="phoneerror error" style="display: none;">请填写正确的手机号</div>
+                </div>
+            </div>
+            <div class=" col-12">
+                <button type="submit" class="btn btn-danger btn-block mb-2 xqbtn sysqbtn">
+                    <i class="icon-updata" style="display: none;"></i>
+                    <span>马上为我推荐</span>
+                </button>
+            </div>
+        </div>
+        <style>
+            .xqtemp{
+                padding: 20px 0;
+            }
+            .xqtemp .hot{
+                width: 16px;
+                height: 26px;
+                margin: 0 10px;
+                margin-top: -10px;
+            }
+            .xqtemp .btn-group .btn{
+                background: rgb(223, 89, 0,0);
+                font-size: 12px;
+                line-height: 16px;
+                border:unset;
+                height: auto;
+                white-space: nowrap;
+            }
+            .xqtitle h3{
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .xqtitle p{
+                font-size: 12px;
+                color: #999;
+            }
+            .xqtitle .btn-group{
+                margin: 20px auto;
+                box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+                background: linear-gradient(to right, #ffa100, #ff6505);
+            }
+            .inputt{
+                padding: 0 0 0 10px;background: #eee;
+                border-radius: 5px;
+            }
+            .inputt label{
+                width: 80px;
+            }
+            .inputt input{
+                padding: 0 10px;
+            }
+            .inputt .error{
+                padding-left: 75px;
+                font-size: 12px;
+                color: red;
+                padding-bottom: 5px;
+            }
+            .xqbtn{
+                border-radius: 30px;
+                margin-top: 20px;
+                color:#fff;
+                font-size: 14px;
+                line-height: 32px;
+                border: unset;
+                box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+                background: linear-gradient(to right, #ffa100, #ff6505);
+            }
+            .icon-updata{
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                margin-bottom:-5px ;
+                position: relative;
+                border-radius: 50%;
+                margin-right: 10px;
+                border:2px solid #fff;
+                border-top: unset;
+                border-left: unset;
+                animation: updata 1s linear infinite;
+            }
+            @keyframes updata{
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(359deg);
+                }
+            }
+           
+        </style>
+        <script>
+            //tags输入
+            $(".xqtags").find('button').each(function(){
+                $(this).click(function(){
+                    $(".sy-describe").val($(this).text())
+                    checkdescribe()
+                })
+            })
+            // 验证需求
+            function checkdescribe() {
+                var val = $(".sy-describe").val();
+                if (val=='') {
+                    $(".describeerror").show();
+                } else {
+                    $(".describeerror").hide();
+                }
+            }
+            // 验证手机号
+            function checkphone() {
+                if (!/^1[3-9]\d{9}$/.test($(".sy-phone").val())) {
+                    $(".phoneerror").show();
+                } else {
+                    $(".phoneerror").hide();
+                }
+            }
+            $(".sysqbtn").on('click', function() {
+                // 获取需求
+                var content = $(".sy-describe").val();
+                // 获取电话
+                var tel = $.trim($(".sy-phone").val());
+                if(content==''||tel=='') {
+                    checkdescribe()
+                    checkphone()
+                    return
+                }
+                $('.sysqbtn span').text('正在提交');
+                $(".icon-updata").show()
+                $('.sysqbtn').attr('disabled',true)
+                
+                var reg = /^1[3-9]\d{9}$/;
+                var qq = '';
+                var telephone = tel;
+                var email = '';
+                if (RegExp(reg).test(tel)) {
+                    var data = JSON.stringify({
+                        "Mobile": tel,
+                        "Content": content,
+                        "Source": document.title + " " + window.location.href
+                    })
+                    $.ajax({
+                        type: 'POST',
+                        url: "/api/form/1/1",
+                        data: data,
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function(result) {
+                            if (result.id > 0) {
+                                $('.sysqbtn span').text('提交成功，请等待客服联系！');
+                            } else {
+                                console.log(result);
+                            }
+                        },
+                        error:function(error){
+                            $('.sysqbtn span').text(error.responseJSON.message);
+                            console.log(error);
+                        },
+                        complete:function(res){
+                            setTimeout(function() {
+                                $(".icon-updata").hide()
+                                $(".sy-describe").val('');
+                                $(".sy-phone").val('');
+                                $('.sysqbtn span').text('马上为我推荐');
+                                $('.sysqbtn').attr('disabled',false)
+                            }, 5000);
+                        }
+                    });
+                } else {
+                    checkphone()
+                }
+            });
+        </script>
+    </div>
+    <!--END-->
     <stl:contents channelName="广告" isImage="true" totalNum="3">
         <div class="line"></div>
         <div class="md m2">
