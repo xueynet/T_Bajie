@@ -50,13 +50,17 @@
     <div class="container">
         <div class="row xqtemp">
             <div class="xqtitle text-center col-12 mb-3">
-                <h3><img class="hot" src="https://gc.zbj.com/images/hot.png">免费发布需求<img class="hot" src="https://gc.zbj.com/images/hot.png"></h3>
-                <p>官方推荐优质服务商</p>
+                <div class="bjgctj">
+                    <div class="tag">八戒工程推荐</div>
+                </div>
+                <h3><i class="fa fa-circle"></i>免费发布需求，官方推荐优质服务商<i class="fa fa-circle"></i></h3>
                 <div class="btn-group mr-2 xqtags" role="group" aria-label="First group">
+                    <img class="hot" src="https://gc.zbj.com/images/hot.png">
                     <button type="button" class="btn btn-danger btn-sm">效果图</button>
                     <button type="button" class="btn btn-danger btn-sm">自建房/别墅</button>
                     <button type="button" class="btn btn-danger btn-sm">建筑设计</button>
                     <button type="button" class="btn btn-danger btn-sm">装修设计</button>
+                    <img class="hot" src="https://gc.zbj.com/images/hot.png">
                 </div>
             </div>
             <div class="col-12">
@@ -74,6 +78,9 @@
                     </div>
                     <div class="phoneerror error" style="display: none;">请填写正确的手机号</div>
                 </div>
+                <div class="form-group">
+                    <strong><i class="fa fa-id-card"></i>信息保护中，请放心填写</strong>
+                </div>
             </div>
             <div class=" col-12">
                 <button type="submit" class="btn btn-danger btn-block mb-2 xqbtn sysqbtn">
@@ -85,10 +92,43 @@
         <style>
             .xqtemp{
                 padding: 20px 0;
+                margin: 0 ;
+                background: #fff;
+                border-radius: 10px;   
+                box-shadow: -2px 1px 10px #eee;
+                margin-bottom: 10px;
+            }
+            .xqtemp .bjgctj{
+                padding: 5px 10px;
+                display: flex;
+                align-items: flex-end;
+                flex-direction: row-reverse;
+            }
+            .xqtemp .bjgctj .tag{
+                padding: 2px 5px;
+                font-size: 12px;
+                background: linear-gradient(to right, #ffa100, #ff6505);
+                border-radius: 10px;
+                border-bottom-left-radius: 0;
+                color: #fff;
+            }
+            .xqtemp{
+                font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+            }
+            .xqtemp strong{
+                color: #ffa100;
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                font-weight: normal;
+            }
+            .xqtemp strong i{
+                margin-right: 5px;
+                font-size: 16px;
             }
             .xqtemp .hot{
-                width: 16px;
-                height: 26px;
+                width: 12px;
+                height: 22px;
                 margin: 0 10px;
                 margin-top: -10px;
             }
@@ -100,9 +140,24 @@
                 height: auto;
                 white-space: nowrap;
             }
+            .xqtags .hot{
+                top: 8px;
+                position:absolute;
+                left: -30px;
+            }
+            .xqtags .hot:last-child{
+                left: unset;
+                right: -30px;
+            }
             .xqtitle h3{
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: bold;
+            }
+            .xqtitle h3 i{
+                margin: 0 5px;
+                font-size: 12px;
+                transform: translateY(-3px) scale(.8);
+                color:#ffa100
             }
             .xqtitle p{
                 font-size: 12px;
@@ -113,15 +168,21 @@
                 box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
                 background: linear-gradient(to right, #ffa100, #ff6505);
             }
+
             .inputt{
-                padding: 0 0 0 10px;background: #eee;
+                padding: 0 0 0 10px;
+                background: #f7f7f7;
                 border-radius: 5px;
+                box-shadow: 0 0 5p #f7f7f7;
             }
             .inputt label{
-                width: 80px;
+                width: 60px;
+                font-weight: bold;
+                font-size: 14px;
             }
             .inputt input{
                 padding: 0 10px;
+                font-size: 14px;
             }
             .inputt .error{
                 padding-left: 75px;
@@ -133,8 +194,8 @@
                 border-radius: 30px;
                 margin-top: 20px;
                 color:#fff;
-                font-size: 14px;
-                line-height: 32px;
+                font-size: 16px;
+                line-height: 28px;
                 border: unset;
                 box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
                 background: linear-gradient(to right, #ffa100, #ff6505);
