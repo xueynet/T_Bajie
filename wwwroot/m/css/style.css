@@ -890,3 +890,115 @@ footer .navbar div a.btn {
     text-align: center;
     background-color: #fff;
 }
+
+.xqtemp{
+    padding: 20px 0;
+    margin: 0 ;
+    background: #fff;
+    border-radius: 10px;   
+    box-shadow: -2px 1px 10px #eee;
+    margin-bottom: 10px;
+}
+.xqtemp .bjgctj{
+    padding: 5px 10px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+}
+
+.xqtemp{
+    font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+}
+.xqtemp strong{
+    color: #ffa100;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+.xqtemp strong i{
+    margin-right: 5px;
+    font-size: 16px;
+}
+.xqtemp .btn-group .btn{
+    background: #00000000;
+    font-size: 12px;
+    line-height: 16px;             
+    color: #ffa100;
+    border:unset;
+    height: auto;
+    white-space: nowrap;
+    padding: 3px 6px;
+    position: relative;
+}
+.xqtemp .btn-group .btn .hot{
+    width: 8px;
+    height: 12px;
+    margin-top: -6px;
+    position:absolute;
+    left: -5px;
+}
+.xqtitle h3{
+    font-size: 16px;
+    font-weight: bold;
+}
+.xqtitle p{
+    font-size: 12px;
+    color: #999;
+}
+.xqtitle .btn-group{
+    margin: 0px auto;
+}
+
+.inputt{
+    padding: 0 0 0 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 5p #f7f7f7;
+}
+.inputt label{
+    width: 60px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.inputt input{
+    padding: 0 10px;
+    font-size: 14px;
+}
+.inputt .error{
+    padding-left: 60px;
+    font-size: 12px;
+    color: red;
+    padding-bottom: 5px;
+}
+.xqbtn{
+    border-radius: 30px;
+    color:#fff;
+    height: auto;
+    font-size: 16px;
+    line-height: 24px;
+    border: unset;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+    background: linear-gradient(to right, #ffa100, #ff6505);
+}
+.icon-updata{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-bottom:-5px ;
+    position: relative;
+    border-radius: 50%;
+    margin-right: 10px;
+    border:2px solid #fff;
+    border-top: unset;
+    border-left: unset;
+    animation: updata 1s linear infinite;
+}
+@keyframes updata{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(359deg);
+    }
+}
