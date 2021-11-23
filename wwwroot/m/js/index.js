@@ -54,7 +54,7 @@ $(function() {
 
  
 //tags输入
-$(".xqtags").find('button').each(function(){
+$(".xqtags").find('.btn').each(function(){
     $(this).click(function(){
         $(".sy-describe").val($(this).text())
         checkdescribe()
