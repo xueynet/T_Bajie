@@ -8,7 +8,6 @@ AOS.init({
 
 	$('#owl-productimg').owlCarousel({
 		items: 1,
-		autoPlay: true,
 		loop: true,
 		autoPlay: 5000,
 		transitionStyle: 'fade',
@@ -22,7 +21,6 @@ AOS.init({
 
 	$('#owl-xgt-banner').owlCarousel({
 		items: 1,
-		autoPlay: true,
 		loop: true,
 		autoPlay: 10000,
 		transitionStyle: 'fade',

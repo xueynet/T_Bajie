@@ -110,45 +110,9 @@
             </ul>
             <div class="header-top-right">
                 <ul class="header-top-user">
-                    <stl:if type="IsUserLoggin">
-                        <stl:yes>
-                            <li class="item hover-control J_user-login-status">
-                                <span class="hover-title"><a href="/home" data-linkid="zbjindex2018-top-username-0" target="_blank" class="nav-username-overflow">{user.DisplayName}</a></span>
-                                <div class="hover-panel">
-                                    <div class="user-login-panel">
-                                        <div class="user-panel-top clearfix">
-                                            <a class="user-avatar-wrap" href="/home" target="_blank" data-linkid="zbjindex2017-loginfo-user-touxiang"><img src="//avatar.zbjimg.com/012/23/15/200x200_avatar_36.jpg!small"></a>
-                                            <div class="user-info-wrap">
-                                                <div class="user-info">
-                                                    <a class="user-name" href="/home" target="_blank" data-linkid="zbjindex2017-loginfo-user-nicheng">用户中心</a>
-                                                    <span class="fr"><a class="user-logout" href="{stl:login url=logout}" data-linkid="zbjindex2017-loginfo-user-out">退出</a></span>
-                                                    <span class="fr"><a class="account-set" href="/home" target="_blank" data-linkid="10176191">账号设置</a></span>
-                                                </div>
-                                                <div class="user-account clearfix">
-                                                    <span>账户余额</span>
-                                                    <a class="user-amount" href="/home" target="_blank" data-linkid="zbjindex2017-loginfo-user-yue">查询<i class="icon-arrow"></i></a>
-                                                    <a class="coin-amount" href="/home" data-linkid="zbjindex2017-loginfo-user-points" target="_blank">0</a>
-                                                    <span class="integral">积分</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="user-panel-links clearfix">
-                                            <a class="links-item" href="{Stl.SiteUrl}/home/#1/10" data-linkid="zbjindex2017-loginfo-mylink-1" target="_blank"><i class="links-icon links-icon-1"></i>我的订单</a>
-                                            <a class="links-item" href="#" data-linkid="zbjindex2017-loginfo-mylink-2" target="_blank"><i class="links-icon links-icon-2"></i>我的足迹</a>
-                                            <a class="links-item  links-item-nb" href="#" data-linkid="zbjindex2017-loginfo-mylink-3" target="_blank"><i class="links-icon links-icon-3"></i>我的收藏</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </stl:yes>
-                        <stl:no>
-                            <li class="item J_user-login-status">
-                                <div class="top-user-login">
-                                    <span class="text-highlight"><stl:a href="{stl.LoginUrl}" class="J_header-top-fromurl header-top-login">请登录</stl:a><a href="{stl.RegisterUrl}" class="J_header-top-fromurl" data-linkid="zbjindex2018-top-register">免费注册</a></span>
-                                </div>
-                            </li>
-                        </stl:no>
-                    </stl:if>
+                    <li class="item hover-control J_user-login-status">
+                        <span class="hover-title"><a href="{Stl.SiteUrl}/home" data-linkid="zbjindex2018-top-username-0" target="_blank" class="nav-username-overflow">我的订单</a></span>
+                    </li>
                     <li class="item hover-control J_msg_box hidden"></li>
                     <li class="item hover-control">
                         <a class="hover-title" href="https://i.zbj.com/" data-linkid="zbjindex2018-top-employer" target="_blank">我的猪八戒<i class="arrow-icon"></i></a>

@@ -101,7 +101,6 @@ AOS.init({
 
     $('#owl-banner').owlCarousel({
         items: 1,
-        autoPlay: true,
         loop: true,
         autoPlay: 8000,
         transitionStyle: 'fade',
@@ -113,12 +112,9 @@ AOS.init({
         singleItem: true
     });
 
-    $('.navmenubtn').on('click', function() {
-            $(".navmenu").slideToggle("fast")
-        })
-        // 14. Wow JS
+    $('.navmenubtn').click(function(){
+        $(".navmenu").slideToggle("fast")
+    })
+
     new WOW().init();
-
-
-
 })(jQuery);
