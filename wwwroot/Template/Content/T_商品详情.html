@@ -52,7 +52,7 @@
 
         function btnPayClick() {
             var payurl = "/assets/shopping/layer/pay.html?siteId={content.SiteId}&channelId={content.ChannelId}&productId={content.Id}&title=" + encodeURIComponent("{content.Title}") +
-                "&summary=" + encodeURIComponent("{content.Summary}") + "&price={content.Price}&count=" + $("#count").val();
+                "&summary=" + encodeURIComponent("{content.Title}") + "&price={content.Price}&count=" + $("#count").val();
             if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
                 //如果是微信浏览器，需要直接跳转，不能用iframe方式
                 if (/MicroMessenger/i.test(navigator.userAgent)) {
